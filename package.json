@@ -20,5 +20,8 @@
   "homepage": "https://github.com/zuiass/Ponto#readme",
   "devDependencies": {
     "electron": "^35.0.1"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }

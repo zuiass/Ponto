@@ -1,0 +1,36 @@
+@import url('../Images/Poppins.ttf');
+@import url('../Images/Roboto-Slab.ttf');
+
+html {
+    scroll-behavior: smooth;
+} * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family), system-ui;
+}
+
+:root {
+    --background-color-light: #ffffff;
+    --color-bg-light: #000000;
+
+    --background-color-dark: #000000;
+    --color-bg-dark: #ffffff;
+
+    --font-family: 'Poppins', 'Roboto Slab';
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+body.modo-claro {
+    --background-color: var(--background-color-light);
+    --color: var(--color-bg-light);
+}
+
+body.modo-escuro {
+    --background-color: var(--background-color-dark);
+    --color: var(--color-bg-dark);
+}

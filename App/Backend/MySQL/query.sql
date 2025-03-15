@@ -1,0 +1,2 @@
+CREATE DATABASE ponto;
+USE ponto;
