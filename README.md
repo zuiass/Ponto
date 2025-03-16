@@ -38,8 +38,6 @@
 
 <div align="center">
    Feito com ❤ por<br>
-   <a target="_blank" href="zuiass">@zuiass</a><br>
-   <a target="_blank" href="/zuiass">@MkcSamuel</a><br>
-   <a target="_blank" href="Kayke2707">Kayke2707</a><br>
-   <a target="_blank" href="JoaoAugusto1509">@JoaoAugusto1509</a>
+   
+   `@zuiass` `@MkcSamuel` `@Kayke2707` `@JoaoAugusto1509`
 </div>
