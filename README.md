@@ -37,5 +37,9 @@
 <br>
 
 <div align="center">
-   Feito com ❤ por <a href="github.com/zuiass">@zuiass</a>, <a href="github.com/zuiass">@MkcSamuel</a>, <a href="github.com/Kayke2707">Kayke2707</a> e <a href="github.com/JoaoAugusto1509">@JoaoAugusto1509</a>
+   Feito com ❤ por<br>
+   <a target="_blank" href="github.com/zuiass">@zuiass</a><br>
+   <a target="_blank" href="github.com/zuiass">@MkcSamuel</a><br>
+   <a target="_blank" href="github.com/Kayke2707">Kayke2707</a><br>
+   <a target="_blank" href="github.com/JoaoAugusto1509">@JoaoAugusto1509</a>
 </div>
