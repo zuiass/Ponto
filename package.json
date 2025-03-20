@@ -3,24 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "./src/main/index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zuiass/Ponto.git"
   },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/zuiass/Ponto/issues"
   },
+
   "homepage": "https://github.com/zuiass/Ponto#readme",
+  
   "devDependencies": {
     "electron": "^35.0.3"
   },
+
   "dependencies": {
     "mysql": "^2.18.1",
     "mysql2": "^3.14.0"
