@@ -4,12 +4,13 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
     }
   });
 
-  win.loadFile('./App/Frontend/Pages/Início/index.html');
+  win.loadFile('../renderer/pages/login.html');
 }
 
 app.whenReady().then(() => {

@@ -2,7 +2,7 @@
   "name": "ponto",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/main/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
@@ -22,6 +22,7 @@
     "electron": "^35.0.1"
   },
   "dependencies": {
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.0"
   }
 }
