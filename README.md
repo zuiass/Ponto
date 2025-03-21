@@ -1,5 +1,5 @@
 <div align="center">
-   <img width=150px height=150px src="">
+   <img width=150px height=150px src="./public/logo.svg">
    <h1>Ponto | Dependências</h1>
 </div>
 
