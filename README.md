@@ -1,6 +1,6 @@
 <div align="center">
    <img width=150px height=150px src="./public/logo.svg">
-   <h1>Ponto | Dependências</h1>
+   <h1>Ponto 🎮 | Dependências</h1>
 </div>
 
 1. Abra o navegador e baixe o **Node JS** em:
@@ -12,7 +12,7 @@
 2. Clone o repositório **Ponto** em uma pasta:
    
    ```bash
-   git clone https://github.com/zuiass/Horsouls.git
+   git clone https://github.com/zuiass/Ponto.git
 <br>
 
 3. Entre no projeto em:
