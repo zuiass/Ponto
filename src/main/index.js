@@ -10,11 +10,11 @@ function createWindow() {
     
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false // Adicionado para garantir que o nodeIntegration funcione corretamente
+      contextIsolation: false
     }
   });
   
-  win.loadFile(path.join(__dirname, '../renderer/pages/login.html')); // Corrigido o caminho do arquivo HTML
+  win.loadFile(path.join(__dirname, '../renderer/pages/login.html'));
 }
 
 app.whenReady().then(() => {
