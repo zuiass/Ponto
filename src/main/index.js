@@ -14,7 +14,7 @@ function createWindow() {
     }
   });
   
-  win.loadFile(path.join(__dirname, '../renderer/pages/login.html'));
+  win.loadFile(path.join(__dirname, '../renderer/pages/home.html'));
 }
 
 app.whenReady().then(() => {
