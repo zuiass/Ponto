@@ -1,13 +1,7 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .image-name{
     display: flex;
 }
+
 .image-box{
     width: 100%;
     max-width: 45px;
@@ -20,11 +14,13 @@
     align-items: center;
     justify-content: center;
 }
+
 .image{
     width: 30px;
     height: 30px;
     border-radius: 10px;
 }
+
 .container {
     display: flex;
     justify-content: center;
@@ -191,7 +187,3 @@
         width: 150px;
     }
 }
- 
- 
- 
- 
