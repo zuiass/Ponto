@@ -18,7 +18,7 @@ html {
     --background-color-light: #ffffff;
     --color-bg-light: #000000;
 
-    --background-color-dark: #000000;
+    --background-color-dark: linear-gradient(#001330, #004AAD);
     --color-bg-dark: #ffffff;
 }
 
