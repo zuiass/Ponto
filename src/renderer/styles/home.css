@@ -1,0 +1,36 @@
+.titulo-e-kaicoins {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+} 
+
+.cards-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+} .remessa-1 {
+    display: flex;
+    gap: 25px;
+} .remessa-2 {
+    display: flex;
+    gap: 25px;
+}
+
+.ponto, .pondeto, .ponteto {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(125, 125, 125, 0.25);
+    border: 3px solid #3D72D6;
+    border-radius: 25px;
+    padding: 25px;
+    width: 200px;
+    height: 200px;
+}
+
+.kaikinho-container {
+    display: flex;
+}
