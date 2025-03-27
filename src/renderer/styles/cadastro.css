@@ -1,8 +1,8 @@
-.image-name{
+.image-name {
     display: flex;
 }
 
-.image-box{
+.image-box {
     width: 100%;
     max-width: 45px;
     height: 45px;
@@ -15,7 +15,7 @@
     justify-content: center;
 }
 
-.image{
+.image {
     width: 30px;
     height: 30px;
     border-radius: 10px;
