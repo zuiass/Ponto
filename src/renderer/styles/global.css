@@ -1,18 +1,17 @@
 @import url('../../../public/Poppins.ttf');
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../public/Poppins.ttf');
+}
+
 html {
     scroll-behavior: smooth;
 } * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-@font-face {
-    font-family: 'Poppins';
-    src: url('../../../public/Poppins.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    font-family: 'Poppins', 'Segoe UI';
 }
 
 :root {
