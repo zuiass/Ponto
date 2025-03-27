@@ -14,9 +14,10 @@
 }
 
 .login-box {
-    background: rgba(255, 255, 255, 0.1);
+    height: 500px;
+    background: rgba(0, 0, 0, 0.137);
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 35px;
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -30,14 +31,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 40px;
     border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo {
     width: 200px;
     height: auto;
-    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
 }
 
 .form-section {
@@ -54,7 +53,7 @@
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -67,7 +66,6 @@
     padding: 0 15px;
     color: #fff;
     font-size: 1rem;
-    transition: all 0.3s ease;
     margin-bottom: 15px;
 }
 
@@ -76,9 +74,7 @@
 }
 
 .input-login:focus {
-    border-color: #ffa500;
     outline: none;
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .btn-container {
@@ -98,7 +94,6 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     padding: 0 20px;
 }
 
@@ -116,7 +111,6 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     padding: 0 20px;
 }
 
@@ -127,16 +121,14 @@
 .links-container {
     
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .recuperar-link {
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 0.9rem;
-    margin-top: 15px;
-    display: inline-block;
-    transition: all 0.3s ease;
+    margin-top: 14px;
 }
 
 .criar-conta {
@@ -144,8 +136,6 @@
     text-decoration: none;
     font-size: 0.9rem;
     margin-top: 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
 }
 
 .criar-conta:hover {
