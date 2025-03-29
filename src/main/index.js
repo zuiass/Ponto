@@ -1,11 +1,15 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+let janela;
 
-function createWindow() {
-  const win = new BrowserWindow({
+function criarJanela() {
+  janela = new BrowserWindow({
     width: 800,
-    height: 600,
-    icon: '../../public/icon.svg',
+    height: 500,
+    minWidth: 800,
+    minHeight: 500,
+    simpleFullscreen: true,
+    icon: path.join(__dirname, '../../public/typeGame.ico'),
     autoHideMenuBar: true,
     
     webPreferences: {
@@ -14,14 +18,19 @@ function createWindow() {
     }
   });
   
-  win.loadFile(path.join(__dirname, '../renderer/pages/login.html'));
+  janela.maximize();
+  janela.loadFile(path.join(__dirname, '../renderer/pages/login.html'));
 }
 
+ipcMain.on('mudar-pagina', (event, pagina) => {
+  janela.loadFile(path.join(__dirname, `../renderer/pages/${pagina}.html`));
+});
+
 app.whenReady().then(() => {
-  createWindow();
+  criarJanela();
 
   app.on('activate', function () {
-    if (BrowserWindow.getAllWindows().length === 0) createWindow();
+    if (BrowserWindow.getAllWindows().length === 0) criarJanela();
   });
 });
 

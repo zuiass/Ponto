@@ -1,68 +1,68 @@
 /* IMPORTS */
 
-    @import url('../../../public/Poppins.ttf');
+@import url('../../../public/Poppins.ttf');
 
-    @font-face {
-        font-family: 'Poppins';
-        src: url('../../../public/Poppins.ttf');
-    }
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../public/Poppins.ttf');
+}
 
-/* </> */
+/* GLOBALS */
 
-/* GLOBAL */
+html, body {
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+} .container {
+    width: 100%;
+    height: 100%;
+}
 
-    html, body {
-        scroll-behavior: smooth;
-        width: 100%;
-        height: 100%;
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', 'Segoe UI';
-    } .container {
-        width: 100%;
-        height: 100%;
-    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI';
+}
 
-    :root {
-        --background-color-light: #ffffff;
-        --color-bg-light: #000000;
+::-webkit-scrollbar {
+    display: none;
+}
 
-        --background-color-dark: linear-gradient(to right, #001330, #004AAD);
-        --color-bg-dark: #ffffff;
-    }
+:root {
+    --background-color-light: #ffffff;
+    --color-bg-light: #000000;
 
-/* </> */
+    --background-color-dark: linear-gradient(to right, #001330, #004AAD);
+    --color-bg-dark: #ffffff;
+}
 
 /* ELEMENTOS */
 
-    img {
-        width: 100%;
-        height: 100%;
-    }
+img {
+    width: 100%;
+    height: 100%;
+}
 
-/* </> */
+a {
+    text-decoration: none;
+}
 
 /* MODO PRETO & BODY */
 
-    body {
-        width: 100%;
-        height: 100%;
-        background: var(--background-color);
-        color: var(--color);
-    }
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    color: var(--color);
+}
 
-    body.modo-claro {
-        --background-color: var(--background-color-light);
-        --color: var(--color-bg-light);
-    }
+body.modo-claro {
+    --background-color: var(--background-color-light);
+    --color: var(--color-bg-light);
+}
 
-    body.modo-escuro {
-        --background-color: var(--background-color-dark);
-        --color: var(--color-bg-dark);
-    }
-
-/* </> */
+body.modo-escuro {
+    --background-color: var(--background-color-dark);
+    --color: var(--color-bg-dark);
+}

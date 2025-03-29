@@ -2,8 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
 }
 
 .login-box {
@@ -11,6 +9,7 @@
     background: rgba(0, 0, 0, 0.137);
     padding: 40px;
     border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     width: 100%;
@@ -91,7 +90,7 @@
 }
 
 .btn-criar-conta:hover {
-    background: rgba(228, 140, 21, 0.1);
+    background: rgba(255, 155, 25, 0.1);
 }
 
 .btn-entrar {
@@ -108,7 +107,7 @@
 }
 
 .btn-entrar:hover {
-    background: #d17d0e;
+    background: #ff9d1c;
 }
 
 .links-container {
@@ -138,32 +137,18 @@
     color: #E48C15;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 799px) {
     .login-box {
-        flex-direction: column;
-        max-width: 400px;
-        margin: 20px;
+        background: none;
+        box-shadow: none;
+        border: none;
     }
-    
-    .logo-section {
-        padding-right: 0;
-        padding-bottom: 30px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .form-section {
-        padding-left: 0;
-        padding-top: 10px;
-        width: 100%;
-    }
-    
-    .input-login {
-        width: 100%;
-        height: 60px;
-    }
-    
-    .logo {
-        width: 150px;
+}
+
+@media (max-height: 549px) {
+    .login-box {
+        background: none !important;
+        box-shadow: none !important;
+        border: none !important;
     }
 }
