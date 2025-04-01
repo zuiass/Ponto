@@ -22,15 +22,25 @@
 
 .ponto, .pondeto, .ponteto {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    background-color: rgba(125, 125, 125, 0.25);
-    border: 3px solid #3D72D6;
-    border-radius: 25px;
-    padding: 25px;
+    font-size: 20px;
+    background-color: rgba(0, 108, 196, 0.05);
+    border: none;
     width: 200px;
     height: 200px;
 }
 
-.kaikinho-container {
+.atras {
+    background-color: rgba(0, 108, 196, 0.1);
+    width: 95%;
+    height: 95%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kaikinho-container {
+    width: 100px;
+    height: 70%;
 }
