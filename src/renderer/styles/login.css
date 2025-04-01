@@ -79,18 +79,13 @@
 .btn-criar-conta {
     flex: 1;
     height: 45px;
-    border: 2px solid #E48C15;
+    border: 2px solid var(--button-bg-color);
     border-radius: 50px;
     background: transparent;
-    color: #E48C15;
+    color: var(--button-bg-color);
     font-size: 1rem;
     font-weight: 600;
-    cursor: pointer;
     padding: 0 20px;
-}
-
-.btn-criar-conta:hover {
-    background: rgba(255, 155, 25, 0.1);
 }
 
 .btn-entrar {
@@ -98,16 +93,11 @@
     height: 45px;
     border: none;
     border-radius: 50px;
-    background: #E48C15;
-    color: #fff;
+    color: white;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     padding: 0 20px;
-}
-
-.btn-entrar:hover {
-    background: #ff9d1c;
 }
 
 .links-container {
@@ -122,22 +112,11 @@
     margin-top: 15px;
 }
 
-.criar-conta {
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 10px;
+.recuperar-senha {
+    color: var(--button-bg-color);
 }
 
-.criar-conta:hover {
-    color: #ffa500;
-}
-
-.texto-laranja {
-    color: #E48C15;
-}
-
-@media (max-width: 799px) {
+@media (max-width: 849px) {
     .login-box {
         background: none;
         box-shadow: none;
@@ -147,8 +126,8 @@
 
 @media (max-height: 549px) {
     .login-box {
-        background: none !important;
-        box-shadow: none !important;
-        border: none !important;
+        background: none;
+        box-shadow: none;
+        border: none;
     }
 }

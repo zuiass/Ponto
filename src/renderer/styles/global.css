@@ -30,11 +30,14 @@ html, body {
 }
 
 :root {
-    --background-color-light: #ffffff;
+    --background-color-light: linear-gradient(to right, #BD650A, #E69A08);
     --color-bg-light: #000000;
 
     --background-color-dark: linear-gradient(to right, #001330, #004AAD);
     --color-bg-dark: #ffffff;
+
+    --button-bg-light: #256FF8;
+    --button-bg-dark: #1E3A8A;
 }
 
 /* ELEMENTOS */
@@ -48,6 +51,10 @@ a {
     text-decoration: none;
 }
 
+input, input {
+    outline: none;
+}
+
 /* MODO PRETO & BODY */
 
 body {
@@ -57,12 +64,28 @@ body {
     color: var(--color);
 }
 
+    button {
+        background-color: var(--button-bg-color);
+        cursor: pointer;
+        color: white;
+    }
+
+/* MODO CLARO & ESCURO */
+
 body.modo-claro {
     --background-color: var(--background-color-light);
     --color: var(--color-bg-light);
 }
 
+    .modo-claro button {
+        --button-bg-color: #256FF8;
+    }
+
 body.modo-escuro {
     --background-color: var(--background-color-dark);
     --color: var(--color-bg-dark);
 }
+
+    .modo-escuro button {
+        --button-bg-color: #DF8C00;
+    }
