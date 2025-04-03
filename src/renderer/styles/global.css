@@ -75,18 +75,10 @@ body.modo-claro {
     --color: var(--color-bg-light);
 }
 
-    .modo-claro button {
-        --button-bg-color: #256FF8;
-    }
-
 body.modo-escuro {
     --background-color: var(--background-color-dark);
     --color: var(--color-bg-dark);
 }
-
-    .modo-escuro button {
-        --button-bg-color: #DF8C00;
-    }
 
 /* B O T Õ E S */
 
@@ -94,6 +86,7 @@ body.modo-escuro {
     background: none;
     box-shadow: 0 2px 0px rgb(0, 0, 0, 0.5);
     border-radius: 10px;
+    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
 .shadowEntrar {
