@@ -30,11 +30,8 @@ html, body {
 }
 
 :root {
-    --background-color-light: linear-gradient(to right, #BD650A, #E69A08);
-    --color-bg-light: #000000;
-
-    --background-color-dark: linear-gradient(to right, #001330, #004AAD);
-    --color-bg-dark: #ffffff;
+    --background-color-light: #D18009;
+    --background-color-dark: #724D0D;
 
     --button-bg-light: #256FF8;
     --button-bg-dark: #1E3A8A;
@@ -68,6 +65,7 @@ body {
         background-color: var(--button-bg-color);
         cursor: pointer;
         color: white;
+        border: none;
     }
 
 /* MODO CLARO & ESCURO */
@@ -89,3 +87,29 @@ body.modo-escuro {
     .modo-escuro button {
         --button-bg-color: #DF8C00;
     }
+
+/* B O T Õ E S */
+
+.botaoEntrar {
+    background: none;
+    box-shadow: 0 2px 0px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.shadowEntrar {
+    padding-bottom: 10px;
+    background-color: #B86F03;
+    border-radius: 10px;
+}
+
+.divTextEntrar {
+    background-color: #e08700;
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #B86F03;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.botaoEntrar:active .shadowEntrar {
+    padding: 0;
+}
