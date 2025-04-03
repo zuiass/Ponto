@@ -5,17 +5,16 @@
 }
 
 .login-box {
-    height: 500px;
-    background: rgba(0, 0, 0, 0.137);
-    padding: 40px;
-    border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
     display: flex;
     align-items: center;
+    height: 500px;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 35px;
+    background: #D07D05;
+    border: 3px solid #B86F03;
+    border-bottom: 13px solid #B86F03;
 }
 
 .logo-section {
@@ -74,18 +73,6 @@
     justify-content: space-between;
     gap: 20px;
     margin-top: 30px;
-}
-
-.btn-criar-conta {
-    flex: 1;
-    height: 45px;
-    border: 2px solid var(--button-bg-color);
-    border-radius: 50px;
-    background: transparent;
-    color: var(--button-bg-color);
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0 20px;
 }
 
 .links-container {
