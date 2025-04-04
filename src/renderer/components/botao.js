@@ -5,7 +5,7 @@ function criarBotao(texto, onClick) {
     botao.innerHTML = `
         <div class="shadowEntrar">
             <div class="divTextEntrar">
-                <h1>${texto}</h1>
+                <h2>${texto}</h2>
             </div>
         </div>
     `;
@@ -14,6 +14,12 @@ function criarBotao(texto, onClick) {
     return botao;
 }
 
-const container = document.querySelector(".btn-container");
-container.appendChild(criarBotao("Criar conta"));
-container.appendChild(criarBotao("Entrar"));
+const btn_container = document.querySelector(".btn-container");
+btn_container.appendChild(criarBotao("Criar conta"));
+btn_container.appendChild(criarBotao("Entrar"));
+
+btn_container.addEventListener("mousedown", () => {
+    const som = document.getElementById("som-botao");
+    som.currentTime = 0;
+    som.play();
+});

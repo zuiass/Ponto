@@ -33,8 +33,7 @@ html, body {
     --background-color-light: #D18009;
     --background-color-dark: #724D0D;
 
-    --button-bg-light: #256FF8;
-    --button-bg-dark: #1E3A8A;
+    --color-bg: #000;
 }
 
 /* ELEMENTOS */
@@ -48,8 +47,9 @@ a {
     text-decoration: none;
 }
 
-input, input {
+input {
     outline: none;
+    border: none;
 }
 
 /* MODO PRETO & BODY */
@@ -83,16 +83,16 @@ body.modo-escuro {
 /* B O T Õ E S */
 
 .botaoEntrar {
-    background: none;
-    box-shadow: 0 2px 0px rgb(0, 0, 0, 0.5);
+    width: 100%;
+    box-shadow: 0 2px 1px rgb(0, 0, 0, 0.5);
     border-radius: 10px;
-    transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
 .shadowEntrar {
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     background-color: #995d02;
     border-radius: 10px;
+    transition: padding-bottom 0.05s ease-in-out;
 }
 
 .divTextEntrar {
@@ -101,8 +101,42 @@ body.modo-escuro {
     border-radius: 10px;
     border: 5px solid #B86F03;
     color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 0 #995d02;
 }
 
 .botaoEntrar:active .shadowEntrar {
-    padding: 0;
+    padding: 0px;
+    transform: translateY(2px);
+}
+
+/* I N P U T S */
+
+.inputTexto {
+    padding: 10px;
+    background: none;
+    width: 100%;
+    height: 100%;
+    color: black;
+} ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.inputArea {
+    box-shadow: 0 2px 0 rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.shadowInput {
+    padding-bottom: 4px;
+    background-color: #995d02;
+    border-radius: 10px;
+    transition: padding-bottom 0.05s ease-in-out;
+}
+
+.divInput {
+    background-color: #e08700;
+    border-radius: 10px;
+    border: 5px solid #B86F03;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 0 #995d02;
 }
