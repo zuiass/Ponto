@@ -37,5 +37,15 @@
 </div>
     <script src="../components/input.js"></script>
     <script src="../components/botao.js"></script>
+    <!-- # -->
+    <script>
+        input_group = document.querySelector(".input-group");
+        input_group.appendChild(criarInput("Digite seu email"));
+        input_group.appendChild(criarInput("Digite sua senha"));
+
+        btn_container = document.querySelector(".btn-container");
+        btn_container.appendChild(criarBotao("Criar conta"));
+        btn_container.appendChild(criarBotao("Entrar"));
+    </script>
 </body>
 </html>

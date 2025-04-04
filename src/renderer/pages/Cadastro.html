@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../styles/cadastro.css">
 </head>
  
-<body class="modo-escuro">
+<body class="modo-claro">
 <div class="container">
 
     <div class="login-box">
@@ -42,7 +42,7 @@
 </div>
     <script src="../components/botao.js"></script>
     <script src="../components/input.js"></script>
-
+    <!-- # -->
     <script>
         input_group = document.querySelector(".image-name");
         input_group.appendChild(criarInput("Nome"))
@@ -59,11 +59,11 @@
         btn_container = document.querySelector(".image-box");
         btn_container.appendChild(
             criarBotao("", () => {
-            
-            btn_container.innerHTML = `
-                <img src='../../../public/add_photo_alternate.svg' alt='Perfil'>
-            `;
-        }));
+                btn_container.innerHTML = `
+                    <img src='../../../public/add_photo_alternate.svg' alt='Perfil'>
+                `;
+            })
+        );
     </script>
 </body>
 </html>
