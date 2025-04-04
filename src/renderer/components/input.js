@@ -12,7 +12,3 @@ function criarInput(placeholder, onInput) {
     
     return input;
 }
-
-const input_group = document.querySelector(".input-group");
-input_group.appendChild(criarInput("Digite seu email"));
-input_group.appendChild(criarInput("Digite sua senha"));

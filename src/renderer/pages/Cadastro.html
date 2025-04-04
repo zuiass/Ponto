@@ -10,37 +10,60 @@
 </head>
  
 <body class="modo-escuro">
- 
-    <div class="container">
-        <div class="login-box">
-            <div class="logo-section">
-                <img src="../../../public/icon.svg" alt="Logo" class="logo">
-            </div>
-           
-            <div class="form-section">
-                <h1 class="login-letra">Cadastro</h1>
-               
-                <div class="input-group">
-                    <div class="image-name">
-                        <div class="image-box">
-                            <img src="../../../public/add_photo_alternate.svg" alt="Perfil">
-                        </div>
+<div class="container">
 
-                        <input type="email" class="input-cadastro" placeholder="Nome">
+    <div class="login-box">
+        <div class="logo-section">
+            <img src="../../../public/icon.svg" alt="Logo" class="logo">
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <div class="image-name">
+                    <div class="image-box">
+                        <!-- # -->
                     </div>
-                    <input type="text" class="input-cadastro" placeholder="Digite seu email">
-                    <input type="password" class="input-cadastro" placeholder="Senha">
-                    <input type="password" class="input-cadastro" placeholder="Confirmar senha">
+
+                    <!-- Nome -->
                 </div>
- 
-                <div class="btn-container">
-                    <button class="btn-entrar">Entrar</button>
-                    <button class="btn-cadastrar">Cadastrar</button>
-                </div>
-               
+
+                <!-- Email -->
+                <!-- Senha -->
+                <!-- Confirmar senha -->
             </div>
+
+            <div class="btn-container">
+                <!-- Entrar --> <!-- Cadastrar -->
+            </div>
+            
         </div>
     </div>
- 
+
+</div>
+    <script src="../components/botao.js"></script>
+    <script src="../components/input.js"></script>
+
+    <script>
+        input_group = document.querySelector(".image-name");
+        input_group.appendChild(criarInput("Nome"))
+
+        input_group = document.querySelector(".input-group");
+        input_group.appendChild(criarInput("Email"));
+        input_group.appendChild(criarInput("Senha"));
+        input_group.appendChild(criarInput("Confirmar senha"));
+
+        btn_container = document.querySelector(".btn-container");
+        btn_container.appendChild(criarBotao("Entrar"));
+        btn_container.appendChild(criarBotao("Cadastrar"));
+
+        btn_container = document.querySelector(".image-box");
+        btn_container.appendChild(
+            criarBotao("", () => {
+            
+            btn_container.innerHTML = `
+                <img src='../../../public/add_photo_alternate.svg' alt='Perfil'>
+            `;
+        }));
+    </script>
 </body>
 </html>

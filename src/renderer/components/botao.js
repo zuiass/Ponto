@@ -14,10 +14,6 @@ function criarBotao(texto, onClick) {
     return botao;
 }
 
-const btn_container = document.querySelector(".btn-container");
-btn_container.appendChild(criarBotao("Criar conta"));
-btn_container.appendChild(criarBotao("Entrar"));
-
 btn_container.addEventListener("mousedown", () => {
     const som = document.getElementById("som-botao");
     som.currentTime = 0;
