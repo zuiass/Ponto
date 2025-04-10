@@ -1,4 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .titulo-e-kaicoins {
+    color: white;
     display: flex;
     justify-content: center;
     padding: 50px;
@@ -20,13 +28,18 @@
     gap: 25px;
 }
 
-.ponto, .pondeto, .ponteto {
+.historico {
+    color: orange;
+    border-radius: 25px;
+    border: 2px solid #313F52;
+    background: linear-gradient(90deg, #334155, #1E293B);
     display: flex;
-    justify-content: space-between;
+    padding: 25px;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: column;
     font-size: 20px;
     background-color: rgba(0, 108, 196, 0.05);
-    border: none;
     width: 200px;
     height: 200px;
 }
@@ -41,6 +54,10 @@
 }
 
 .kaikinho-container {
+    display: flex;
+    padding: 25px;
+    border-radius: 100%;
+    background-color: #2D3C4F;
     width: 100px;
-    height: 70%;
+    height: 100px;
 }
