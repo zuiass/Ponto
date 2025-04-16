@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+ 
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/cadastro.css">
+</head>
+ 
+<body class="modo-escuro">
+<div class="container">
+
+    <div class="login-box">
+        <div class="form-section">
+            <h1 class="LetraCadastro">C a d a s t r a r</h1>    
+            <div class="input-group">
+                <div class="image-name">
+                    <div class="image-box">
+                        <!-- # -->
+                    </div>
+
+                    <!-- Nome -->
+                </div>
+
+                <!-- Email -->
+                <!-- Senha -->
+                <!-- Confirmar senha -->
+            </div>
+
+            <div class="btn-container">
+                <!-- Entrar --> <!-- Cadastrar -->
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+    <script src="../components/botao.js"></script>
+    <script src="../components/input.js"></script>
+    <!-- # -->
+    <script>
+        input_group = document.querySelector(".image-name");
+        input_group.appendChild(criarInput("Nome"))
+
+        input_group = document.querySelector(".input-group");
+        input_group.appendChild(criarInput("Email"));
+        input_group.appendChild(criarInput("Senha"));
+        input_group.appendChild(criarInput("Confirmar senha"));
+
+        btn_container = document.querySelector(".btn-container");
+        btn_container.appendChild(criarBotao("Entrar"));
+        btn_container.appendChild(criarBotao("Cadastrar"));
+
+        btn_container = document.querySelector(".image-box");
+        btn_container.appendChild(
+            criarBotao("", () => {
+                btn_container.innerHTML = `
+                    <img src='../../../public/add_photo_alternate.svg' alt='Perfil'>
+                `;
+            })
+        );
+    </script>
+</body>
+</html>

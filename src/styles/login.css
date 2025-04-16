@@ -1,0 +1,93 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 3px solid #995d02;
+    /* border-bottom: 13px solid #B86F03; */
+}
+
+.logo-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.form-section {
+    flex: 1;
+    padding-left: 40px;
+}
+
+.login-letra {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 140px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.links-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.recuperar-link {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.recuperar-senha {
+    color: black;
+}
+
+@media (max-width: 849px) {
+    .login-box {
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+@media (max-height: 549px) {
+    .login-box {
+        background: none;
+        box-shadow: none;
+        border: none;
+    }
+}

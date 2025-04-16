@@ -2,4 +2,146 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '';
+/* IMPORTS */
+
+@import url('../../../public/Poppins.ttf');
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../public/Poppins.ttf');
+}
+
+/* GLOBALS */
+
+html, body {
+    position: fixed;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+} .container {
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI';
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --background-color-light: #D18009;
+    --background-color-dark: linear-gradient(180deg, #0F172A, #1E293B, #0F172A);
+
+    --color-bg: #000;
+}
+
+/* ELEMENTOS */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+/* MODO PRETO & BODY */
+
+body {
+    width: 100%;
+    height: 100%;
+    background: var(--background-color);
+    color: var(--color);
+}
+
+    button {
+        background-color: var(--button-bg-color);
+        cursor: pointer;
+        color: white;
+        border: none;
+    }
+
+/* MODO CLARO & ESCURO */
+
+body.modo-claro {
+    --background-color: var(--background-color-light);
+    --color: var(--color-bg-light);
+}
+
+body.modo-escuro {
+    --background-color: var(--background-color-dark);
+    --color: var(--color-bg-dark);
+}
+
+/* B O T Õ E S */
+
+.botaoEntrar {
+    width: 100%;
+    box-shadow: 0 2px 1px rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.shadowEntrar {
+    padding-bottom: 8px;
+    background-color: #995d02;
+    border-radius: 10px;
+    transition: padding-bottom 0.05s ease-in-out;
+}
+
+.divTextEntrar {
+    background-color: #e08700;
+    padding: 10px;
+    border-radius: 10px;
+    border: 5px solid #B86F03;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 0 #995d02;
+}
+
+.botaoEntrar:active .shadowEntrar {
+    padding: 0px;
+    transform: translateY(2px);
+}
+
+/* I N P U T S */
+
+.inputTexto {
+    padding: 10px;
+    background: none;
+    width: 100%;
+    height: 100%;
+    color: black;
+} ::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.inputArea {
+    box-shadow: 0 2px 0 rgb(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.shadowInput {
+    padding-bottom: 4px;
+    background-color: #995d02;
+    border-radius: 10px;
+    transition: padding-bottom 0.05s ease-in-out;
+}
+
+.divInput {
+    background-color: #e08700;
+    border-radius: 10px;
+    border: 5px solid #B86F03;
+    color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 0 #995d02;
+}
