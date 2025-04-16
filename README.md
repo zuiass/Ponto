@@ -26,14 +26,12 @@
    ```bash
    npm install
    ```
-   ```bash
-   npm install mysql2
 <br>
 
 5. Rode o projeto:
 
    ```bash
-   npm start
+   npm run start
 <br>
 
 <div align="center">
