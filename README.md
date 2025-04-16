@@ -1,5 +1,5 @@
 <div align="center">
-   <img width=150px height=150px src="./public/images/icon.ico">
+   <img width=150px height=150px src="./src/assets/public/ponto.svg">
    <h1>Ponto 🎮 | Dependências</h1>
 </div>
 
