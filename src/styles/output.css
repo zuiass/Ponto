@@ -1,3 +1,5 @@
+/* I M P O R T S */
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -106,9 +108,7 @@
   --tw-contain-style:  ;
 }
 
-/*
-! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
-*/
+/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -588,11 +588,130 @@ video {
   }
 }
 
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
 
-/* IMPORTS */
+.h-14 {
+  height: 3.5rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.min-h-14 {
+  min-height: 3.5rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.min-w-14 {
+  min-width: 3.5rem;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.border-2 {
+  border-width: 2px;
+}
+
+.border-\[\#2A3648\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(42 54 72 / var(--tw-border-opacity, 1));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-body-darkMidOne {
+  --tw-gradient-from: #0F172A var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-normalButton-midOne {
+  --tw-gradient-from: #2E3A4E var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(46 58 78 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.via-body-darkMidTwo {
+  --tw-gradient-to: rgb(30 41 59 / 0)  var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), #1E293B var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.to-body-darkMidOne {
+  --tw-gradient-to: #0F172A var(--tw-gradient-to-position);
+}
+
+.to-normalButton-midTwo {
+  --tw-gradient-to: #1E283B var(--tw-gradient-to-position);
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-\[\#FBBF24\] {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#ffbb0e\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 187 14 / var(--tw-text-opacity, 1));
+}
 
 @font-face {
   font-family: 'Poppins';
@@ -600,16 +719,13 @@ video {
   src: url('../../../public/Poppins.ttf');
 }
 
-/* GLOBALS */
+/* G L O B A L S */
 
-html, body {
-  position: fixed;
+html {
   scroll-behavior: smooth;
-  width: 100%;
-  height: 100%;
 }
 
-.container {
+body {
   width: 100%;
   height: 100%;
 }
@@ -625,13 +741,7 @@ html, body {
   display: none;
 }
 
-:root {
-  --background-color-light: #D18009;
-  --background-color-dark: linear-gradient(180deg, #0F172A, #1E293B, #0F172A);
-  --color-bg: #000;
-}
-
-/* ELEMENTOS */
+/* E L E M E N T O S */
 
 img {
   width: 100%;
@@ -645,99 +755,4 @@ a {
 input {
   outline: none;
   border: none;
-}
-
-/* MODO PRETO & BODY */
-
-body {
-  width: 100%;
-  height: 100%;
-  background: var(--background-color);
-  color: var(--color);
-}
-
-button {
-  background-color: var(--button-bg-color);
-  cursor: pointer;
-  color: white;
-  border: none;
-}
-
-/* MODO CLARO & ESCURO */
-
-body.modo-claro {
-  --background-color: var(--background-color-light);
-  --color: var(--color-bg-light);
-}
-
-body.modo-escuro {
-  --background-color: var(--background-color-dark);
-  --color: var(--color-bg-dark);
-}
-
-/* B O T Õ E S */
-
-.botaoEntrar {
-  width: 100%;
-  box-shadow: 0 2px 1px rgb(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.shadowEntrar {
-  padding-bottom: 8px;
-  background-color: #995d02;
-  border-radius: 10px;
-  transition: padding-bottom 0.05s ease-in-out;
-}
-
-.divTextEntrar {
-  background-color: #e08700;
-  padding: 10px;
-  border-radius: 10px;
-  border: 5px solid #B86F03;
-  color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 0 #995d02;
-}
-
-.botaoEntrar:active .shadowEntrar {
-  padding: 0px;
-  transform: translateY(2px);
-}
-
-/* I N P U T S */
-
-.inputTexto {
-  padding: 10px;
-  background: none;
-  width: 100%;
-  height: 100%;
-  color: black;
-}
-
-::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-.inputArea {
-  box-shadow: 0 2px 0 rgb(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.shadowInput {
-  padding-bottom: 4px;
-  background-color: #995d02;
-  border-radius: 10px;
-  transition: padding-bottom 0.05s ease-in-out;
-}
-
-.divInput {
-  background-color: #e08700;
-  border-radius: 10px;
-  border: 5px solid #B86F03;
-  color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 4px 0 #995d02;
 }

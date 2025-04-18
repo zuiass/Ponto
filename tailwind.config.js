@@ -10,7 +10,17 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // <body class="dark">
+        'body-darkMidOne': '#0F172A',
+        'body-darkMidTwo': '#1E293B',
+
+        // Buttons 
+        'normalButton-midOne': '#2E3A4E',
+        'normalButton-midTwo': '#1E283B',
+      },
+    },
   },
 
   plugins: [],
