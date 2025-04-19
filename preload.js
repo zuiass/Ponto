@@ -10,3 +10,19 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     
 });
+
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electron', {
+    ipcRenderer: {
+        send: (channel, data) => {
+            const validChannels = [
+                'window:minimize', 'window:toggle-maximize', 'window:close'
+            ];
+            
+            if (validChannels.includes(channel)) {
+                ipcRenderer.send(channel, data);
+            }
+        }
+    }
+});
