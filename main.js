@@ -6,7 +6,7 @@ function createWindow () {
         minWidth: 750,
         minHeight: 550,
         frame: false,
-        icon: path.join(__dirname, './src/assets/ponto.png'),
+        icon: path.join(__dirname, './src/assets/icons/logo(1).ico'),
         webPreferences: {
             preload: path.join(__dirname, './preload.js'),
             contextIsolation: true,
