@@ -604,8 +604,8 @@ video {
   top: 0px;
 }
 
-.block {
-  display: block;
+.mt-\[40px\] {
+  margin-top: 40px;
 }
 
 .flex {
@@ -620,16 +620,28 @@ video {
   height: 2.5rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
 .h-24 {
   height: 6rem;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .h-36 {
   height: 9rem;
+}
+
+.h-\[30\%\] {
+  height: 30%;
+}
+
+.h-\[60\%\] {
+  height: 60%;
 }
 
 .h-full {
@@ -640,56 +652,20 @@ video {
   height: 100vh;
 }
 
-.h-14 {
-  height: 3.5rem;
-}
-
-.h-16 {
-  height: 4rem;
-}
-
-.h-12 {
-  height: 3rem;
-}
-
-.h-\[20\%\] {
-  height: 20%;
-}
-
-.h-\[80\%\] {
-  height: 80%;
+.w-16 {
+  width: 4rem;
 }
 
 .w-24 {
   width: 6rem;
 }
 
-.w-44 {
-  width: 11rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-36 {
   width: 9rem;
 }
 
-.w-14 {
-  width: 3.5rem;
-}
-
-.w-16 {
-  width: 4rem;
-}
-
-.w-\[80\%\] {
-  width: 80%;
-}
-
-.flex-1 {
-  flex: 1 1 0%;
+.w-full {
+  width: 100%;
 }
 
 .select-none {
@@ -704,6 +680,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -722,32 +702,20 @@ video {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
-.gap-10 {
-  gap: 2.5rem;
-}
-
-.gap-12 {
-  gap: 3rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-6 {
   gap: 1.5rem;
 }
 
-.gap-\[1px\] {
-  gap: 1px;
-}
-
-.gap-5 {
-  gap: 1.25rem;
-}
-
 .gap-7 {
   gap: 1.75rem;
+}
+
+.gap-\[1px\] {
+  gap: 1px;
 }
 
 .rounded-3xl {
@@ -791,16 +759,12 @@ video {
   --tw-gradient-to: #0F172A var(--tw-gradient-to-position);
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
-.p-7 {
-  padding: 1.75rem;
-}
-
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .px-4 {
@@ -826,27 +790,18 @@ video {
   font-weight: 700;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
-.font-normal {
-  font-weight: 400;
-}
-
-.text-orange-500 {
+.text-black {
   --tw-text-opacity: 1;
-  color: rgb(249 115 22 / var(--tw-text-opacity, 1));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
+}
+
+.opacity-75 {
+  opacity: 0.75;
 }
 
 @font-face {
