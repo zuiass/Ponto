@@ -4,9 +4,10 @@ const path = require('path');
 function createWindow () {
     const win = new BrowserWindow({
         minWidth: 700,
-        minHeight: 550,
+        minHeight: 570,
         frame: false,
         icon: path.join(__dirname, './src/assets/icons/logo(1).ico'),
+
         webPreferences: {
             preload: path.join(__dirname, './preload.js'),
             contextIsolation: true,
@@ -15,7 +16,7 @@ function createWindow () {
         }
     });
 
-    win.loadFile('./src/pages/ponto.html');
+    win.loadFile('./src/pages/home.html');
 
     ipcMain.on('window:minimize', () => {
         win.minimize();
