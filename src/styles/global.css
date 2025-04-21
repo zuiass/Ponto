@@ -4,11 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('../../../public/Poppins.ttf');
-
 @font-face {
     font-family: 'Poppins';
-    src: url('../../../public/Poppins.ttf');
+    src: url('../assets/fonts/Poppins.ttf') format('truetype');
 }
 
 /* G L O B A L S */
@@ -18,27 +16,22 @@ html {
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', 'Segoe UI';
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-/* E L E M E N T O S */
-
-img {
-    width: 100%;
-    height: 100%;
-}
+/* E L E M E N T S */
 
 a {
     text-decoration: none;
