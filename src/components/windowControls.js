@@ -1,10 +1,6 @@
 export function createWindowControls() {
     return `
-        <div id="title-bar" class="fixed top-0 left-0 right-0 flex justify-end items-center bg-gray-800 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
-            <div class="flex flex-1 justify-start items-center h-full px-4">
-                <h2 class="text-white">Home</h2>
-            </div>
-
+        <div id="title-bar" class="fixed top-0 left-0 right-0 flex mb-5 justify-end items-center bg-gray-800 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
             <div id="window-controls" class="flex gap-[1px] pr-[1px]" style="-webkit-app-region: no-drag;">
                 <button id="minimize" class="hover:bg-gray-600 px-4 py-2 flex justify-center" title="Minimizar">
                     <img src="../assets/public/minimize.svg">
