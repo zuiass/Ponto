@@ -588,6 +588,26 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.block {
+  display: block;
+}
+
 .flex {
   display: flex;
 }
@@ -628,6 +648,18 @@ video {
   height: 4rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-\[20\%\] {
+  height: 20%;
+}
+
+.h-\[80\%\] {
+  height: 80%;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -650,6 +682,10 @@ video {
 
 .w-16 {
   width: 4rem;
+}
+
+.w-\[80\%\] {
+  width: 80%;
 }
 
 .flex-1 {
