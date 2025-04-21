@@ -1,6 +1,6 @@
 export function createWindowControls() {
     return `
-        <div id="title-bar" class="fixed top-0 left-0 right-0 flex mb-5 justify-end items-center bg-gray-800 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
+        <div id="title-bar" class="fixed top-0 left-0 right-0 flex justify-end items-center bg-gray-800 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
             <div id="window-controls" class="flex gap-[1px] pr-[1px]" style="-webkit-app-region: no-drag;">
                 <button id="minimize" class="hover:bg-gray-600 px-4 py-2 flex justify-center" title="Minimizar">
                     <img src="../assets/public/minimize.svg">
@@ -52,8 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.electron.ipcRenderer.on('window:is-fullscreen', (isFullscreen) => {
         if (isFullscreen) {
             titleBar.style.display = 'none';
+            document.body.style.paddingTop = '0';
         } else {
             titleBar.style.display = 'flex';
+            document.body.style.paddingTop = '40px';
         }
     });
 });
