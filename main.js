@@ -15,6 +15,8 @@ function createWindow () {
         }
     });
 
+    win.loadFile('./src/pages/ponto.html');
+
     ipcMain.on('window:minimize', () => {
         win.minimize();
     });
@@ -46,8 +48,6 @@ function createWindow () {
     ipcMain.on('window:close', () => {
         win.close();
     });
-
-    win.loadFile('./src/pages/home.html');
 }
 
 app.whenReady().then(createWindow);
