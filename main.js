@@ -19,6 +19,14 @@ function createWindow () {
         win.minimize();
     });
 
+    win.on('enter-full-screen', () => {
+        win.webContents.send('window:is-fullscreen', true);
+    });
+    
+    win.on('leave-full-screen', () => {
+        win.webContents.send('window:is-fullscreen', false);
+    });
+    
     ipcMain.on('window:toggle-maximize', () => {
         if (win.isMaximized()) {
             win.unmaximize();
@@ -26,6 +34,14 @@ function createWindow () {
             win.maximize();
         }
     });
+
+    win.on('maximize', () => {
+        win.webContents.send('window:is-maximized', true);
+    });
+    
+    win.on('unmaximize', () => {
+        win.webContents.send('window:is-maximized', false);
+    });    
 
     ipcMain.on('window:close', () => {
         win.close();

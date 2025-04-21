@@ -29,10 +29,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close');
 
     minBtn?.addEventListener('click', () => ipcRenderer.send('window:minimize'));
+    maxBtn?.addEventListener('click', () => ipcRenderer.send('window:toggle-maximize'));
+    closeBtn?.addEventListener('click', () => ipcRenderer.send('window:close'));
 
-    maxBtn?.addEventListener('click', () => {
-        ipcRenderer.send('window:toggle-maximize');
+    window.electron.ipcRenderer.on('window:is-maximized', (isMaximized) => {
+        const icon = document.getElementById('maximize-icon');
+        const maximize = document.getElementById('maximize'); 
+
+        if (!icon) return;
+
+        if (isMaximized) {
+            icon.src = '../assets/public/restore.svg';
+            maximize.title = 'Restaurar';
+        } else {
+            icon.src = '../assets/public/maximize.svg';
+            maximize.title = 'Maximizar';
+        }
     });
 
-    closeBtn?.addEventListener('click', () => ipcRenderer.send('window:close'));
+    const titleBar = document.getElementById('title-bar');
+
+    window.electron.ipcRenderer.on('window:is-fullscreen', (isFullscreen) => {
+        if (isFullscreen) {
+            titleBar.style.display = 'none';
+        } else {
+            titleBar.style.display = 'flex';
+        }
+    });
 });

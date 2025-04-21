@@ -1,16 +1,3 @@
-window.addEventListener('DOMContentLoaded', () => {
-
-    const replaceText = (selector, text) => {
-        const element = document.getElementById(selector)
-        if (element) element.innerText = text
-    }
-
-    for (const dependency of ['chrome', 'node', 'electron']) {
-        replaceText(`${dependency}-version`, process.versions[dependency])
-    }
-    
-});
-
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('electron', {
@@ -19,9 +6,20 @@ contextBridge.exposeInMainWorld('electron', {
             const validChannels = [
                 'window:minimize', 'window:toggle-maximize', 'window:close'
             ];
-            
+
             if (validChannels.includes(channel)) {
                 ipcRenderer.send(channel, data);
+            }
+        },
+
+        on: (channel, func) => {
+            const validChannels = [
+                'window:is-maximized',
+                'window:is-fullscreen'
+            ];
+
+            if (validChannels.includes(channel)) {
+                ipcRenderer.on(channel, (_, ...args) => func(...args));
             }
         }
     }
