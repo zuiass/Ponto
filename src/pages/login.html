@@ -11,21 +11,21 @@
     <link rel="stylesheet" href="../styles/output.css">
 </head>
 
-<body>
+<body class="bg-gray-800">
 <div class="flex justify-center items-center min-h-screen">
-    <div class="flex items-center w-full max-w-2xl p-10 rounded-xl bg-black/10 border-4 border-[#995d02] md:max-h-[500px] max-md:bg-transparent max-md:border-none max-h-[550px]:bg-transparent max-h-[550px]:border-none">
-        <div class="flex-1 pl-10">
-            <h1 class="text-3xl font-semibold text-black/50 mb-8 text-center">Login</h1>
-            <div class="flex flex-col gap-6 mb-5 w-full h-36">
+    <div class="w-full max-w-md p-8 rounded-2xl bg-gray-900 shadow-lg">
+        <div class="flex-1">
+            <h1 class="text-4xl font-bold text-yellow-400 mb-8 text-center">L o g i n</h1>
+            <div class="flex flex-col gap-6 mb-6 w-full">
                 <!-- Input group content will be appended via JavaScript -->
             </div>
-            <div class="text-center mt-5">
-                <span class="text-sm text-black/50">Esqueceu a senha?</span>
-                <a href="#" class="text-black ml-1">Recuperar</a>
-            </div>
-            <div class="flex justify-between gap-5 mt-8">
+            <div class="flex justify-between gap-4 mb-4">
                 <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
                 <!-- Button container content will be appended via JavaScript -->
+            </div>
+            <div class="text-center mt-4">
+                <span class="text-sm text-gray-400">Esqueceu a senha?</span>
+                <a href="#" class="text-yellow-400 ml-1">Recuperar</a>
             </div>
         </div>
     </div>
@@ -34,12 +34,12 @@
     <script src="../components/input.js"></script>
     <script src="../components/botao.js"></script>
     <script>
-        const input_group = document.querySelector(".flex.flex-col.gap-6.mb-5.w-full.h-36");
+        const input_group = document.querySelector(".flex.flex-col.gap-6.mb-6.w-full");
         input_group.appendChild(criarInput("Digite seu email"));
         input_group.appendChild(criarInput("Digite sua senha"));
 
-        const btn_container = document.querySelector(".flex.justify-between.gap-5.mt-8");
-        btn_container.appendChild(criarBotao("Criar conta"));
+        const btn_container = document.querySelector(".flex.justify-between.gap-4.mb-4");
+        btn_container.appendChild(criarBotao("Cadastrar"));
         btn_container.appendChild(criarBotao("Entrar"));
     </script>
 </body>
