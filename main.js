@@ -16,7 +16,7 @@ function createWindow () {
         }
     });
 
-    win.loadFile('./src/pages/home.html');
+    win.loadFile('./src/pages/login.html');
 
     ipcMain.on('window:minimize', () => {
         win.minimize();
