@@ -4,46 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Keep global.css and output.css if they are still needed -->
     <link rel="stylesheet" href="../styles/global.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/output.css">
 </head>
 
-<body class="modo-claro">
-<div class="container">
-
-    <div class="login-box">
-        <div class="logo-section">
-            <img src="../../../public/icon.svg" alt="Logo" class="logo">
-        </div>
-        
-        <div class="form-section">
-            <h1 class="login-letra">Login</h1>
-            
-            <div class="input-group">
-                <!-- # -->
+<body>
+<div class="flex justify-center items-center min-h-screen">
+    <div class="flex items-center w-full max-w-2xl p-10 rounded-xl bg-black/10 border-4 border-[#995d02] md:max-h-[500px] max-md:bg-transparent max-md:border-none max-h-[550px]:bg-transparent max-h-[550px]:border-none">
+        <div class="flex-1 pl-10">
+            <h1 class="text-3xl font-semibold text-black/50 mb-8 text-center">Login</h1>
+            <div class="flex flex-col gap-6 mb-5 w-full h-36">
+                <!-- Input group content will be appended via JavaScript -->
             </div>
-            
-            <div class="links-container">
-                <span class="recuperar-link">Esqueceu a senha?</span> <a href="#" class="recuperar-senha">Recuperar</a>
+            <div class="text-center mt-5">
+                <span class="text-sm text-black/50">Esqueceu a senha?</span>
+                <a href="#" class="text-black ml-1">Recuperar</a>
             </div>
-
-            <div class="btn-container">
+            <div class="flex justify-between gap-5 mt-8">
                 <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
+                <!-- Button container content will be appended via JavaScript -->
             </div>
         </div>
     </div>
-
 </div>
+    <script type="module" src="../components/windowControls.js"></script>
     <script src="../components/input.js"></script>
     <script src="../components/botao.js"></script>
-    <!-- # -->
     <script>
-        input_group = document.querySelector(".input-group");
+        const input_group = document.querySelector(".flex.flex-col.gap-6.mb-5.w-full.h-36");
         input_group.appendChild(criarInput("Digite seu email"));
         input_group.appendChild(criarInput("Digite sua senha"));
 
-        btn_container = document.querySelector(".btn-container");
+        const btn_container = document.querySelector(".flex.justify-between.gap-5.mt-8");
         btn_container.appendChild(criarBotao("Criar conta"));
         btn_container.appendChild(criarBotao("Entrar"));
     </script>
