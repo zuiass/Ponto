@@ -31,7 +31,7 @@
 5. Rode o projeto:
 
    ```bash
-   npm run start
+   npm start
 <br>
 
 <div align="center">
