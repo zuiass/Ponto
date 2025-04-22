@@ -4,11 +4,13 @@ export function createInput({ id, label, placeholder = '', type = 'text', value 
     wrapper.className = 'w-full';
 
     const labelEl = document.createElement('label');
+    
     labelEl.htmlFor = id;
     labelEl.className = 'block text-sm font-medium text-gray-700 mb-1';
     labelEl.textContent = label;
   
     const input = document.createElement('input');
+
     input.id = id;
     input.type = type;
     input.placeholder = placeholder;
