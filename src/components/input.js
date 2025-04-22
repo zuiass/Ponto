@@ -1,9 +1,9 @@
-function criarInput(placeholder, ) {
-    const input = document.createElement("div");
+function criarInput(placeholder, onInput) {
+    const input = document.createElement("input");
     input.className = "inputArea";
 
     input.innerHTML = `
-        <div></div>
+        <input type="text">
     `;
 
     return input;
