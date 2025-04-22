@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script type="module" src="../components/windowControls.js"></script>
-    <script src="../components/input.js"></script>
-    <script src="../components/botao.js"></script>
 
     <link rel="stylesheet" href="../styles/global.css"> 
     <link rel="stylesheet" href="../styles/output.css">
@@ -16,20 +11,30 @@
 
 <body class="bg-gray-800">
 <div class="flex justify-center items-center min-h-screen">
+
     <div class="w-full max-w-md p-8 rounded-2xl shadow-lg border-2 border-white/10" style="background: linear-gradient(to bottom, rgba(41,53,70,0.8), rgba(25,33,46,0.8)); backdrop-filter: blur(4px);">
         <div class="flex-1">
             <h1 class="text-4xl font-bold text-yellow-400 mb-8 text-center tracking-tighter">L o g i n</h1>
-            <div class="flex flex-col gap-4 mb-6 w-full">
-            </div>
-            <div class="flex justify-between gap-4 mb-4">
-                <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
-            </div>
+
+            <form id="form" class="flex flex-col gap-4 mb-6 w-full">
+                <!-- Entrada dos inputs -->
+            </form>
+
             <div class="text-center mt-4">
                 <span class="text-sm text-gray-400">Esqueceu a senha? </span>
                 <a href="#" class="text-blue-500">Recuperar</a>
             </div>
+
+            <div class="flex justify-between gap-4 mb-4">
+                <button>Cadastrar</button>
+                <button>Entrar</button>
+                <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
+            </div>
         </div>
     </div>
-</div>
+
+</div> <!-- S C R I P T S -->
+    <script type="module" src="../components/windowControls.js"></script>
+    <script type="module" src="../scripts/login.js"></script>
 </body>
 </html>

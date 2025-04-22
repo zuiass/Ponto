@@ -1,28 +1,41 @@
-export function createInput({ id, label, placeholder = '', type = 'text', value = '', onInput = null }) {
-
+export function createInput({
+    id,
+    label,
+    placeholder = '',
+    type = 'text',
+    value = '',
+    onInput = null,
+    autocomplete = '',
+    required = false,
+    disabled = false,
+    maxLength = null,
+    className = ''
+}) {
     const wrapper = document.createElement('div');
-    wrapper.className = 'w-full';
+    wrapper.className = 'w-full border border-[#91959D] rounded-xl pt-2';
 
-    const labelEl = document.createElement('label');
-    
-    labelEl.htmlFor = id;
-    labelEl.className = 'block text-sm font-medium text-gray-700 mb-1';
-    labelEl.textContent = label;
-  
+    const myLabel = document.createElement('label');
+    myLabel.htmlFor = id;
+    myLabel.className = 'block text-sm text-gray-500 ml-2';
+    myLabel.textContent = label;
+
     const input = document.createElement('input');
-
     input.id = id;
     input.type = type;
     input.placeholder = placeholder;
     input.value = value;
-    input.className = 'w-full px-4 py-2 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition';
-  
+    input.autocomplete = autocomplete;
+    input.required = required;
+    input.disabled = disabled;
+    input.maxLength = maxLength;
+    input.className = `text-white bg-transparent w-full px-2 py-2 rounded-xl border border-gray-300 focus:outline-none transition ${className}`;
+
     if (onInput) {
-      input.addEventListener('input', onInput);
+        input.addEventListener('input', onInput);
     }
-  
-    wrapper.appendChild(labelEl);
+
+    wrapper.appendChild(myLabel);
     wrapper.appendChild(input);
-  
+
     return wrapper;
 }
