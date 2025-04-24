@@ -1,5 +1,10 @@
-const game_button_2 = document.getElementById("game-button-2");
+import { createLoginModal } from '../components/loginModal.js';
 
-game_button_2.addEventListener("click", () => {
-    
+document.addEventListener('DOMContentLoaded', () => {
+    const loginModal = createLoginModal();
+
+    const loginButton = document.getElementById('abrir-login');
+    loginButton.addEventListener('click', () => {
+        loginModal.open();
+    });
 });
