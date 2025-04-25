@@ -1,6 +1,7 @@
 import { createInput } from '../components/input.js';
 
 export function createLoginModal() {
+
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
 
@@ -70,5 +71,5 @@ export function createLoginModal() {
         open: () => modal.classList.remove('hidden'),
         close: () => modal.classList.add('hidden')
     };
+
 }
-// eai
