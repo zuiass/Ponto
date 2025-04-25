@@ -1,21 +1,19 @@
-function criarBotao(texto, onClick) {
-    const botao = document.createElement("button");
-    botao.className = "botaoEntrar";
+export function createButton({ text, className, type = 'button', onClick }) {
+    const button = document.createElement("button");
+    button.className = className;
+    button.type = type;
 
-    botao.innerHTML = `
+    button.innerHTML = `
         <div class="shadowEntrar">
             <div class="divTextEntrar">
-                <h2>${texto}</h2>
+                <h2>${text}</h2>
             </div>
         </div>
     `;
 
-    botao.addEventListener("click", onClick);
-    return botao;
-}
+    if (onClick) {
+        button.addEventListener("click", onClick);
+    }
 
-btn_container.addEventListener("mousedown", () => {
-    const som = document.getElementById("som-botao");
-    som.currentTime = 0;
-    som.play();
-});
+    return button;
+}
