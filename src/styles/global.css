@@ -17,8 +17,7 @@ html {
 
 body {
     padding-top: 40px;
-    width: 100%;
-    height: 100%;
+    background: linear-gradient(to bottom, #0F172A, #273447, #0F172A);
 }
 
 * {
@@ -33,6 +32,23 @@ body {
 }
 
 /* E L E M E N T S */
+
+#ponto-image {
+    opacity: 0;
+    transform: scale(1.1);
+    animation: fadeInScale 1s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 
 a {
     text-decoration: none;

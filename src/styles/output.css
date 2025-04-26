@@ -913,11 +913,6 @@ video {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity, 1));
 }
 
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity, 1));
-}
-
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
@@ -929,10 +924,6 @@ video {
 
 .bg-white\/5 {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.bg-white\/10 {
-  background-color: rgb(255 255 255 / 0.1);
 }
 
 .bg-gradient-to-b {
@@ -955,27 +946,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-body-darkMidOne {
-  --tw-gradient-from: #0F172A var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.via-body-darkMidTwo {
-  --tw-gradient-to: rgb(30 41 59 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #1E293B var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
 .to-\[\#1F293B\] {
   --tw-gradient-to: #1F293B var(--tw-gradient-to-position);
 }
 
 .to-\[\#F2AB1B\] {
   --tw-gradient-to: #F2AB1B var(--tw-gradient-to-position);
-}
-
-.to-body-darkMidOne {
-  --tw-gradient-to: #0F172A var(--tw-gradient-to-position);
 }
 
 .p-3 {
@@ -1113,21 +1089,16 @@ video {
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
 }
 
-.text-blue-600 {
-  --tw-text-opacity: 1;
-  color: rgb(37 99 235 / var(--tw-text-opacity, 1));
-}
-
-.opacity-75 {
-  opacity: 0.75;
-}
-
 .opacity-0 {
   opacity: 0;
 }
 
 .opacity-100 {
   opacity: 1;
+}
+
+.opacity-75 {
+  opacity: 0.75;
 }
 
 .shadow-inner {
@@ -1223,8 +1194,7 @@ html {
 
 body {
   padding-top: 40px;
-  width: 100%;
-  height: 100%;
+  background: linear-gradient(to bottom, #0F172A, #273447, #0F172A);
 }
 
 * {
@@ -1239,6 +1209,24 @@ body {
 }
 
 /* E L E M E N T S */
+
+#ponto-image {
+  opacity: 0;
+  transform: scale(1.1);
+  animation: fadeInScale 1s ease forwards;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 a {
   text-decoration: none;

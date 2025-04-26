@@ -4,7 +4,6 @@ import { createRecover } from '../components/recoverModal.js';
 
 window.addEventListener('DOMContentLoaded', () => {
     const music = document.getElementById('background-music');
-    music.volume = 1;
 });
 
 document.addEventListener('DOMContentLoaded', () => {
