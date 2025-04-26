@@ -1,4 +1,5 @@
 import { createInput } from '../components/input.js';
+import { createButton } from '../components/button.js';
 
 export function createLoginModal() {
 
@@ -29,15 +30,15 @@ export function createLoginModal() {
                 <a href="#" class="text-blue-500">Recuperar</a>
             </div>
 
-            <div class="flex justify-between gap-4 mb-4 mt-6">
-                <button class="bg-gray-600 px-4 py-2 rounded text-white">Cadastrar</button>
-                <button class="bg-blue-600 px-4 py-2 rounded text-white">Entrar</button>
+            <div id="buttonContainer" class="flex justify-between gap-4 mb-4 mt-6">
+                <!-- Botões -->
             </div>
             <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
         </div>
     `;
 
     const form = modalBox.querySelector('#form');
+    const buttonContainer = modalBox.querySelector('#buttonContainer');
 
     const emailInput = createInput({
         id: 'email',
@@ -59,7 +60,20 @@ export function createLoginModal() {
         onInput: (e) => console.log('Senha:', e.target.value)
     });
 
+    const cadastrarButton = createButton({
+        text: 'Cadastrar',
+        className: '',
+        type: 'button'
+    });
+
+    const entrarButton = createButton({
+        text: 'Entrar',
+        className: 'my-custom-class',
+        type: 'button'
+    });
+
     form.append(emailInput, senhaInput);
+    buttonContainer.append(cadastrarButton, entrarButton);
 
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => modal.classList.add('hidden'));

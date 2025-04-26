@@ -2,7 +2,7 @@ export function createInput({
     id,
     label,
     placeholder = '',
-    type = 'text',
+    type = '',
     value = '',
     onInput = null,
     autocomplete = '',
