@@ -2,6 +2,11 @@ import { createLogin } from '../components/loginModal.js';
 import { createRegister } from '../components/registerModal.js';
 import { createRecover } from '../components/recoverModal.js';
 
+window.addEventListener('DOMContentLoaded', () => {
+    const music = document.getElementById('background-music');
+    music.volume = 1;
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const loginModal = createLogin();
     const registerModal = createRegister();
@@ -33,15 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Seleciona todos os botões com a classe "game-button"
     const botoes = document.querySelectorAll('.game-button');
 
     botoes.forEach((botao, index) => {
         setTimeout(() => {
-            // Remove as classes de invisibilidade e tamanho grande
             botao.classList.remove('opacity-0', 'scale-125');
-            // Adiciona as classes que deixam o botão visível e no tamanho correto
             botao.classList.add('opacity-100', 'scale-100');
-        }, 100 + (index * 150)); // Delay entre os botões para a animação em cascata
+        }, 100 + (index * 150));
     });
 });
