@@ -1,4 +1,4 @@
-export function createButton({ text, className, type = 'button', onClick }) {
+export function createButton({ text, className, type, onClick }) {
     const button = document.createElement("button");
     button.className = className;
     button.type = type;
