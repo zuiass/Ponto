@@ -1,10 +1,12 @@
-export function createButton({ 
+export function createButton({
+    id, 
     text = '',
     className = '',
     type = 'button',
     onClick
 }) {
     const button = document.createElement("button");
+    if (id) button.id = id;
     button.innerText = text;
     button.className = className;
     button.type = type;

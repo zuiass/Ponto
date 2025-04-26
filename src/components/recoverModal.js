@@ -1,7 +1,7 @@
 import { createInput } from '../components/input.js';
 import { createButton } from '../components/button.js';
 
-export function createLogin() {
+export function createRecover() {
 
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
@@ -18,22 +18,17 @@ export function createLogin() {
                     </div>
                 </button>
 
-                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">L o g i n</h1>
+                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">Recuperar senha</h1>
             </div>
 
             <form id="form" class="flex flex-col gap-4 mb-6 w-full">
                 <!-- Inputs -->
             </form>
 
-            <div class="text-center mt-4">
-                <span class="text-sm text-gray-400">Esqueceu a senha? </span>
-                <button id="recuperar" class="text-blue-500">Recuperar</button>
-            </div>
-
             <div id="buttonContainer" class="flex justify-between gap-4 mb-4 mt-6">
                 <!-- Botões -->
             </div>
-            <audio id="audio" src="../assets/public/buttonSound.mp3" preload="auto"></audio>
+            <audio id="som-botao" src="../assets/Button - Sound Effect.mp3" preload="auto"></audio>
         </div>
     `;
 
@@ -50,32 +45,15 @@ export function createLogin() {
         onInput: (e) => console.log('Email:', e.target.value)
     });
 
-    const senhaInput = createInput({
-        id: 'senha',
-        label: 'Senha',
-        type: 'password',
-        placeholder: 'suasenha123',
-        required: true,
-        maxLength: 20,
-        onInput: (e) => console.log('Senha:', e.target.value)
-    });
-
-    const cadastrarButton = createButton({
-        id: 'registerPage',
-        text: 'Cadastrar',
+    const enviarButton = createButton({
+        id: 'enviar',
+        text: 'Enviar',
         className: '',
-        type: 'button'
+        type: 'submit'
     });
 
-    const entrarButton = createButton({
-        id: 'entrar',
-        text: 'Entrar',
-        className: '',
-        type: 'button'
-    });
-
-    form.append(emailInput, senhaInput);
-    buttonContainer.append(cadastrarButton, entrarButton);
+    form.append(emailInput);
+    buttonContainer.append(enviarButton);
 
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => modal.classList.add('hidden'));

@@ -12,10 +12,10 @@ export function createInput({
     className = ''
 }) {
     const wrapper = document.createElement('div');
-    wrapper.className = 'w-full border border-[#91959D] rounded-xl pt-2';
+    wrapper.className = 'bg-white/5 w-full border border-[#91959D] rounded-xl pt-2';
 
     const myLabel = document.createElement('label');
-    myLabel.htmlFor = id;
+    if (id) myLabel.id = id;
     myLabel.className = 'block text-sm text-gray-500 ml-2';
     myLabel.textContent = label;
 
