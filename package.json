@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "electron .",
     "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch",
-    "start": "concurrently \"npm run build:css\" \"npm run dev\"",
-    "build": "electron-builder"
+    "start": "concurrently \"npm run build:css\" \"npm run dev\""
   },
   "keywords": [],
   "author": "",
@@ -16,45 +15,10 @@
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "electron": "^35.1.5",
-    "electron-builder": "^26.0.12",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "mysql2": "^3.14.0"
-  },
-  "build": {
-    "appId": "com.kaycorp.ponto",
-    "productName": "Ponto Game",
-    "asar": true,
-    "files": [
-      "src/**/*",
-      "main.js",
-      "preload.js",
-      "package.json",
-      "!**/*.test.js",
-      "!**/*.md",
-      "!**/.gitkeep",
-      "!LICENSES.chromium"
-    ],
-    "directories": {
-      "output": "build"
-    },
-    "extraResources": [],
-    "win": {
-      "target": "nsis",
-      "icon": "./src/assets/icons/logo(1).ico",
-      "publish": {
-        "provider": "generic",
-        "url": "https://example.com/your-app"
-      }
-    },
-    "mac": {
-      "category": "public.app-category.games",
-      "icon": "./src/assets/icons/logo(1).icns"
-    },
-    "linux": {
-      "icon": "./src/assets/icons/logo(1).png"
-    }
   }
 }
