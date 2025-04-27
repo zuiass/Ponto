@@ -38,7 +38,7 @@
       "!LICENSES.chromium"
     ],
     "directories": {
-      "output": "build"}
+      "output": "build"
     },
     "extraResources": [],
     "win": {
