@@ -65,16 +65,6 @@ export function createRegister() {
         onInput: (e) => console.log('Senha:', e.target.value)
     });
 
-    const confirmarInput = createInput({
-        id: 'confirmarSenha',
-        label: 'Confirmar senha',
-        type: 'password',
-        placeholder: 'suasenha123',
-        required: true,
-        maxLength: 20,
-        onInput: (e) => console.log('Senha:', e.target.value)
-    });
-
     const entrarButton = createButton({
         id: 'enterPage',
         text: 'Entrar',
@@ -89,7 +79,7 @@ export function createRegister() {
         type: 'button'
     });
 
-    form.append(nomeInput, emailInput, senhaInput, confirmarInput);
+    form.append(nomeInput, emailInput, senhaInput);
     buttonContainer.append(entrarButton, cadastrarButton);
 
     const closeButton = modalBox.querySelector('.close-modal');
