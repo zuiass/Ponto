@@ -968,11 +968,6 @@ video {
   --tw-gradient-to: #19212E var(--tw-gradient-to-position);
 }
 
-.object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .p-3 {
   padding: 0.75rem;
 }
@@ -1118,10 +1113,6 @@ video {
 
 .opacity-75 {
   opacity: 0.75;
-}
-
-.opacity-50 {
-  opacity: 0.5;
 }
 
 .shadow-inner {
