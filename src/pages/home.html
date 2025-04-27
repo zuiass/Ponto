@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home - Ponto</title>
 
     <link rel="stylesheet" href="../styles/output.css">
     <link rel="stylesheet" href="../styles/global.css">
@@ -30,6 +30,7 @@
 
         .game-button:hover {
             border-color: #FBBF24;
+            box-shadow: rgba(251, 191, 36, 0.25) 0px 0px 10px 0px;
         }
 
         .icon-container {
@@ -41,6 +42,7 @@
             outline: none;
             border-color: #FBBF24;
             background: linear-gradient(135deg, #FBBF24, #D97706);
+            box-shadow: rgba(251, 191, 36, 0.3) 0px 0px 75px 0px;
         }
 
         .game-button:focus .icon-container {
@@ -54,7 +56,7 @@
         <source src="../assets/public/AriaMath.mp3" type="audio/mp3">
     </audio>
 <div class="fixed flex flex-col h-full w-full items-center">
-
+    
     <div class="flex w-full h-48 justify-center items-center">
         <div class="items-center justify-center">
             <img id="ponto-image" src="../assets/public/home.png" width="300px">
@@ -91,7 +93,7 @@
         <!-- Linha 2 -->
         
         <div class="flex flex-row gap-7">
-            <button id="game-button-4" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
+            <button id="history" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
                 <div class="icon-container flex justify-center p-4 rounded-full w-16 h-16">
                     <img src="../assets/public/history.svg">
                 </div>
@@ -99,7 +101,7 @@
                 <h2 class="text-xl text-yellow-500">Histórico</h2>
             </button>
 
-            <button id="game-button-5" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
+            <button id="rank" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
                 <div class="icon-container flex justify-center p-4 rounded-full w-16 h-16">
                     <img src="../assets/public/rank.svg">
                 </div>
@@ -107,7 +109,7 @@
                 <h2 class="text-xl text-yellow-500">Rank</h2>
             </button>
 
-            <button id="game-button-6" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
+            <button id="settings" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-36 h-36">
                 <div class="icon-container flex justify-center p-4 rounded-full w-16 h-16">
                     <img src="../assets/public/config.svg">
                 </div>

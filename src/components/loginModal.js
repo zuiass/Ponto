@@ -7,7 +7,7 @@ export function createLogin() {
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gray-800';
+    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
 
     modalBox.innerHTML = `
         <div class="flex-1">

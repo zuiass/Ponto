@@ -930,6 +930,10 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
 .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
@@ -946,12 +950,27 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-modal-midOne {
+  --tw-gradient-from: #293546 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(41 53 70 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-\[\#1F293B\] {
   --tw-gradient-to: #1F293B var(--tw-gradient-to-position);
 }
 
 .to-\[\#F2AB1B\] {
   --tw-gradient-to: #F2AB1B var(--tw-gradient-to-position);
+}
+
+.to-modal-midTwo {
+  --tw-gradient-to: #19212E var(--tw-gradient-to-position);
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-3 {
@@ -1099,6 +1118,10 @@ video {
 
 .opacity-75 {
   opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .shadow-inner {

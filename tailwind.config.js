@@ -16,9 +16,13 @@ module.exports = {
         'body-darkMidOne': '#0F172A',
         'body-darkMidTwo': '#1E293B',
 
-        // Buttons 
-        'normalButton-midOne': '#2E3A4E',
-        'normalButton-midTwo': '#1E283B',
+        // Buttons
+        'normalButton-midOne': '#2F3B4F',
+        'normalButton-midTwo': '#1E293C',
+
+        // Modals
+        'modal-midOne': '#293546',
+        'modal-midTwo': '#19212E'
       },
     },
   },
