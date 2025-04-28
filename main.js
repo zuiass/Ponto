@@ -18,6 +18,13 @@ function createWindow () {
 
     win.loadFile('./src/pages/home.html');
 
+    win.webContents.on('before-input-event', (event, input) => {
+        const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
+        if (isReload) {
+            event.preventDefault();
+        }
+    });
+
     ipcMain.on('window:minimize', () => {
         win.minimize();
     });
