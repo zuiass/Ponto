@@ -60,3 +60,19 @@ input {
     outline: none;
     border: none;
 }
+
+.game-button {
+
+}
+
+@media (max-height: 800px) {
+    #optionsHome {
+        gap: 6px;
+    } #line-one {
+        gap: 8px;
+    } #line-two {
+        gap: 8px;
+    } .game-button {
+        transform: scale(0.8);
+    }
+}

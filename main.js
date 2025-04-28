@@ -6,7 +6,7 @@ let audioWindow;
 function createWindow() {
     const win = new BrowserWindow({
         minWidth: 700,
-        minHeight: 570,
+        minHeight: 700,
         frame: false,
         icon: path.join(__dirname, './src/assets/icons/logo(2).ico'),
 

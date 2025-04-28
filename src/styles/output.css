@@ -649,6 +649,10 @@ video {
   margin-right: 1rem;
 }
 
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
 }
@@ -719,10 +723,6 @@ video {
 
 .min-h-full {
   min-height: 100%;
-}
-
-.min-h-screen {
-  min-height: 100vh;
 }
 
 .w-12 {
@@ -1259,6 +1259,27 @@ a {
 input {
   outline: none;
   border: none;
+}
+
+.game-button {
+}
+
+@media (max-height: 800px) {
+  #optionsHome {
+    gap: 6px;
+  }
+
+  #line-one {
+    gap: 8px;
+  }
+
+  #line-two {
+    gap: 8px;
+  }
+
+  .game-button {
+    transform: scale(0.8);
+  }
 }
 
 .hover\:bg-\[\#34495E\]:hover {
