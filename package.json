@@ -1,16 +1,15 @@
 {
   "name": "ponto",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tente adivinhar uma palavra de 5 letras",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "electron .",
-    "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch",
-    "start": "concurrently \"npm run build:css\" \"npm run dev\""
+    "start": "concurrently \"npm:electron\" \"npm:build:css\"",
+    "electron": "electron .",
+    "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch"
   },
   "keywords": [],
-  "author": "",
+  "author": "@zuiass, @Kayke2707, @MkcSamuel, @JoaoAugusto1509",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.21",

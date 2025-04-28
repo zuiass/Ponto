@@ -1,15 +1,15 @@
-export function createButton({ text, className, type = 'button', onClick }) {
+export function createButton({
+    id, 
+    text = '',
+    className = '',
+    type = 'button',
+    onClick
+}) {
     const button = document.createElement("button");
+    if (id) button.id = id;
+    button.innerText = text;
     button.className = className;
     button.type = type;
-
-    button.innerHTML = `
-        <div class="shadowEntrar">
-            <div class="divTextEntrar">
-                <h2>${text}</h2>
-            </div>
-        </div>
-    `;
 
     if (onClick) {
         button.addEventListener("click", onClick);

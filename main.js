@@ -1,12 +1,14 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
-function createWindow () {
+let audioWindow;
+
+function createWindow() {
     const win = new BrowserWindow({
         minWidth: 700,
         minHeight: 570,
         frame: false,
-        icon: path.join(__dirname, './src/assets/icons/logo(1).ico'),
+        icon: path.join(__dirname, './src/assets/icons/logo(2).ico'),
 
         webPreferences: {
             preload: path.join(__dirname, './preload.js'),
@@ -17,6 +19,30 @@ function createWindow () {
     });
 
     win.loadFile('./src/pages/home.html');
+
+    audioWindow = new BrowserWindow({
+        width: 0,
+        height: 0,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+            devTools: false
+        }
+    });
+
+    audioWindow.loadFile('./src/scripts/audioPlayer.html');
+
+    win.on('closed', () => {
+        app.quit();
+    });
+
+    // win.webContents.on('before-input-event', (event, input) => {
+    //     const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
+    //     if (isReload) {
+    //         event.preventDefault();
+    //     }
+    // });
 
     ipcMain.on('window:minimize', () => {
         win.minimize();
@@ -49,6 +75,7 @@ function createWindow () {
     ipcMain.on('window:close', () => {
         win.close();
     });
+
 }
 
 app.whenReady().then(createWindow);
