@@ -3,24 +3,6 @@ const path = require('path');
 
 let audioWindow;
 
-function createAudio() {
-    audioWindow = new BrowserWindow({
-        width: 0,
-        height: 0,
-        show: false,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-        }
-    });
-
-    audioWindow.loadFile('./src/scripts/audioPlayer.html');
-}
-
-app.whenReady().then(() => {
-    createAudio();
-});
-
 function createWindow() {
     const win = new BrowserWindow({
         minWidth: 700,
@@ -38,6 +20,22 @@ function createWindow() {
 
     win.loadFile('./src/pages/home.html');
 
+    audioWindow = new BrowserWindow({
+        width: 0,
+        height: 0,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    });
+
+    audioWindow.loadFile('./src/scripts/audioPlayer.html');
+
+    mainWindow.on('closed', () => {
+        app.quit();
+    });
+    
     // win.webContents.on('before-input-event', (event, input) => {
     //     const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
     //     if (isReload) {
