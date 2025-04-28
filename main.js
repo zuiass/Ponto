@@ -6,7 +6,7 @@ function createWindow () {
         minWidth: 700,
         minHeight: 570,
         frame: false,
-        icon: path.join(__dirname, './src/assets/icons/logo(1).ico'),
+        icon: path.join(__dirname, './src/assets/icons/logo(2).ico'),
 
         webPreferences: {
             preload: path.join(__dirname, './preload.js'),
@@ -18,12 +18,12 @@ function createWindow () {
 
     win.loadFile('./src/pages/home.html');
 
-    win.webContents.on('before-input-event', (event, input) => {
-        const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
-        if (isReload) {
-            event.preventDefault();
-        }
-    });
+    // win.webContents.on('before-input-event', (event, input) => {
+    //     const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
+    //     if (isReload) {
+    //         event.preventDefault();
+    //     }
+    // });
 
     ipcMain.on('window:minimize', () => {
         win.minimize();
