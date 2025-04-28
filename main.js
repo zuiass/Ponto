@@ -27,15 +27,16 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
+            devTools: false
         }
     });
 
     audioWindow.loadFile('./src/scripts/audioPlayer.html');
 
-    mainWindow.on('closed', () => {
+    win.on('closed', () => {
         app.quit();
     });
-    
+
     // win.webContents.on('before-input-event', (event, input) => {
     //     const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
     //     if (isReload) {
