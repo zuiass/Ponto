@@ -1,7 +1,27 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
-function createWindow () {
+let audioWindow;
+
+function createAudio() {
+    audioWindow = new BrowserWindow({
+        width: 0,
+        height: 0,
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
+    });
+
+    audioWindow.loadFile('./src/scripts/audioPlayer.html');
+}
+
+app.whenReady().then(() => {
+    createAudio();
+});
+
+function createWindow() {
     const win = new BrowserWindow({
         minWidth: 700,
         minHeight: 570,
@@ -56,6 +76,7 @@ function createWindow () {
     ipcMain.on('window:close', () => {
         win.close();
     });
+
 }
 
 app.whenReady().then(createWindow);

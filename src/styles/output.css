@@ -1190,6 +1190,10 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .duration-700 {
   transition-duration: 700ms;
 }
@@ -1279,6 +1283,14 @@ input {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.disabled\:cursor-default:disabled {
+  cursor: default;
+}
+
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
 }
 
 @media not all and (min-width: 768px) {

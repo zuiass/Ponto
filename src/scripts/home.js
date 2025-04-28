@@ -20,18 +20,83 @@ document.addEventListener('DOMContentLoaded', () => {
     const history = document.getElementById('history');
     const rank = document.getElementById('rank');
     const settings = document.getElementById('settings');
+    const jogar = document.getElementById('jogar');
 
     const botoes = document.querySelectorAll('.game-button');
+    const gamesHome = [ pondeto, diario, ponteto ];
+    const optionsHome = [ history, rank, settings ];
 
-    const buttonsHome = [
-        pondeto, diario, ponteto, history, rank, settings
-    ];
+
+    let lastFocusedButton = null;
+
+    if (jogar) {
+        jogar.disabled = true;
+    
+        jogar.addEventListener('click', () => {
+            if (lastFocusedButton) {
+                switch (lastFocusedButton.id) {
+                    case 'pondeto':
+                        window.location.href = '../pages/pondeto.html';
+                        break;
+                    case 'diario':
+                        console.log("Abrindo o jogo Diário");
+                        window.location.href = '../pages/diario.html';
+                        break;
+                    case 'ponteto':
+                        console.log("Abrindo o jogo Ponteto");
+                        window.location.href = '../pages/ponteto.html';
+                        break;
+                    default:
+                        return;
+                }
+            }
+        });
+    }
+    
 
     botoes.forEach((botao, index) => {
         setTimeout(() => {
             botao.classList.remove('opacity-0', 'scale-125');
             botao.classList.add('opacity-100', 'scale-100');
         }, 100 + (index * 150));
+    });
+
+    gamesHome.forEach((button) => {
+        if (button) {
+            button.addEventListener('click', () => {
+                lastFocusedButton = button;
+                button.focus();
+                jogar.disabled = false;
+            });
+        }
+    });
+
+    optionsHome.forEach((button) => {
+        if (button) {
+            button.addEventListener('click', () => {
+                if (lastFocusedButton === button) {
+                    loginModal.open();
+                    lastFocusedButton = null;
+                    jogar.disabled = true;
+                } else {
+                    lastFocusedButton = button;
+                    button.focus();
+                    jogar.disabled = true;
+                }
+            });
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        const isGameButton = event.target.closest('.game-button');
+
+        if (!isGameButton) {
+            document.querySelectorAll('.game-button').forEach(button => {
+                button.blur();
+            });
+            lastFocusedButton = null;
+            jogar.disabled = true;
+        }
     });
 
     if (recoverButton) {
@@ -60,32 +125,5 @@ document.addEventListener('DOMContentLoaded', () => {
             loginModal.open();
         });
     }
-
-    let lastFocusedButton = null;
-
-    buttonsHome.forEach((button) => {
-        if (button) {
-            button.addEventListener('click', () => {
-                if (lastFocusedButton === button) {
-                    loginModal.open();
-                    lastFocusedButton = null;
-                } else {
-                    lastFocusedButton = button;
-                    button.focus();
-                }
-            });
-        }
-    });
-
-    document.addEventListener('click', (event) => {
-        const isGameButton = event.target.closest('.game-button');
-
-        if (!isGameButton) {
-            document.querySelectorAll('.game-button').forEach(button => {
-                button.blur();
-            });
-            lastFocusedButton = null;
-        }
-    });
 
 });
