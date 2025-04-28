@@ -4,24 +4,14 @@
   "description": "Tente adivinhar uma palavra de 5 letras",
   "main": "main.js",
   "scripts": {
-    "dev": "electron .",
-    "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start": "concurrently \"npm:electron\" \"npm:build:css\"",
+    "electron": "electron .",
+    "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch"
   },
   "keywords": [],
   "author": "@zuiass, @Kayke2707, @MkcSamuel, @JoaoAugusto1509",
   "license": "ISC",
   "devDependencies": {
-    "@electron-forge/cli": "^7.8.0",
-    "@electron-forge/maker-deb": "^7.8.0",
-    "@electron-forge/maker-rpm": "^7.8.0",
-    "@electron-forge/maker-squirrel": "^7.8.0",
-    "@electron-forge/maker-zip": "^7.8.0",
-    "@electron-forge/plugin-auto-unpack-natives": "^7.8.0",
-    "@electron-forge/plugin-fuses": "^7.8.0",
-    "@electron/fuses": "^1.8.0",
     "autoprefixer": "^10.4.21",
     "concurrently": "^9.1.2",
     "electron": "^35.1.5",
@@ -29,7 +19,6 @@
     "tailwindcss": "^3.4.17"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1",
     "mysql2": "^3.14.0"
   }
 }
