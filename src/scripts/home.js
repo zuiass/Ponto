@@ -1,12 +1,14 @@
 import { createLogin } from '../components/loginModal.js';
 import { createRegister } from '../components/registerModal.js';
 import { createRecover } from '../components/recoverModal.js';
+import { createHistory } from '../components/historyModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
     const loginModal = createLogin();
     const registerModal = createRegister();
     const recoverModal = createRecover();
+    const historyModal = createHistory();
 
     const loginButton = document.getElementById('abrir-login');
     const registerPage = document.getElementById('registerPage');
@@ -75,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (button) {
             button.addEventListener('click', () => {
                 if (lastFocusedButton === button) {
-                    loginModal.open();
+                    historyModal.open();
                     lastFocusedButton = null;
                     jogar.disabled = true;
                 } else {

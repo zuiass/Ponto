@@ -18,7 +18,7 @@ export function createLogin() {
                     </div>
                 </button>
 
-                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">L o g i n</h1>
+                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">Login</h1>
             </div>
 
             <form id="form" class="flex flex-col gap-4 mb-6 w-full">
