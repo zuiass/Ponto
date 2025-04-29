@@ -714,6 +714,10 @@ video {
   height: 3rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .h-16 {
   height: 4rem;
 }
@@ -722,8 +726,8 @@ video {
   height: 0.5rem;
 }
 
-.h-36 {
-  height: 9rem;
+.h-32 {
+  height: 8rem;
 }
 
 .h-48 {
@@ -762,6 +766,10 @@ video {
   width: 3rem;
 }
 
+.w-14 {
+  width: 3.5rem;
+}
+
 .w-16 {
   width: 4rem;
 }
@@ -770,8 +778,8 @@ video {
   width: 0.5rem;
 }
 
-.w-36 {
-  width: 9rem;
+.w-32 {
+  width: 8rem;
 }
 
 .w-8 {
@@ -1411,24 +1419,25 @@ input {
   border: none;
 }
 
-.game-button {
-}
-
-@media (max-height: 800px) {
+@media (max-height: 700px) {
   #optionsHome {
-    gap: 6px;
+    gap: 4px;
   }
 
   #line-one {
-    gap: 8px;
+    gap: 6px;
   }
 
   #line-two {
-    gap: 8px;
+    gap: 6px;
   }
 
   .game-button {
-    transform: scale(0.8);
+    transform: scale(0.9);
+  }
+
+  #ponto-image {
+    width: 250px;
   }
 }
 

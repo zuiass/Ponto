@@ -12,7 +12,7 @@ export function createHistory() {
       <div class="flex items-center justify-between mb-6">
         <button class="close-modal text-sm text-red-500">
             <div class="flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10">
-                <img src="../assets/public/fechar.svg"/>
+              <img src="../assets/public/fechar.svg"/>
             </div>
         </button>
 

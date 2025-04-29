@@ -61,18 +61,16 @@ input {
     border: none;
 }
 
-.game-button {
-
-}
-
-@media (max-height: 800px) {
+@media (max-height: 700px) {
     #optionsHome {
-        gap: 6px;
+        gap: 4px;
     } #line-one {
-        gap: 8px;
+        gap: 6px;
     } #line-two {
-        gap: 8px;
+        gap: 6px;
     } .game-button {
-        transform: scale(0.8);
+        transform: scale(0.9);
+    } #ponto-image {
+        width: 250px;
     }
 }
