@@ -3,7 +3,7 @@ import { createRegister } from '../components/registerModal.js';
 import { createRecover } from '../components/recoverModal.js';
 import { createHistory } from '../components/historyModal.js';
 import { createProfile } from '../components/profileModal.js';
-// import { createRank } from '../components/rankModal.js';
+import { createRank } from '../components/rankModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const recoverModal = createRecover();
     const historyModal = createHistory();
     const profileModal = createProfile();
+    const rankModal = createModal();
 
     const loginButton = document.getElementById('abrir-login');
     const registerPage = document.getElementById('registerPage');
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             break;
                         case 'rank':
                             if (user === "logged") {
-                                // rankModal.open();
+                                rankModal.open();
                             } else {
                                 loginModal.open();
                             }
