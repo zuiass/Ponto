@@ -6,7 +6,7 @@ export function createProfile() {
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-5xl p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
+    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
 
     modalBox.innerHTML = `
     <div class="flex-1">
@@ -21,7 +21,7 @@ export function createProfile() {
         </div>
 
         <div class="flex items-center w-full justify-around">
-            <div class="flex flex-col items-center w-[45%]">
+            <div class="flex flex-col items-center w-full">
                 <img class=" h-[150px] w-[150px] rounded-full m-16" src="./../assets/public/gato_image_test.jpg" alt="">
                 <form id="form" class="flex flex-col gap-4 mb-6 w-full">
 
@@ -32,7 +32,7 @@ export function createProfile() {
             </div>
 
 
-            <div class="flex flex-col items-center  w-[45%]">
+            <div class="flex flex-col items-center ">
 
                 
 
