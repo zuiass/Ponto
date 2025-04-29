@@ -3,114 +3,208 @@ import { createButton } from './button.js';
 
 export function createProfile() { 
     const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
+    modal.className = 'fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
+    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border border-white/10 bg-gradient-to-b from-slate-800 to-slate-900 transform transition-all duration-300 scale-95 opacity-0';
 
     modalBox.innerHTML = `
-    <div class="flex-1">
-        <div class="flex flex-row items-center gap-3">
-            <button class="close-modal text-sm text-red-500">
-                <div class="flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10">
-                    <img src="../assets/public/fechar.svg"/>
-                </div>
+    <div class="w-full">
+        <div class="flex flex-row items-center gap-3 mb-6">
+            <button class="close-modal flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
             </button>
-
-            <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">Perfil</h1>
+            <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter flex-1 mr-10">Perfil</h1>
         </div>
 
-        <div class="flex items-center w-full justify-around">
-            <div class="flex flex-col items-center w-full">
-                <img class=" h-[150px] w-[150px] rounded-full m-16" src="./../assets/public/gato_image_test.jpg" alt="">
-                <form id="form" class="flex flex-col gap-4 mb-6 w-full">
-
-                </form>
-                <div class="flex justify-between w-full gap-4 mb-4" id="buttonContainer">
-
+        <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex flex-col items-center w-full md:w-2/3">
+                <div class="mb-6 relative">
+                    <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20" src="./../assets/public/gato_image_test.jpg" alt="Profile picture">
+                    <button class="absolute bottom-0 right-0 bg-yellow-500 rounded-full p-1 hover:bg-yellow-600 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900">
+                            <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                        </svg>
+                    </button>
                 </div>
-            </div>
-
-
-            <div class="flex flex-col items-center ">
-
                 
-
+                <form id="profile-form" class="flex flex-col gap-4 w-full"></form>
+                <div class="flex justify-between w-full gap-4 mt-6" id="button-container"></div>
+            </div>
+            
+            <div class="flex flex-col gap-4 w-full md:w-1/3">
+                <button id="dark-mode-toggle" class="flex items-center justify-between bg-yellow-500 text-slate-900 p-4 rounded-xl hover:bg-yellow-600 transition-colors">
+                    <span class="font-medium">Modo escuro</span>
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                        </svg>
+                    </div>
+                </button>
+                
+                <div id="dark-mode-status" class="text-sm text-center text-slate-400 -mt-2">Ativado</div>
+                
+                <button id="logout-button" class="flex items-center justify-between bg-slate-700 text-white p-4 rounded-xl hover:bg-slate-600 transition-colors mt-2">
+                    <span class="font-medium">Sair da conta</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                        <polyline points="16 17 21 12 16 7"></polyline>
+                        <line x1="21" y1="12" x2="9" y2="12"></line>
+                    </svg>
+                </button>
+                <div class="text-sm text-center text-slate-400 -mt-2">Clique para sair</div>
+                
+                <button id="delete-account-button" class="flex items-center justify-between bg-slate-700 text-white p-4 rounded-xl hover:bg-red-900/50 transition-colors mt-2">
+                    <span class="font-medium">Excluir conta</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
+                        <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
+                    </svg>
+                </button>
+                <div class="text-sm text-center text-slate-400 -mt-2">Clique para excluir</div>
             </div>
         </div>
     </div>
-`;
-
-const form = modalBox.querySelector('#form');
-
-const buttonContainer = modalBox.querySelector('#buttonContainer');
-
-
-const nomeInput = createInput({
-    id: 'nome',
-    label: 'nome',
-    type: 'text',
-    placeholder: 'usuario@email.com',
-    required: true,
-    maxLength: 50,
-    onInput: (e) => console.log('Email:', e.target.value)
-});
-const emailInput = createInput({
-    id: 'email',
-    label: 'Email',
-    type: 'email',
-    placeholder: 'usuario@email.com',
-    required: true,
-    maxLength: 50,
-    onInput: (e) => console.log('Email:', e.target.value)
-});
-
-const senhaInput = createInput({
-    id: 'senha',
-    label: 'Senha',
-    type: 'password',
-    placeholder: 'suasenha123',
-    required: true,
-    maxLength: 20,
-    onInput: (e) => console.log('Senha:', e.target.value)
-});
-
-const cancelarButton = createButton({
-    id: 'cancelar',
-    text: 'Cancelar',
-    className: 'bg-[#2C3E50] text-[#F1C40F] font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
-    type: 'button'
-});
-
-const salvarButton = createButton({
-    id: 'salvar',
-    text: 'Salvar',
-    className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] text-black p-4 rounded font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
-    type: 'button'
-});
-
-form.append(nomeInput,emailInput, senhaInput);
-
-buttonContainer.append(cancelarButton, salvarButton);
-
-
-
-
-    const closeButton = modalBox.querySelector('.close-modal');
-    closeButton.addEventListener('click', () => modal.classList.add('hidden'));
+    `;
 
     document.body.appendChild(modal);
     modal.appendChild(modalBox);
 
+    const form = modalBox.querySelector('#profile-form');
+    const buttonContainer = modalBox.querySelector('#button-container');
+
+    const nomeInput = createInputWithIcon({
+        id: 'nome',
+        label: 'Nome',
+        type: 'text',
+        placeholder: 'Seu nome completo',
+        value: 'Kayke Vieira',
+        required: true,
+        maxLength: 50
+    });
+
+    const emailInput = createInputWithIcon({
+        id: 'email',
+        label: 'Email',
+        type: 'email',
+        placeholder: 'usuario@email.com',
+        value: 'cakevieira@gmail.com',
+        required: true,
+        maxLength: 50
+    });
+
+    const senhaInput = createInputWithIcon({
+        id: 'senha',
+        label: 'Senha',
+        type: 'password',
+        placeholder: '••••••••',
+        value: 'kai2',
+        required: true,
+        maxLength: 20
+    });
+
+    const cancelarButton = createButton({
+        id: 'cancelar',
+        text: 'Cancelar',
+        className: 'bg-slate-700 text-white font-medium py-3 px-6 rounded-xl hover:bg-slate-600 transition-colors w-full',
+        type: 'button'
+    });
+
+    const salvarButton = createButton({
+        id: 'salvar',
+        text: 'Salvar',
+        className: 'bg-yellow-500 text-slate-900 font-medium py-3 px-6 rounded-xl hover:bg-yellow-600 transition-colors w-full',
+        type: 'button'
+    });
+
+    form.append(nomeInput, emailInput, senhaInput);
+    buttonContainer.append(cancelarButton, salvarButton);
+
+    const closeButton = modalBox.querySelector('.close-modal');
+    closeButton.addEventListener('click', () => close());
+
+    const darkModeToggle = modalBox.querySelector('#dark-mode-toggle');
+    darkModeToggle.addEventListener('click', () => {
+        const status = modalBox.querySelector('#dark-mode-status');
+        if (status.textContent === 'Ativado') {
+            status.textContent = 'Desativado';
+            darkModeToggle.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+            darkModeToggle.classList.add('bg-slate-600', 'hover:bg-slate-500');
+        } else {
+            status.textContent = 'Ativado';
+            darkModeToggle.classList.remove('bg-slate-600', 'hover:bg-slate-500');
+            darkModeToggle.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+        }
+    });
+
+    const logoutButton = modalBox.querySelector('#logout-button');
+    logoutButton.addEventListener('click', () => {
+        console.log('Logging out...');
+        close();
+    });
+
+    const deleteAccountButton = modalBox.querySelector('#delete-account-button');
+    deleteAccountButton.addEventListener('click', () => {
+        if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
+            console.log('Deleting account...');
+            close();
+        }
+    });
+
+    function createInputWithIcon(options) {
+        const container = document.createElement('div');
+        container.className = 'relative';
+        
+        const input = createInput(options);
+        input.className = 'w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-500/50';
+        
+        const editButton = document.createElement('button');
+        editButton.type = 'button';
+        editButton.className = 'absolute right-3 top-1/2 -translate-y-1/2 text-yellow-500 hover:text-yellow-400 transition-colors';
+        editButton.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+            </svg>
+        `;
+        
+        container.appendChild(input);
+        container.appendChild(editButton);
+        
+        return container;
+    }
+
+    function open() {
+        modal.classList.remove('hidden');
+        void modal.offsetWidth;
+        modal.classList.add('opacity-100');
+        modalBox.classList.remove('scale-95', 'opacity-0');
+        modalBox.classList.add('scale-100', 'opacity-100');
+    }
+
+    function close() {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        modalBox.classList.remove('scale-100', 'opacity-100');
+        modalBox.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    }
+
+    modal.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) close();
+    });
+
     return {
-        open: () => modal.classList.remove('hidden'),
-        close: () => modal.classList.add('hidden')
+        open,
+        close
     };
-
-
-
 }
-
-
-
- 
