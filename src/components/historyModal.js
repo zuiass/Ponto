@@ -11,9 +11,9 @@ export function createHistory() {
 
       <div class="flex items-center justify-between mb-6">
         <button class="close-modal text-sm text-red-500">
-            <div class="flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10">
-              <img src="../assets/public/fechar.svg"/>
-            </div>
+          <div class="flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10">
+            <img src="../assets/public/fechar.svg"/>
+          </div>
         </button>
 
         <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter flex-1 mr-10">Histórico</h1>
