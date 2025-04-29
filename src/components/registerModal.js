@@ -68,14 +68,14 @@ export function createRegister() {
     const entrarButton = createButton({
         id: 'enterPage',
         text: 'Entrar',
-        className: '',
+        className: 'bg-[#2C3E50] text-[#F1C40F] font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full', 
         type: 'button'
     });
 
     const cadastrarButton = createButton({
         id: 'cadastrar',
         text: 'Cadastrar',
-        className: '',
+        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] text-black p-4 rounded font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
