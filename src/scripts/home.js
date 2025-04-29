@@ -2,6 +2,8 @@ import { createLogin } from '../components/loginModal.js';
 import { createRegister } from '../components/registerModal.js';
 import { createRecover } from '../components/recoverModal.js';
 import { createHistory } from '../components/historyModal.js';
+import { createProfile } from '../components/profileModal.js';
+// import { createRank } from '../components/rankModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerModal = createRegister();
     const recoverModal = createRecover();
     const historyModal = createHistory();
+    const profileModal = createProfile();
 
     const loginButton = document.getElementById('abrir-login');
     const registerPage = document.getElementById('registerPage');
@@ -41,11 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         window.location.href = '../pages/pondeto.html';
                         break;
                     case 'diario':
-                        console.log("Abrindo o jogo Diário");
                         window.location.href = '../pages/diario.html';
                         break;
                     case 'ponteto':
-                        console.log("Abrindo o jogo Ponteto");
                         window.location.href = '../pages/ponteto.html';
                         break;
                     default:
@@ -76,10 +77,21 @@ document.addEventListener('DOMContentLoaded', () => {
     optionsHome.forEach((button) => {
         if (button) {
             button.addEventListener('click', () => {
-                if (lastFocusedButton === button) {
-                    historyModal.open();
-                    lastFocusedButton = null;
-                    jogar.disabled = true;
+                jogar.disabled = true;
+                if (lastFocusedButton) {
+                    switch (lastFocusedButton.id) {
+                        case 'history':
+                            historyModal.open();
+                            break;
+                        case 'rank':
+                            // rankModal.open();
+                            break;
+                        case 'settings':
+                            profileModal.open();
+                            break;
+                        default:
+                            return;
+                    }
                 } else {
                     lastFocusedButton = button;
                     button.focus();
