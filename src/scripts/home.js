@@ -7,7 +7,7 @@ import { createProfile } from '../components/profileModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const user = "user";
+    const user = "logged";
 
     const loginModal = createLogin();
     const registerModal = createRegister();
