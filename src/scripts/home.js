@@ -5,9 +5,12 @@ import { createHistory } from '../components/historyModal.js';
 import { createProfile } from '../components/profileModal.js';
 import { createRank } from '../components/rankModal.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+const users = [
+    { email: "joao@example.com", senha: "senha123" },
+    { email: "kayke@example.com", senha: "abc123" }
+];
 
-    const user = "logged";
+document.addEventListener('DOMContentLoaded', () => {
 
     const loginModal = createLogin();
     const registerModal = createRegister();
@@ -15,11 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyModal = createHistory();
     const profileModal = createProfile();
     const rankModal = createRank();
-    
+
     const loginButton = document.getElementById('abrir-login');
     const registerPage = document.getElementById('registerPage');
     const enterPage = document.getElementById('enterPage');
     const recoverButton = document.getElementById('recuperar');
+
+    const botoes = document.querySelectorAll('.game-button');
 
     const pondeto = document.getElementById('pondeto');
     const diario = document.getElementById('diario');
@@ -30,9 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const settings = document.getElementById('settings');
     const jogar = document.getElementById('jogar');
 
-    const botoes = document.querySelectorAll('.game-button');
-    const gamesHome = [ pondeto, diario, ponteto ];
-    const optionsHome = [ history, rank, settings ];
+    const gamesHome = [pondeto, diario, ponteto];
+    const optionsHome = [history, rank, settings];
 
 
     let lastFocusedButton = null;
@@ -44,25 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastFocusedButton) {
                 switch (lastFocusedButton.id) {
                     case 'pondeto':
-                        if (user === "logged") {
-                            loginModal.open();
-                        } else {;
-                            window.location.href = '../pages/pondeto.html';
-                        }
+                        window.location.href = '../pages/pondeto.html';
                         break;
                     case 'diario':
-                        if (user === "logged") {
-                            loginModal.open();
-                        } else {;
-                            window.location.href = '../pages/diario.html';
-                        }
+                        window.location.href = '../pages/diario.html';
                         break;
                     case 'ponteto':
-                        if (user === "logged") {
-                            loginModal.open();
-                        } else {;
-                            window.location.href = '../pages/ponteto.html';
-                        }
+                        window.location.href = '../pages/ponteto.html';
                         break;
                     default:
                         return;
@@ -94,41 +86,28 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', () => {
                 jogar.disabled = true;
 
-                if (lastFocusedButton) {
-                    switch (lastFocusedButton.id) {
-                        case 'history':
-                            if (user === "logged") {
-                                historyModal.open();
-                            } else {
-                                loginModal.open();
-                            }
-                            break;
-                        case 'rank':
-                            if (user === "logged") {
-                                rankModal.open();
-                            } else {
-                                loginModal.open();
-                            }
-                            break;
-                        case 'settings':
-                            if (user === "logged") {
-                                profileModal.open();
-                            } else {
-                                loginModal.open();
-                            }
-                        default:
-                            return;
-                    }
-                } else {
-                    lastFocusedButton = button;
-                    button.focus();
+                switch (button.id) {
+                    case 'history':
+                        historyModal.open();
+                        break;
+                    case 'rank':
+                        rankModal.open();
+                        break;
+                    case 'settings':
+                        profileModal.open();
+                        break;
+                    default:
+                        return;
                 }
+                
+                lastFocusedButton = button;
+                button.focus();
             });
         }
     });
 
-    document.addEventListener('click', (event) => {
-        const isGameButton = event.target.closest('.game-button');
+    document.addEventListener('click', (e) => {
+        const isGameButton = e.target.closest('.game-button');
 
         if (!isGameButton) {
             document.querySelectorAll('.game-button').forEach(button => {
