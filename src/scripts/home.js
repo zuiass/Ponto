@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const recoverModal = createRecover();
     const historyModal = createHistory();
     const profileModal = createProfile();
-    const rankModal = createModal();
-
+    const rankModal = createRank();
+    
     const loginButton = document.getElementById('abrir-login');
     const registerPage = document.getElementById('registerPage');
     const enterPage = document.getElementById('enterPage');

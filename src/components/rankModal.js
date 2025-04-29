@@ -1,7 +1,4 @@
-import { createInput } from './input.js';
-import { createButton } from './button.js';
-
-export function createProfile() { 
+export function createRank() { 
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
 
@@ -17,7 +14,7 @@ export function createProfile() {
                     </div>
                 </button>
 
-                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">Perfil</h1>
+                <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter">Ranking</h1>
             </div>
         </div>
     `;
