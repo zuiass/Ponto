@@ -1,10 +1,10 @@
 export function createHistory() {
 
-    const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
 
-    const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
+  const modalBox = document.createElement('div');
+  modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
   
   modalBox.innerHTML = `
     <div class="w-full">
@@ -21,32 +21,31 @@ export function createHistory() {
 
       <div class="grid grid-cols-3 gap-4 mb-6">
         <div class="bg-slate-800/50 rounded-xl p-3 text-center transition-transform hover:scale-105 hover:bg-slate-800/80">
-          <span class="text-3xl font-bold text-red-500 block">250</span>
+          <span class="text-3xl font-bold text-red-500 block">0</span>
           <span class="text-sm text-slate-300">Erros</span>
         </div>
         
         <div class="bg-slate-800/50 rounded-xl p-3 text-center transition-transform hover:scale-105 hover:bg-slate-800/80">
-          <span class="text-3xl font-bold text-green-500 block">1000</span>
+          <span class="text-3xl font-bold text-green-500 block">0</span>
           <span class="text-sm text-slate-300">Acertos</span>
         </div>
         
         <div class="bg-slate-800/50 rounded-xl p-3 text-center transition-transform hover:scale-105 hover:bg-slate-800/80">
-          <span class="text-3xl font-bold text-amber-500 block">100</span>
+          <span class="text-3xl font-bold text-amber-500 block">0</span>
           <span class="text-sm text-slate-300">Tentativas</span>
         </div>
       </div>
 
-      <!-- Divider with gradient -->
-      <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-6"></div>
+      <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-6">
+        <!-- # -->
+      </div>
 
-      <!-- Tabs navigation -->
       <div class="flex mb-4 bg-slate-800/30 rounded-lg p-1">
         <button class="tab-button flex-1 py-2 px-4 rounded-md text-slate-300 transition-colors text-center" data-tab="ponto">Ponto</button>
         <button class="tab-button flex-1 py-2 px-4 rounded-md text-slate-300 transition-colors text-center" data-tab="ponteto">Ponteto</button>
         <button class="tab-button flex-1 py-2 px-4 rounded-md text-slate-300 transition-colors text-center" data-tab="pondeto">Pondeto</button>
       </div>
 
-      <!-- Tab content -->
       <div class="tab-content" id="ponto-content">
         <div class="space-y-2">
           <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center">
@@ -55,7 +54,7 @@ export function createHistory() {
           </div>
           <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center">
             <div class="h-2 w-2 rounded-full bg-yellow-400 mr-3"></div>
-            Bujão
+            Bosta
           </div>
         </div>
       </div>
@@ -68,7 +67,7 @@ export function createHistory() {
           </div>
           <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center">
             <div class="h-2 w-2 rounded-full bg-yellow-400 mr-3"></div>
-            Bujão
+            Bosta
           </div>
           <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center">
             <div class="h-2 w-2 rounded-full bg-yellow-400 mr-3"></div>
