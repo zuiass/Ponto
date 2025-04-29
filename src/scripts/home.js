@@ -7,6 +7,8 @@ import { createProfile } from '../components/profileModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const user = "user";
+
     const loginModal = createLogin();
     const registerModal = createRegister();
     const recoverModal = createRecover();
@@ -41,13 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (lastFocusedButton) {
                 switch (lastFocusedButton.id) {
                     case 'pondeto':
-                        window.location.href = '../pages/pondeto.html';
+                        if (user === "logged") {
+                            loginModal.open();
+                        } else {;
+                            window.location.href = '../pages/pondeto.html';
+                        }
                         break;
                     case 'diario':
-                        window.location.href = '../pages/diario.html';
+                        if (user === "logged") {
+                            loginModal.open();
+                        } else {;
+                            window.location.href = '../pages/diario.html';
+                        }
                         break;
                     case 'ponteto':
-                        window.location.href = '../pages/ponteto.html';
+                        if (user === "logged") {
+                            loginModal.open();
+                        } else {;
+                            window.location.href = '../pages/ponteto.html';
+                        }
                         break;
                     default:
                         return;
@@ -78,24 +92,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (button) {
             button.addEventListener('click', () => {
                 jogar.disabled = true;
+
                 if (lastFocusedButton) {
                     switch (lastFocusedButton.id) {
                         case 'history':
-                            historyModal.open();
+                            if (user === "logged") {
+                                historyModal.open();
+                            } else {
+                                loginModal.open();
+                            }
                             break;
                         case 'rank':
-                            // rankModal.open();
+                            if (user === "logged") {
+                                // rankModal.open();
+                            } else {
+                                loginModal.open();
+                            }
                             break;
                         case 'settings':
-                            profileModal.open();
-                            break;
+                            if (user === "logged") {
+                                profileModal.open();
+                            } else {
+                                loginModal.open();
+                            }
                         default:
                             return;
                     }
                 } else {
                     lastFocusedButton = button;
                     button.focus();
-                    jogar.disabled = true;
                 }
             });
         }
