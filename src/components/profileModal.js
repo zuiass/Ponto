@@ -6,24 +6,21 @@ export function createProfile() {
     modal.className = 'fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border border-white/10 bg-gradient-to-b from-slate-800 to-slate-900 transform transition-all duration-300 scale-95 opacity-0';
+    modalBox.className = 'w-full max-w-3xl p-8 rounded-3xl border border-white/10 bg-gradient-to-b from-slate-800 to-slate-900 transform transition-all duration-300 scale-95 opacity-0';
 
     modalBox.innerHTML = `
-    <div class="w-full">
         <div class="flex flex-row items-center gap-3 mb-6">
             <button class="close-modal flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500">
-                    <path d="M18 6 6 18"></path>
-                    <path d="m6 6 12 12"></path>
-                </svg>
+                <img src="../assets/public/fechar.svg" />
             </button>
             <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter flex-1 mr-10">Perfil</h1>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-6">
-            <div class="flex flex-col items-center w-full md:w-2/3">
+        <div class="flex flex-col md:flex-row gap-6 justify-around">
+            <div class="flex flex-col items-center w-[40%]">
                 <div class="mb-6 relative">
-                    <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20" src="./../assets/public/gato_image_test.jpg" alt="Profile picture">
+                    <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20" src="./../assets/public/fotoTeste.jpg">
+
                     <button class="absolute bottom-0 right-0 bg-yellow-500 rounded-full p-1 hover:bg-yellow-600 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-900">
                             <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
@@ -35,7 +32,7 @@ export function createProfile() {
                 <div class="flex justify-between w-full gap-4 mt-6" id="button-container"></div>
             </div>
             
-            <div class="flex flex-col gap-4 w-full md:w-1/3">
+            <div class="flex flex-col gap-4 w-[40%]">
                 <button id="dark-mode-toggle" class="flex items-center justify-between bg-yellow-500 text-slate-900 p-4 rounded-xl hover:bg-yellow-600 transition-colors">
                     <span class="font-medium">Modo escuro</span>
                     <div class="flex items-center">
@@ -44,9 +41,7 @@ export function createProfile() {
                         </svg>
                     </div>
                 </button>
-                
-                <div id="dark-mode-status" class="text-sm text-center text-slate-400 -mt-2">Ativado</div>
-                
+
                 <button id="logout-button" class="flex items-center justify-between bg-slate-700 text-white p-4 rounded-xl hover:bg-slate-600 transition-colors mt-2">
                     <span class="font-medium">Sair da conta</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -55,7 +50,6 @@ export function createProfile() {
                         <line x1="21" y1="12" x2="9" y2="12"></line>
                     </svg>
                 </button>
-                <div class="text-sm text-center text-slate-400 -mt-2">Clique para sair</div>
                 
                 <button id="delete-account-button" class="flex items-center justify-between bg-slate-700 text-white p-4 rounded-xl hover:bg-red-900/50 transition-colors mt-2">
                     <span class="font-medium">Excluir conta</span>
@@ -65,10 +59,8 @@ export function createProfile() {
                         <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
                     </svg>
                 </button>
-                <div class="text-sm text-center text-slate-400 -mt-2">Clique para excluir</div>
             </div>
         </div>
-    </div>
     `;
 
     document.body.appendChild(modal);
@@ -77,52 +69,52 @@ export function createProfile() {
     const form = modalBox.querySelector('#profile-form');
     const buttonContainer = modalBox.querySelector('#button-container');
 
-    const nomeInput = createInputWithIcon({
+    const nomeInput = createInput({
         id: 'nome',
         label: 'Nome',
         type: 'text',
-        placeholder: 'Seu nome completo',
-        value: 'Kayke Vieira',
+        placeholder: `${nome}`,
+        value: `${nome}`,
         required: true,
         maxLength: 50
     });
 
-    const emailInput = createInputWithIcon({
+    const emailInput = createInput({
         id: 'email',
         label: 'Email',
         type: 'email',
-        placeholder: 'usuario@email.com',
-        value: 'cakevieira@gmail.com',
+        placeholder: `${email}`,
+        value: `${email}`,
         required: true,
         maxLength: 50
     });
 
-    const senhaInput = createInputWithIcon({
+    const senhaInput = createInput({
         id: 'senha',
         label: 'Senha',
         type: 'password',
-        placeholder: '••••••••',
-        value: 'kai2',
+        placeholder: `${senha}`,
+        value: `${senha}`,
         required: true,
         maxLength: 20
     });
 
-    const cancelarButton = createButton({
+    const cancelButton = createButton({
         id: 'cancelar',
         text: 'Cancelar',
-        className: 'bg-slate-700 text-white font-medium py-3 px-6 rounded-xl hover:bg-slate-600 transition-colors w-full',
+        className: 'bg-[#2C3E50] text-[#F1C40F] font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
-    const salvarButton = createButton({
+    const saveButton = createButton({
         id: 'salvar',
         text: 'Salvar',
-        className: 'bg-yellow-500 text-slate-900 font-medium py-3 px-6 rounded-xl hover:bg-yellow-600 transition-colors w-full',
+        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] text-black p-4 rounded font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
     form.append(nomeInput, emailInput, senhaInput);
-    buttonContainer.append(cancelarButton, salvarButton);
+    buttonContainer.append(cancelButton, saveButton);
 
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => close());
@@ -130,6 +122,7 @@ export function createProfile() {
     const darkModeToggle = modalBox.querySelector('#dark-mode-toggle');
     darkModeToggle.addEventListener('click', () => {
         const status = modalBox.querySelector('#dark-mode-status');
+
         if (status.textContent === 'Ativado') {
             status.textContent = 'Desativado';
             darkModeToggle.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
@@ -142,40 +135,7 @@ export function createProfile() {
     });
 
     const logoutButton = modalBox.querySelector('#logout-button');
-    logoutButton.addEventListener('click', () => {
-        console.log('Logging out...');
-        close();
-    });
-
     const deleteAccountButton = modalBox.querySelector('#delete-account-button');
-    deleteAccountButton.addEventListener('click', () => {
-        if (confirm('Tem certeza que deseja excluir sua conta? Esta ação não pode ser desfeita.')) {
-            console.log('Deleting account...');
-            close();
-        }
-    });
-
-    function createInputWithIcon(options) {
-        const container = document.createElement('div');
-        container.className = 'relative';
-        
-        const input = createInput(options);
-        input.className = 'w-full bg-slate-700/50 border border-slate-600 rounded-xl px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-500/50';
-        
-        const editButton = document.createElement('button');
-        editButton.type = 'button';
-        editButton.className = 'absolute right-3 top-1/2 -translate-y-1/2 text-yellow-500 hover:text-yellow-400 transition-colors';
-        editButton.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
-            </svg>
-        `;
-        
-        container.appendChild(input);
-        container.appendChild(editButton);
-        
-        return container;
-    }
 
     function open() {
         modal.classList.remove('hidden');
@@ -194,14 +154,6 @@ export function createProfile() {
             modal.classList.add('hidden');
         }, 300);
     }
-
-    modal.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') close();
-    });
-
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) close();
-    });
 
     return {
         open,
