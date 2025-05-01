@@ -5,8 +5,8 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../assets/fonts/Poppins.ttf') format('truetype');
+    font-family: 'Outfit', Arial;
+    src: url('../assets/fonts/Outfit.ttf') format('truetype');
 }
 
 /* G L O B A L S */
