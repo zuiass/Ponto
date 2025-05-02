@@ -39,7 +39,7 @@ function createWindow() {
         }
     });
 
-    audioWindow.loadFile('./src/scripts/audioPlayer.html');
+    audioWindow.loadFile('./src/pages/audioPlayer.html');
 
     win.on('closed', () => {
         app.quit();

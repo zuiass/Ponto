@@ -37,9 +37,9 @@ export function createRegister() {
 
     const nomeInput = createInput({
         id: 'nome',
-        label: 'Nome',
+        label: 'Criar nome',
         type: 'name',
-        placeholder: 'Nome',
+        placeholder: 'Digite aqui...',
         required: true,
         maxLength: 50,
         onInput: (e) => console.log('Nome:', e.target.value)
@@ -49,7 +49,7 @@ export function createRegister() {
         id: 'email',
         label: 'Email',
         type: 'email',
-        placeholder: 'usuario@email.com',
+        placeholder: 'Digite aqui...',
         required: true,
         maxLength: 50,
         onInput: (e) => console.log('Email:', e.target.value)
@@ -57,9 +57,9 @@ export function createRegister() {
 
     const senhaInput = createInput({
         id: 'senha',
-        label: 'Senha',
+        label: 'Criar senha',
         type: 'password',
-        placeholder: 'suasenha123',
+        placeholder: 'Digite aqui...',
         required: true,
         maxLength: 20,
         onInput: (e) => console.log('Senha:', e.target.value)
@@ -91,6 +91,6 @@ export function createRegister() {
     return {
         open: () => modal.classList.remove('hidden'),
         close: () => modal.classList.add('hidden')
-    };
-
+    }
+    
 }

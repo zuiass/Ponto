@@ -147,8 +147,28 @@ export function createHistory() {
     if (e.target === modal) close();
   });
 
+  function open() {
+    modal.classList.remove('hidden');
+    void modal.offsetWidth;
+    modal.classList.add('opacity-100');
+    modalBox.classList.remove('scale-95', 'opacity-0');
+    modalBox.classList.add('scale-100', 'opacity-100');
+  }
+
+  function close() {
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+    modalBox.classList.remove('scale-100', 'opacity-100');
+    modalBox.classList.add('scale-95', 'opacity-0');
+    
+    setTimeout(() => {
+      modal.classList.add('hidden');
+    }, 300);
+  }
+
   return {
     open,
-    close
-  };
+    close,
+  }
+
 }

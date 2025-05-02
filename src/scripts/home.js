@@ -142,9 +142,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    return {
-        open,
-        close
-    }
-
 });

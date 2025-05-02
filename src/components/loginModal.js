@@ -44,7 +44,7 @@ export function createLogin() {
         id: 'email',
         label: 'Email',
         type: 'email',
-        placeholder: 'usuario@email.com',
+        placeholder: 'Digite aqui...',
         required: true,
         maxLength: 50,
         onInput: (e) => console.log('Email:', e.target.value)
@@ -54,7 +54,7 @@ export function createLogin() {
         id: 'senha',
         label: 'Senha',
         type: 'password',
-        placeholder: 'suasenha123',
+        placeholder: 'Digite aqui...',
         required: true,
         maxLength: 20,
         onInput: (e) => console.log('Senha:', e.target.value)

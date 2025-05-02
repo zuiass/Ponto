@@ -7,39 +7,7 @@
 
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/output.css">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'game-bg': '#0f172a',
-                        'game-surface': '#1e293b',
-                        'game-border': '#334155',
-                        'game-highlight': '#2563eb',
-                        'game-correct': '#16a34a',
-                        'game-partial': '#ea580c',
-                        'game-wrong': '#475569',
-                    },
-                    boxShadow: {
-                        'cell': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.25)',
-                        'glow': '0 0 15px rgba(59, 130, 246, 0.5)',
-                    },
-                    animation: {
-                        'float': 'float 3s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
+
     <style>
         .cell {
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -132,14 +100,7 @@
             animation: bounce 2s infinite;
         }
         
-        .modal-content {
-            animation: fadeIn 0.3s ease-out;
-        }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
         
         .hint-pulse {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
@@ -153,7 +114,7 @@
 </head>
  
 <body id="bodyGame">
-<div id="container" class="fixed w-full h-full flex flex-col text-white">
+<div id="container" class="flex fixed w-full h-full flex-col">
 
     <header class="flex justify-between items-center p-4 md:p-6 bg-gradient-to-r from-game-surface/50 to-transparent">
         <button class="back-button flex items-center space-x-2 focus:outline-none bg-game-surface/50 hover:bg-game-surface p-2 rounded-full md:rounded-lg transition-all">
@@ -269,8 +230,8 @@
     </div>
 
 </div> <!-- # -->
-    <script type="module" src="../scripts/diarioGame.js"></script>
-    <script type="module" src="../scripts/diarioPage.js" defer></script>
+    <script type="module" src="../scripts/diario.js"></script>
+    <script type="module" src="../components/instructionsModal.js"></script>
     <script type="module" src="../components/windowControls.js"></script>
 </body>
 </html>

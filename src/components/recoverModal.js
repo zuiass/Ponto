@@ -63,7 +63,7 @@ export function createRecover() {
 
     return {
         open: () => modal.classList.remove('hidden'),
-        close: () => modal.classList.add('hidden')
-    };
+        close: () => modal.classList.add('hidden'),
+    }
 
 }

@@ -100,14 +100,14 @@ export function createProfile() {
     const cancelButton = createButton({
         id: 'cancelar',
         text: 'Cancelar',
-        className: 'bg-[#2C3E50] text-[#F1C40F] font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        className: 'border-2 border-button-stroke bg-gradient-to-br from-bg-button-normalMidOne to-bg-button-normalMidTwo text-[#F1C40F] text-bold py-2 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
     const saveButton = createButton({
         id: 'salvar',
         text: 'Salvar',
-        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] text-black p-4 rounded font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        className: 'bg-gradient-to-br from-[#DC7C08] to-[#F2AB1B] text-semibold p-4 rounded py-3 px-2 rounded-xl shadow-md text-[#392404] hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
@@ -117,23 +117,24 @@ export function createProfile() {
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => close());
 
-    const darkModeToggle = modalBox.querySelector('#dark-mode-toggle');
-    darkModeToggle.addEventListener('click', () => {
-        const status = modalBox.querySelector('#dark-mode-status');
+    // const darkModeToggle = modalBox.querySelector('#dark-mode-toggle');
 
-        if (status.textContent === 'Ativado') {
-            status.textContent = 'Desativado';
-            darkModeToggle.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
-            darkModeToggle.classList.add('bg-slate-600', 'hover:bg-slate-500');
-        } else {
-            status.textContent = 'Ativado';
-            darkModeToggle.classList.remove('bg-slate-600', 'hover:bg-slate-500');
-            darkModeToggle.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
-        }
-    });
+    // darkModeToggle.addEventListener('click', () => {
+    //     const status = modalBox.querySelector('#dark-mode-status');
 
-    const logoutButton = modalBox.querySelector('#logout-button');
-    const deleteAccountButton = modalBox.querySelector('#delete-account-button');
+    //     if (status.textContent === 'Ativado') {
+    //         status.textContent = 'Desativado';
+    //         darkModeToggle.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
+    //         darkModeToggle.classList.add('bg-slate-600', 'hover:bg-slate-500');
+    //     } else {
+    //         status.textContent = 'Ativado';
+    //         darkModeToggle.classList.remove('bg-slate-600', 'hover:bg-slate-500');
+    //         darkModeToggle.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
+    //     }
+    // });
+
+    // const logoutButton = modalBox.querySelector('#logout-button');
+    // const deleteAccountButton = modalBox.querySelector('#delete-account-button');
 
     function open() {
         modal.classList.remove('hidden');
@@ -148,6 +149,7 @@ export function createProfile() {
         modal.classList.add('opacity-0');
         modalBox.classList.remove('scale-100', 'opacity-100');
         modalBox.classList.add('scale-95', 'opacity-0');
+        
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
@@ -156,5 +158,6 @@ export function createProfile() {
     return {
         open,
         close
-    };
+    }
+
 }

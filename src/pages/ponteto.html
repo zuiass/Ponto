@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pondeto</title>
+
+    <link rel="stylesheet" href="../styles/output.css">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+
+<body id="bodyGame">
+<div id="container" class="flex fixed w-full h-full flex-col">
+
+    <header class="flex justify-between items-center p-4 md:p-6 bg-gradient-to-r from-game-surface/50 to-transparent">
+        <button class="back-button flex items-center space-x-2 focus:outline-none bg-game-surface/50 hover:bg-game-surface p-2 rounded-full md:rounded-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span class="text-lg hidden md:inline font-medium">Voltar</span>
+        </button>
+        
+        <h1 class="text-4xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Ponteto</h1>
+        
+        <div class="flex items-center space-x-2">
+            <span class="text-lg hidden md:inline font-medium">Dica</span>
+            <button class="hint-button bg-gradient-to-br from-blue-500 to-blue-700 rounded-full w-10 h-10 flex justify-center items-center text-xl font-bold shadow-lg hover:shadow-glow focus:outline-none transition-all">?</button>
+        </div>
+    </header>
+
+    <div class="flex-1 flex items-center justify-center">
+        <h1 class="text-green-600 md:text-3xl">Status: criando...</h1>
+    </div>
+
+</div> <!-- # -->
+    <script>
+        document.querySelector('.back-button').addEventListener('click', () => {
+            window.location.href = '../pages/home.html';
+        });
+    </script>
+
+    <script type="module" src="../components/windowControls.js"></script>
+    <script type="module" src="../components/instructionsModal.js"></script>
+</body>
