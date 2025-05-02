@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PONTO - Jogo de Palavras</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Diário</title>
+
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/output.css">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        'outfit': ['Outfit', 'sans-serif'],
-                    },
                     colors: {
                         'game-bg': '#0f172a',
                         'game-surface': '#1e293b',
@@ -42,17 +39,8 @@
             }
         }
     </script>
+    
     <style>
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: #0f172a;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.1) 0%, transparent 30%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-        
         .cell {
             transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             background: linear-gradient(145deg, #1e293b, #1a2234);
@@ -164,431 +152,125 @@
     </style>
 </head>
  
-<body class="text-white font-outfit">
-    <div class="fixed inset-0 flex flex-col">
-        <header class="flex justify-between items-center p-4 md:p-6 bg-gradient-to-r from-game-surface/50 to-transparent">
-            <button class="back-button flex items-center space-x-2 focus:outline-none bg-game-surface/50 hover:bg-game-surface p-2 rounded-full md:rounded-lg transition-all">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                <span class="text-lg hidden md:inline font-medium">Voltar</span>
-            </button>
-            
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-wider title-glow bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Diário</h1>
-            
-            <div class="flex items-center space-x-2">
-                <span class="text-lg hidden md:inline font-medium">Dica</span>
-                <button class="hint-button bg-gradient-to-br from-blue-500 to-blue-700 rounded-full w-10 h-10 flex justify-center items-center text-xl font-bold shadow-lg hover:shadow-glow focus:outline-none transition-all">?</button>
-            </div>
-        </header>
+<body id="bodyGame">
+<div id="container" class="fixed w-full h-full flex flex-col text-white">
+
+    <header class="flex justify-between items-center p-4 md:p-6 bg-gradient-to-r from-game-surface/50 to-transparent">
+        <button class="back-button flex items-center space-x-2 focus:outline-none bg-game-surface/50 hover:bg-game-surface p-2 rounded-full md:rounded-lg transition-all">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            <span class="text-lg hidden md:inline font-medium">Voltar</span>
+        </button>
         
-        <div class="flex justify-center items-center py-2">
-            <div class="px-4 py-1 bg-game-surface/50 rounded-full text-sm font-medium">
-                <span id="gameStatus">Adivinhe a palavra de 5 letras</span>
-            </div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Diário</h1>
+        
+        <div class="flex items-center space-x-2">
+            <span class="text-lg hidden md:inline font-medium">Dica</span>
+            <button class="hint-button bg-gradient-to-br from-blue-500 to-blue-700 rounded-full w-10 h-10 flex justify-center items-center text-xl font-bold shadow-lg hover:shadow-glow focus:outline-none transition-all">?</button>
         </div>
-        
-        <main class="flex-1 flex justify-center items-center p-4">
-            <div class="grid grid-cols-5 gap-3 md:gap-4 max-w-md mx-auto">
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-                <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
-            </div>
-        </main>
-        
-        <div class="p-4 pb-6">
-            <div class="max-w-md mx-auto">
-                <div class="flex justify-center gap-1 mb-1.5">
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Q</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">W</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">E</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">R</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">T</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Y</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">U</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">I</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">O</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">P</button>
-                </div>
-                
-                <div class="flex justify-center gap-1 mb-1.5 px-4">
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">A</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">S</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">D</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">F</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">G</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">H</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">J</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">K</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">L</button>
-                </div>
-                
-                <div class="flex justify-center gap-1">
-                    <button class="key bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg p-1 flex-1 h-10 md:h-12 text-center font-medium shadow-md text-xs md:text-sm">ENTER</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Z</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">X</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">C</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">V</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">B</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">N</button>
-                    <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">M</button>
-                    <button id="backspace" class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-1 flex-1 h-10 md:h-12 flex justify-center items-center font-medium shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414-6.414a2 2 0 0 1 2.828 0L21 12m-3 0v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="flex justify-center pb-4">
-            <button id="newGameBtn" class="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white font-medium py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-                Novo Jogo
-            </button>
+    </header>
+    
+    <div class="flex justify-center items-center py-2">
+        <div class="px-4 py-1 bg-game-surface/50 rounded-full text-sm font-medium">
+            <span id="gameStatus">Adivinhe a palavra de 5 letras</span>
         </div>
     </div>
-
-    <div id="instructionsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
-        <div class="modal-content bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-md w-full mx-4 border border-slate-700 shadow-xl">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Como Jogar</h2>
-                <button id="closeModal" class="text-slate-400 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    
+    <main class="flex-1 flex justify-center items-center p-4">
+        <div class="grid grid-cols-5 gap-3 md:gap-4 max-w-md mx-auto">
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+            <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
+        </div>
+    </main>
+    
+    <div class="p-4 pb-6">
+        <div class="max-w-md mx-auto">
+            <div class="flex justify-center gap-1 mb-1.5">
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Q</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">W</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">E</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">R</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">T</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Y</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">U</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">I</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">O</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">P</button>
+            </div>
+            
+            <div class="flex justify-center gap-1 mb-1.5 px-4">
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">A</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">S</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">D</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">F</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">G</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">H</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">J</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">K</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">L</button>
+            </div>
+            
+            <div class="flex justify-center gap-1">
+                <button class="key bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg p-1 flex-1 h-10 md:h-12 text-center font-medium shadow-md text-xs md:text-sm">ENTER</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Z</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">X</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">C</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">V</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">B</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">N</button>
+                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">M</button>
+                <button id="backspace" class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-1 flex-1 h-10 md:h-12 flex justify-center items-center font-medium shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414-6.414a2 2 0 0 1 2.828 0L21 12m-3 0v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6" />
                     </svg>
                 </button>
             </div>
-            <div class="space-y-4">
-                <p class="text-slate-300">Adivinhe a palavra em 6 tentativas.</p>
-                <p class="text-slate-300">Cada tentativa deve ser uma palavra válida de 5 letras.</p>
-                <p class="text-slate-300">Após cada tentativa, a cor das letras mudará para mostrar o quão perto você está da resposta.</p>
-                
-                <div class="border-t border-slate-700 pt-4 mt-6">
-                    <p class="font-bold mb-4 text-white">Exemplos:</p>
-                    
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="cell correct w-10 h-10 rounded-lg shadow-cell flex justify-center items-center text-xl font-bold border-2 border-green-500">P</div>
-                        <p class="text-slate-300">A letra P está na palavra e na posição correta.</p>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="cell partial w-10 h-10 rounded-lg shadow-cell flex justify-center items-center text-xl font-bold border-2 border-amber-500">O</div>
-                        <p class="text-slate-300">A letra O está na palavra, mas na posição errada.</p>
-                    </div>
-                    
-                    <div class="flex items-center space-x-4">
-                        <div class="cell wrong w-10 h-10 rounded-lg shadow-cell flex justify-center items-center text-xl font-bold border-2 border-slate-500">N</div>
-                        <p class="text-slate-300">A letra N não está na palavra.</p>
-                    </div>
-                </div>
-            </div>
-            <button id="startPlaying" class="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-lg mt-6 transition-all transform hover:-translate-y-1 shadow-lg">
-                Começar a Jogar
-            </button>
         </div>
     </div>
-
-    <div id="statsModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 hidden">
-        <div class="modal-content bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-6 max-w-md w-full mx-4 border border-slate-700 shadow-xl">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Estatísticas</h2>
-                <button class="close-stats-modal text-slate-400 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-            
-            <div class="grid grid-cols-3 gap-4 mb-6">
-                <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-                    <span class="text-3xl font-bold text-blue-500 block">0</span>
-                    <span class="text-sm text-slate-300">Jogos</span>
-                </div>
-                
-                <div class="bg-slate-800/50 rounded-xl p-3 text-center">
-                    <span class="text-3xl font-bold text-amber-500 block">0%</span>
-                    <span class="text-sm text-slate-300">Taxa</span>
-                </div>
-            </div>
-            
-            <div class="space-y-4">
-                <h3 class="font-bold text-lg">Distribuição de Tentativas</h3>
-                <div class="space-y-2">
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">1</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">2</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">3</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">4</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">5</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                    <div class="flex items-center">
-                        <span class="w-4 text-right mr-2">6</span>
-                        <div class="bg-slate-700 h-5 rounded-sm w-0"></div>
-                        <span class="ml-2">0</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="mt-6 pt-4 border-t border-slate-700">
-                <div class="flex justify-between items-center">
-                    <p class="text-slate-300">Próxima palavra em:</p>
-                    <div class="text-xl font-mono font-bold text-white">12:34:56</div>
-                </div>
-            </div>
-            
-            <button class="close-stats-modal w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-3 px-4 rounded-lg mt-6 transition-all transform hover:-translate-y-1 shadow-lg">
-                Fechar
-            </button>
-        </div>
+    
+    <div class="flex justify-center pb-4">
+        <button id="newGameBtn" class="bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white font-medium py-2 px-6 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            Novo Jogo
+        </button>
     </div>
 
-    <script>
-        let currentRow = 0;
-        let currentCol = 0;
-        let gameActive = true;
-        
-        const cells = document.querySelectorAll('.cell');
-        const rows = 6;
-        const cols = 5;
-        
-        cells[0].classList.add('active');
-        
-        document.querySelector('.hint-button').addEventListener('click', () => {
-            document.getElementById('instructionsModal').classList.remove('hidden');
-        });
-        
-        document.getElementById('closeModal').addEventListener('click', () => {
-            document.getElementById('instructionsModal').classList.add('hidden');
-        });
-        
-        document.getElementById('startPlaying').addEventListener('click', () => {
-            document.getElementById('instructionsModal').classList.add('hidden');
-        });
-        
-        document.querySelectorAll('.close-stats-modal').forEach(button => {
-            button.addEventListener('click', () => {
-                document.getElementById('statsModal').classList.add('hidden');
-            });
-        });
-        
-        document.querySelector('.back-button').addEventListener('click', () => {
-            window.location.href = '../pages/home.html';
-        });
-        
-        document.getElementById('newGameBtn').addEventListener('click', () => {
-            resetGame();
-        });
-        
-        const keys = document.querySelectorAll('.key');
-        keys.forEach(key => {
-            key.addEventListener('click', () => {
-                const keyContent = key.textContent.trim();
-                
-                if (!gameActive) return;
-                
-                if (keyContent === 'ENTER') {
-                    submitGuess();
-                } else if (key.id === 'backspace') {
-                    deleteLetter();
-                } else if (keyContent.length === 1 && currentCol < cols) {
-                    const cellIndex = currentRow * cols + currentCol;
-                    if (cellIndex < cells.length) {
-                        cells[cellIndex].textContent = keyContent;
-                        cells[cellIndex].classList.add('filled');
-                        
-                        currentCol++;
-                        
-                        if (currentCol < cols) {
-                            const nextCellIndex = currentRow * cols + currentCol;
-                            cells.forEach(cell => cell.classList.remove('active'));
-                            cells[nextCellIndex].classList.add('active');
-                        }
-                    }
-                }
-            });
-        });
-        
-        document.addEventListener('keydown', (e) => {
-            if (!gameActive) return;
-            
-            if (e.key === 'Enter') {
-                submitGuess();
-            } else if (e.key === 'Backspace') {
-                deleteLetter();
-            } else if (/^[a-zA-Z]$/.test(e.key) && currentCol < cols) {
-                const cellIndex = currentRow * cols + currentCol;
-                if (cellIndex < cells.length) {
-                    cells[cellIndex].textContent = e.key.toUpperCase();
-                    cells[cellIndex].classList.add('filled');
-                    
-                    currentCol++;
-                    
-                    if (currentCol < cols) {
-                        const nextCellIndex = currentRow * cols + currentCol;
-                        cells.forEach(cell => cell.classList.remove('active'));
-                        cells[nextCellIndex].classList.add('active');
-                    }
-                }
-            }
-        });
-        
-        function submitGuess() {
-            if (currentCol < cols) {
-                shakeRow();
-                document.getElementById('gameStatus').textContent = "Complete a palavra!";
-                setTimeout(() => {
-                    document.getElementById('gameStatus').textContent = "Adivinhe a palavra de 5 letras";
-                }, 2000);
-                return;
-            }
-            
-            const results = ['correct', 'partial', 'wrong'];
-            
-            for (let i = 0; i < cols; i++) {
-                const cellIndex = currentRow * cols + i;
-                const cell = cells[cellIndex];
-                
-                setTimeout(() => {
-                    const result = results[Math.floor(Math.random() * results.length)];
-                    cell.classList.add(result);
-                    
-                    const letter = cell.textContent;
-                    updateKeyColor(letter, result);
-                }, i * 300);
-            }
-            
-            setTimeout(() => {
-                currentRow++;
-                currentCol = 0;
-                
-                if (currentRow >= rows) {
-                    gameActive = false;
-                    document.getElementById('gameStatus').textContent = "Fim de jogo! A palavra era: PONTO";
-                    
-                    setTimeout(() => {
-                        document.getElementById('statsModal').classList.remove('hidden');
-                    }, 1500);
-                    return;
-                }
-                
-                cells.forEach(cell => cell.classList.remove('active'));
-                const nextCellIndex = currentRow * cols;
-                cells[nextCellIndex].classList.add('active');
-            }, cols * 300 + 300);
-        }
-        
-        function deleteLetter() {
-            if (currentCol > 0) {
-                currentCol--;
-                const cellIndex = currentRow * cols + currentCol;
-                cells[cellIndex].textContent = '';
-                cells[cellIndex].classList.remove('filled');
-                
-                cells.forEach(cell => cell.classList.remove('active'));
-                cells[cellIndex].classList.add('active');
-            }
-        }
-        
-        function shakeRow() {
-            for (let i = 0; i < cols; i++) {
-                const cellIndex = currentRow * cols + i;
-                cells[cellIndex].classList.add('animate-bounce-slow');
-                
-                setTimeout(() => {
-                    cells[cellIndex].classList.remove('animate-bounce-slow');
-                }, 500);
-            }
-        }
-        
-        function updateKeyColor(letter, result) {
-            const keys = document.querySelectorAll('.key');
-            keys.forEach(key => {
-                if (key.textContent.trim() === letter) {
-                    if (result === 'correct' || 
-                        (result === 'partial' && !key.classList.contains('correct')) ||
-                        (result === 'wrong' && !key.classList.contains('correct') && !key.classList.contains('partial'))) {
-                        
-                        key.classList.remove('correct', 'partial', 'wrong');
-                        key.classList.add(result);
-                    }
-                }
-            });
-        }
-        
-        function resetGame() {
-            currentRow = 0;
-            currentCol = 0;
-            gameActive = true;
-            
-            cells.forEach(cell => {
-                cell.textContent = '';
-                cell.classList.remove('filled', 'correct', 'partial', 'wrong', 'active');
-            });
-            
-            keys.forEach(key => {
-                key.classList.remove('correct', 'partial', 'wrong');
-            });
-            
-            cells[0].classList.add('active');
-            
-            document.getElementById('gameStatus').textContent = "Adivinhe a palavra de 5 letras";
-        }
-        
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('instructionsModal').classList.remove('hidden');
-            }, 500);
-        });
-    </script>
+</div> <!-- # -->
+    <script type="module" src="../scripts/diarioGame.js"></script>
+    <script type="module" src="../scripts/diarioPage.js" defer></script>
+    <script type="module" src="../components/windowControls.js"></script>
 </body>
 </html>

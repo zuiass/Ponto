@@ -86,6 +86,6 @@ export function createLogin() {
     return {
         open: () => modal.classList.remove('hidden'),
         close: () => modal.classList.add('hidden')
-    };
+    }
 
 }

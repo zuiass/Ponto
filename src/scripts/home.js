@@ -1,14 +1,12 @@
 import { createLogin } from '../components/loginModal.js';
-import { createRegister } from '../components/registerModal.js';
 import { createRecover } from '../components/recoverModal.js';
+import { createRegister } from '../components/registerModal.js';
+
 import { createHistory } from '../components/historyModal.js';
 import { createProfile } from '../components/profileModal.js';
 import { createRank } from '../components/rankModal.js';
 
-const users = [
-    { email: "joao@example.com", senha: "senha123" },
-    { email: "kayke@example.com", senha: "abc123" }
-];
+// S C R I P T S //
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -37,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gamesHome = [pondeto, diario, ponteto];
     const optionsHome = [history, rank, settings];
-
 
     let lastFocusedButton = null;
 
@@ -143,6 +140,11 @@ document.addEventListener('DOMContentLoaded', () => {
         loginButton.addEventListener('click', () => {
             loginModal.open();
         });
+    }
+
+    return {
+        open,
+        close
     }
 
 });

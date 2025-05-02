@@ -1,10 +1,10 @@
 {
   "name": "ponto",
   "version": "1.0.0",
-  "description": "Tente adivinhar uma palavra de 5 letras",
+  "description": "Jogo das palavras de 5 letras",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently \"npm:electron\" \"npm:build:css\"",
+    "start": "concurrently \"npm:build:css\" \"npm:electron\"",
     "electron": "electron .",
     "build:css": "tailwindcss -i ./src/styles/global.css -o ./src/styles/output.css --watch"
   },
