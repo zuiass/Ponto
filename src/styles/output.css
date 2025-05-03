@@ -1410,6 +1410,11 @@ video {
   letter-spacing: 0.05em;
 }
 
+.text-\[\#392404\] {
+  --tw-text-opacity: 1;
+  color: rgb(57 36 4 / var(--tw-text-opacity, 1));
+}
+
 .text-\[\#F1C40F\] {
   --tw-text-opacity: 1;
   color: rgb(241 196 15 / var(--tw-text-opacity, 1));
@@ -1497,11 +1502,6 @@ video {
 .text-yellow-500 {
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\#392404\] {
-  --tw-text-opacity: 1;
-  color: rgb(57 36 4 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0 {
