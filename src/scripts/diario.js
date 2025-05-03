@@ -154,3 +154,55 @@ function updateKeyColor(letter, result) {
         }
     });
 }
+
+// T E S T I N G
+
+// const tamanhoPalavra = 5;
+// const tentativasMaximas = 6;
+// const celulas = document.querySelectorAll(".cell");
+
+// let linhaAtual = 0;
+// let colunaAtual = 0;
+
+// // Armazena as letras digitadas
+// const palpites = Array.from({ length: tentativasMaximas }, () => Array(tamanhoPalavra).fill(""));
+
+// // Escuta o teclado físico
+// document.addEventListener("keydown", (evento) => {
+//     const tecla = evento.key.toUpperCase();
+
+//     // Se for uma letra de A-Z
+//     if (/^[A-Z]$/.test(tecla)) {
+//         if (colunaAtual < tamanhoPalavra) {
+//             const indice = linhaAtual * tamanhoPalavra + colunaAtual;
+//             celulas[indice].textContent = tecla;
+//             celulas[indice].classList.add("preenchida");
+//             palpites[linhaAtual][colunaAtual] = tecla;
+//             colunaAtual++;
+//         }
+//     }
+
+//     // Se for a tecla Backspace (apagar)
+//     else if (evento.key === "Backspace") {
+//         if (colunaAtual > 0) {
+//             colunaAtual--;
+//             const indice = linhaAtual * tamanhoPalavra + colunaAtual;
+//             celulas[indice].textContent = "";
+//             celulas[indice].classList.remove("preenchida");
+//             palpites[linhaAtual][colunaAtual] = "";
+//         }
+//     }
+
+//     // Se for Enter (enviar palpite)
+//     else if (evento.key === "Enter") {
+//         if (colunaAtual === tamanhoPalavra) {
+//             const tentativa = palpites[linhaAtual].join("");
+
+//             // Aqui você pode verificar se a palavra está correta
+//             // e aplicar estilos como .correta, .parcial ou .errada
+
+//             linhaAtual++;
+//             colunaAtual = 0;
+//         }
+//     }
+// });
