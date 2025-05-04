@@ -1,9 +1,13 @@
+import '../../database/temporaryUsers.js';
+
+// U S I N G
+
 export function createRank() { 
     const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden';
+    modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden transition-opacity duration-300 ease-out';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo';
+    modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo transform transition-all duration-300 ease-out scale-95 opacity-0';
 
     modalBox.innerHTML = `
         <div class="flex-1">
@@ -19,78 +23,71 @@ export function createRank() {
         </div>
 
         <div class="w-full">
-            <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-6">
-                <!-- # -->
-            </div>
+            <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-6"></div>
 
-        
             <div class="tab-content" id="rank-content">
-                <div class="space-y-2">
-                    <div class="bg-gradient-to-r from-yellow-500/20 to-yellow-500/5 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-yellow-500 flex items-center justify-center text-slate-900 font-bold mr-3">1</div>
-                            <span>João Pedro</span>
-                        </div>
-
-                        <span class="font-bold text-yellow-400">1250 pts</span>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-slate-400/20 to-slate-400/5 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-slate-400 flex items-center justify-center text-slate-900 font-bold mr-3">2</div>
-                            <span>Maria Silva</span>
-                        </div>
-
-                        <span class="font-bold text-slate-300">980 pts</span>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-amber-700/20 to-amber-700/5 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-amber-700 flex items-center justify-center text-slate-900 font-bold mr-3">3</div>
-                            <span>Carlos Eduardo</span>
-                        </div>
-
-                        <span class="font-bold text-amber-700">875 pts</span>
-                    </div>
-
-                    <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center font-bold mr-3">4</div>
-                            <span>Ana Beatriz</span>
-                        </div>
-
-                        <span>720 pts</span>
-                    </div>
-
-                    <div class="bg-slate-800/30 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center font-bold mr-3">5</div>
-                            <span>Lucas Mendes</span>
-                        </div>
-
-                        <span>695 pts</span>
-                    </div>
-
-                    <div class="bg-gradient-to-r from-cyan-500/20 to-cyan-500/5 border border-cyan-500/30 p-3 rounded-lg text-slate-200 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <div class="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center font-bold mr-3">8</div>
-                            <span>Você</span>
-                        </div>
-
-                        <span class="font-bold text-cyan-400">540 pts</span>
-                    </div>
-                </div>
+                <div class="space-y-2" id="rank-list"></div>
             </div>
         </div>
     `;
 
-    const closeButton = modalBox.querySelector('.close-modal');
-    closeButton.addEventListener('click', () => modal.classList.add('hidden'));
-
     document.body.appendChild(modal);
     modal.appendChild(modalBox);
 
+    // Função para renderizar o ranking
+    function renderRanking() {
+        const container = modalBox.querySelector('#rank-list');
+        container.innerHTML = '';  // Limpa o conteúdo do ranking antes de adicionar os novos dados
+
+        const sorted = [...usuarios].sort((a, b) => b.pontos - a.pontos);  // Ordena os usuários por pontos de forma decrescente
+
+        sorted.forEach((user, index) => {
+            const div = document.createElement('div');
+            let bg = 'bg-slate-800/30';
+            let text = 'text-slate-200';
+            let border = '';
+            let positionClass = 'bg-slate-700';
+
+            // Define a cor de fundo e a classe para cada posição
+            if (index === 0) {
+                bg = 'bg-gradient-to-r from-yellow-500/20 to-yellow-500/5';
+                text = 'text-slate-200';
+                positionClass = 'bg-yellow-500 text-slate-900';
+            } else if (index === 1) {
+                bg = 'bg-gradient-to-r from-slate-400/20 to-slate-400/5';
+                positionClass = 'bg-slate-400 text-slate-900';
+            } else if (index === 2) {
+                bg = 'bg-gradient-to-r from-amber-700/20 to-amber-700/5';
+                positionClass = 'bg-amber-700 text-slate-900';
+            }
+
+            // Exemplo especial se o nome for "Você"
+            if (user.apelido === 'Você') {
+                bg = 'bg-gradient-to-r from-cyan-500/20 to-cyan-500/5';
+                border = 'border border-cyan-500/30';
+                positionClass = 'bg-cyan-600 text-slate-900';
+                text = 'text-cyan-400';
+            }
+
+            div.className = `${bg} ${border} p-3 rounded-lg flex items-center justify-between ${text}`;
+            div.innerHTML = `
+                <div class="flex items-center">
+                    <div class="w-8 h-8 rounded-full ${positionClass} flex items-center justify-center font-bold mr-3">${index + 1}</div>
+                    <span>${user.apelido}</span>
+                </div>
+                <span class="font-bold">${user.pontos} pts</span>
+            `;
+            container.appendChild(div);
+        });
+    }
+
+    // Função de fechar o modal
+    const closeButton = modalBox.querySelector('.close-modal');
+    closeButton.addEventListener('click', () => close());
+
+    // Função para abrir o modal
     function open() {
+        renderRanking();  // Atualiza o ranking toda vez que o modal abrir
         modal.classList.remove('hidden');
         void modal.offsetWidth;
         modal.classList.add('opacity-100');
@@ -98,6 +95,7 @@ export function createRank() {
         modalBox.classList.add('scale-100', 'opacity-100');
     }
 
+    // Função para fechar o modal
     function close() {
         modal.classList.remove('opacity-100');
         modal.classList.add('opacity-0');
@@ -113,5 +111,4 @@ export function createRank() {
         open,
         close
     }
-
 }

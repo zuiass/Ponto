@@ -1,6 +1,8 @@
 import { createInput } from './input.js';
 import { createButton } from './button.js';
 
+// R E T U R N
+
 export function createProfile() { 
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0';
