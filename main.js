@@ -1,4 +1,5 @@
-const { app, BrowserWindow, ipcMain, screen } = require('electron');
+const { app, BrowserWindow } = require('electron');
+const { ipcMain, screen } = require('electron');
 const path = require('path');
 
 let audioWindow;
@@ -6,7 +7,7 @@ let audioWindow;
 function createWindow() {
     const primaryDisplay = screen.getPrimaryDisplay();
     const { x, y, width, height } = primaryDisplay.workArea;
-
+    
     const win = new BrowserWindow({
         x,
         y,
@@ -16,7 +17,8 @@ function createWindow() {
         minHeight: 700,
         frame: false,
         autoHideMenuBar: true,
-        icon: path.join(__dirname, './src/assets/icons/logo(2).ico'),
+        icon: path.join(__dirname, './src/assets/icons/logo.ico'),
+        // devTools: false,
 
         webPreferences: {
             preload: path.join(__dirname, './preload.js'),
@@ -85,10 +87,3 @@ app.on('window-all-closed', () => {
         app.quit();
     }
 });
-
-// win.webContents.on('before-input-event', (event, input) => {
-//     const isReload = (input.control || input.meta) && input.key.toLowerCase() === 'r';
-//     if (isReload) {
-//         event.preventDefault();
-//     }
-// });
