@@ -1,6 +1,5 @@
 import { createInput } from './input.js';
 import { createButton } from './button.js';
-import { usuarios } from '../../database/temporaryUsers.js';
 
 // R E T U R N
 
