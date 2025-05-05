@@ -1,5 +1,6 @@
 import { createInput } from './input.js';
 import { createButton } from './button.js';
+import { usuarios } from '../../database/temporaryUsers.js';
 
 // R E T U R N
 
@@ -21,9 +22,9 @@ export function createProfile() {
 
         <div class="flex flex-col gap-8 justify-beetwen items-center">
             <div class="flex flex-row w-full justify-around items-center">
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-
-                </div>
+                <button class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                    <img src="../assets/public/darkMode.svg" />
+                </button>
 
                 <div class="relative">
                     <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20" src="./../assets/public/fotoTeste.jpg">
@@ -33,9 +34,9 @@ export function createProfile() {
                     </button>
                 </div>
 
-                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
-                    <img src="../assets/public/addPhoto.svg" class="w-6 h-6" />
-                </div>
+                <button class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                    <img src="../assets/public/logout.svg" class="w-6 h-6" />
+                </button>
             </div>
 
             <form id="profile-form" class="flex flex-col h-auto gap-4 w-[350px]">
