@@ -121,24 +121,24 @@
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
+
             <span class="text-lg hidden md:inline font-medium">Voltar</span>
         </button>
         
         <h1 class="text-4xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Diário</h1>
         
-        <div class="flex items-center space-x-2">
-            <span class="text-lg hidden md:inline font-medium">Dica</span>
-            <button class="hint-button bg-gradient-to-br from-blue-500 to-blue-700 rounded-full w-10 h-10 flex justify-center items-center text-xl font-bold shadow-lg hover:shadow-glow focus:outline-none transition-all">?</button>
-        </div>
+        <button class="hint-button flex items-center justify-center p-2 rounded-full gap-2">
+            <span class="text-lg md:inline font-medium">Dica</span>
+            <div class="bg-gradient-to-br from-blue-500 to-blue-700 rounded-full w-10 h-10 flex justify-center items-center text-xl font-bold shadow-lg">?</div>
+        </button>
     </header>
     
-    <div class="flex justify-center items-center py-2">
-        <div class="px-4 py-1 bg-game-surface/50 rounded-full text-sm font-medium">
+    
+    <main class="flex-1 flex justify-center items-center p-4 relative">
+        <div class="absolute flex top-0 w-auto h-auto px-4 py-1 bg-game-surface/50 rounded-full text-sm font-medium mt-2">
             <span id="gameStatus">Adivinhe a palavra de 5 letras</span>
         </div>
-    </div>
-    
-    <main class="flex-1 flex justify-center items-center p-4">
+        
         <div class="grid grid-cols-5 gap-3 md:gap-4 max-w-md mx-auto">
             <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
             <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
@@ -177,55 +177,6 @@
             <div class="cell w-14 h-14 md:w-16 md:h-16 rounded-xl flex justify-center items-center text-2xl font-bold border-2 border-game-border"></div>
         </div>
     </main>
-    
-    <div class="p-4 pb-6">
-        <div class="max-w-md mx-auto">
-            <div class="flex justify-center gap-1 mb-1.5">
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Q</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">W</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">E</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">R</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">T</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Y</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">U</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">I</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">O</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">P</button>
-            </div>
-            
-            <div class="flex justify-center gap-1 mb-1.5 px-4">
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">A</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">S</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">D</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">F</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">G</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">H</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">J</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">K</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">L</button>
-            </div>
-            
-            <div class="flex justify-center gap-1">
-                <button id="backspace" class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-1 flex-1 h-10 md:h-12 flex justify-center items-center font-medium shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414-6.414a2 2 0 0 1 2.828 0L21 12m-3 0v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6" />
-                    </svg>
-                </button>
-
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">Z</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">X</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">C</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">V</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">B</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">N</button>
-                <button class="key bg-gradient-to-b from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 rounded-lg p-2 w-8 h-10 md:w-10 md:h-12 text-center font-medium shadow-md">M</button>
-                
-                <button class="key bg-gradient-to-b from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 rounded-lg p-1 flex-1 h-10 md:h-12 text-center font-medium shadow-md text-xs md:text-sm">
-                    ENTER
-                </button>
-            </div>
-        </div>
-    </div>
 
 </div> <!-- # -->
     <script type="module" src="../scripts/diario.js"></script>

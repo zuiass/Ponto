@@ -7,18 +7,26 @@ export function createHistory() {
   modalBox.className = 'w-full max-w-md p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo transform transition-all duration-300 ease-out scale-95 opacity-0';
   
   modalBox.innerHTML = `
-    <div class="w-full">
-      <div class="flex items-center justify-between mb-6">
-        <button class="close-modal text-sm text-red-500">
+    <div class="flex-1">
+      <div class="flex flex-row items-center">
+        <button class="close-modal">
           <div class="flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10">
             <img src="../assets/public/fechar.svg"/>
           </div>
         </button>
 
-        <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter flex-1 mr-10">Histórico</h1>
+        <div class="w-full h-auto flex items-center justify-center mr-12">
+          <h1 class="text-3xl font-bold text-yellow-400 tracking-tighter">Histórico</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-5">
+        <!-- # -->
       </div>
 
-      <div class="grid grid-cols-3 gap-4">
+      <div class="grid grid-cols-3 gap-4 mb-5">
         <div class="bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
           <span class="text-3xl font-bold text-red-500 block">0</span>
           <span class="text-sm text-slate-300">Erros</span>
@@ -33,10 +41,6 @@ export function createHistory() {
           <span class="text-3xl font-bold text-amber-500 block">0</span>
           <span class="text-sm text-slate-300">Tentativas</span>
         </div>
-      </div>
-
-      <div class="h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent my-5">
-        <!-- # -->
       </div>
 
       <div class="flex bg-white/5 rounded-full p-1">
@@ -114,17 +118,17 @@ export function createHistory() {
   });
 
   tabButtons.forEach(button => {
+
     button.addEventListener('click', () => {
       tabButtons.forEach(btn => btn.classList.remove('bg-slate-700', 'text-white'));
-
       button.classList.add('bg-slate-700', 'text-white');
-
+      
       tabContents.forEach(content => content.classList.add('hidden'));
-
       const tabId = button.getAttribute('data-tab');
       const tabContent = modalBox.querySelector(`#${tabId}-content`);
       tabContent.classList.remove('hidden');
     });
+
   });
 
   tabButtons[0].classList.add('bg-slate-700', 'text-white');

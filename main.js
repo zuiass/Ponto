@@ -30,6 +30,31 @@ function createWindow() {
 
     win.loadFile('./src/pages/home.html');
 
+    // Envia eventos de maximização e fullscreen para o renderer
+    win.on('maximize', () => win.webContents.send('window:is-maximized', true));
+    win.on('unmaximize', () => win.webContents.send('window:is-maximized', false));
+    win.on('enter-full-screen', () => win.webContents.send('window:is-fullscreen', true));
+    win.on('leave-full-screen', () => win.webContents.send('window:is-fullscreen', false));
+
+    // Lida com eventos enviados pelo renderer
+    ipcMain.on('window:minimize', () => win.minimize());
+    ipcMain.on('window:toggle-maximize', () => {
+        if (win.isMaximized()) {
+            win.unmaximize();
+        } else {
+            win.maximize();
+        }
+    });
+    ipcMain.on('window:close', () => win.close());
+
+    // Retorna o estado atual da janela
+    ipcMain.handle('window:get-state', () => {
+        return {
+            isMaximized: win.isMaximized(),
+            isFullscreen: win.isFullScreen(),
+        };
+    });
+
     audioWindow = new BrowserWindow({
         width: 0,
         height: 0,
@@ -42,42 +67,6 @@ function createWindow() {
     });
 
     audioWindow.loadFile('./src/pages/audioPlayer.html');
-
-    win.on('closed', () => {
-        app.quit();
-    });
-
-    ipcMain.on('window:minimize', () => {
-        win.minimize();
-    });
-
-    win.on('enter-full-screen', () => {
-        win.webContents.send('window:is-fullscreen', true);
-    });
-
-    win.on('leave-full-screen', () => {
-        win.webContents.send('window:is-fullscreen', false);
-    });
-
-    ipcMain.on('window:toggle-maximize', () => {
-        if (win.isMaximized()) {
-            win.unmaximize();
-        } else {
-            win.maximize();
-        }
-    });
-
-    win.on('maximize', () => {
-        win.webContents.send('window:is-maximized', true);
-    });
-
-    win.on('unmaximize', () => {
-        win.webContents.send('window:is-maximized', false);
-    });
-
-    ipcMain.on('window:close', () => {
-        win.close();
-    });
 }
 
 app.whenReady().then(createWindow);
