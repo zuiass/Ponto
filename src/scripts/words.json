@@ -1,26 +1,26 @@
 {
-    "diario": [
-      "nuvem",
-      "festa"
-    ],
-    
-    "pondeto": [
-      "livro",
-      "canto",
+  "diario": [
+    "nuvem",
+    "festa"
+  ],
+  
+  "pondeto": [
+    "livro",
+    "canto",
 
-      "prazo",
-      "verde"
-    ],
+    "prazo",
+    "verde"
+  ],
 
-    "ponteto": [
-      "casal",
-      "pleno",
-      "brisa",
-      "tarde",
+  "ponteto": [
+    "casal",
+    "pleno",
+    "brisa",
+    "tarde",
 
-      "certo",
-      "amigo",
-      "chuva",
-      "folha"
-    ]
+    "certo",
+    "amigo",
+    "chuva",
+    "folha"
+  ]
 }
