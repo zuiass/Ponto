@@ -7,103 +7,7 @@
 
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/output.css">
-
-    <style>
-        .cell {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            background: linear-gradient(145deg, #1e293b, #1a2234);
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-        }
-        
-        .cell.active {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
-            transform: scale(1.05);
-        }
-        
-        .cell.filled {
-            transform: scale(0.95);
-            transition: transform 0.1s ease;
-        }
-        
-        .cell.filled:active {
-            transform: scale(0.9);
-        }
-        
-        .cell.correct {
-            background: linear-gradient(145deg, #16a34a, #15803d);
-            border-color: #22c55e;
-            box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
-        }
-        
-        .cell.partial {
-            background: linear-gradient(145deg, #ea580c, #c2410c);
-            border-color: #f97316;
-            box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
-        }
-        
-        .cell.wrong {
-            background: linear-gradient(145deg, #475569, #334155);
-            border-color: #64748b;
-        }
-        
-        .back-button, .hint-button {
-            transition: all 0.2s ease;
-        }
-        
-        .back-button:active, .hint-button:active {
-            transform: scale(0.95);
-        }
-        
-        .key {
-            transition: all 0.2s ease;
-        }
-        
-        .key:hover {
-            transform: translateY(-2px);
-        }
-        
-        .key:active {
-            transform: translateY(1px);
-        }
-        
-        .key.correct {
-            background: linear-gradient(145deg, #16a34a, #15803d);
-            border-color: #22c55e;
-        }
-        
-        .key.partial {
-            background: linear-gradient(145deg, #ea580c, #c2410c);
-            border-color: #f97316;
-        }
-        
-        .key.wrong {
-            background: linear-gradient(145deg, #475569, #334155);
-            border-color: #64748b;
-        }
-        
-        .title-glow {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .animate-bounce-slow {
-            animation: bounce 2s infinite;
-        }
-
-        .hint-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <!-- H T M L -->
@@ -112,12 +16,12 @@
 <div id="container" class="flex fixed w-full h-full flex-col">
 
     <header class="flex justify-between items-center p-4 md:p-6 bg-gradient-to-r from-game-surface/50 to-transparent">
-        <button class="back-button flex items-center gap-2 focus:outline-none bg-game-surface hover:bg-game-surface py-2 px-4 rounded-full transition-all">
+        <button onclick="exitGame()" class="back-button flex items-center gap-2 focus:outline-none bg-game-surface hover:bg-game-surface py-2 px-4 rounded-full transition-all">
             <img src="../assets/public/fechar.svg" >
             <span class="text-lg hidden md:inline font-medium">Voltar</span>
         </button>
         
-        <h1 class="text-4xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500">Diário</h1>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-yellow-600">Diário</h1>
         
         <button class="hint-button flex items-center justify-center p-2 rounded-full gap-2 bg-game-surface/50 hover:bg-game-surface pl-4">
             <img src="../assets/public/idea.svg" alt="">
@@ -170,7 +74,13 @@
         </div>
     </main>
 
-</div> <!-- # -->
+</div> <!-- S C R I P T S -->
+    <script>
+        function exitGame() {
+            window.location.href = "../pages/home.html";
+        }
+    </script>
+    
     <script type="module" src="../scripts/diario.js"></script>
     <script type="module" src="../components/instructionsModal.js"></script>
     <script type="module" src="../components/windowControls.js"></script>
