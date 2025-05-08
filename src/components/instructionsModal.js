@@ -57,7 +57,7 @@ export function createInstructions() {
     const buttonEntendi = createButton({
         id: 'startPlaying',
         text: 'Entendi!',
-        className: 'w-full bg-gradient-to-r from-orange-500 to-yellow-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium text-lg py-3 px-4 rounded-xl mt-6 transition-all transform shadow-lg',
+        className: 'w-full bg-gradient-to-r from-orange-500 to-yellow-600 hover:from-orange-400 hover:to-yellow-500 text-white font-medium text-lg py-3 px-4 rounded-xl mt-6 transition-all transform shadow-lg',
         type: 'button'
     });
 
