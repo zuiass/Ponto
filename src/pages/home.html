@@ -24,10 +24,6 @@
             color: rgba(0, 0, 0, 0.75);
         }
 
-        .game-button:focus img {
-            filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(200%) hue-rotate(180deg);
-        }
-
         .game-button:hover {
             border-color: #FBBF24;
             box-shadow: rgba(251, 191, 36, 0.25) 0px 0px 10px 0px;
@@ -107,8 +103,8 @@
             </button>
 
             <button id="settings" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img src="../assets/public/config.svg">
+                <div class="icon-container border-2 border-[#313E52] flex justify-center rounded-full w-14 h-14 overflow-hidden">
+                    <img src="../assets/public/fotoTeste.jpg" class="object-cover w-full h-full" >
                 </div>
 
                 <h2 class="text-xl text-yellow-500">Perfil</h2>

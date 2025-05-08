@@ -926,6 +926,10 @@ video {
   margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -1016,6 +1020,20 @@ video {
 
 .border-white\/20 {
   border-color: rgb(255 255 255 / 0.2);
+}
+
+.border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
+}
+
+.border-\[\#\#313E52\] {
+  border-color: ##313E52;
+}
+
+.border-\[\#313E52\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(49 62 82 / var(--tw-border-opacity, 1));
 }
 
 .bg-\[\#2C3E50\] {
