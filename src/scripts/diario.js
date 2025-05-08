@@ -1,4 +1,4 @@
-import { sortedWord } from '../scripts/word.js';
+import { sortearPalavra } from '../scripts/word.js';
 
 // V A R I A B L E S
 
@@ -12,7 +12,7 @@ const cells = document.querySelectorAll('.cell');
 cells[0].classList.add('active');
 
 let activeGame = true;
-const correctWord = sortedWord();
+let correctWord = 'PONTO';
 
 // F U N C T I O N S
 
@@ -63,6 +63,4 @@ function submitGuess() {
     }
 
     const results = ['correct', 'partial', 'wrong'];
-
-
 }
