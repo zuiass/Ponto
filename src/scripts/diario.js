@@ -2,17 +2,18 @@ import { sortearPalavra } from '../scripts/word.js';
 
 // V A R I A B L E S
 
-let currentRow = 0;
-let currentCol = 0;
+let currentRow = 0; // linha atual
+let currentCol = 0; // coluna atual
 
-const allLines = 6;
-const allColumns = 5;
+const allLines = 6; // todas as linhas
+const allColumns = 5; // todas as colunas
 
-const cells = document.querySelectorAll('.cell');
+const cells = document.querySelectorAll('.cell'); // todas as células
 cells[0].classList.add('active');
 
-let activeGame = true;
-let correctWord = 'PONTO';
+let activeGame = true; // jogo ativo
+const diaryWords = ["TERMO", "BEBER"]; // que sorteio?
+const secretWord = pontoWords[Math.floor(Math.random() * diaryWords.length)]; // palavra secreta
 
 // F U N C T I O N S
 
@@ -31,7 +32,7 @@ function insertLetter(letter) {
 
     if (index < cells.length) {
         cells[index].textContent = letter;
-        cells[index].classList.add('filled');   // "filled" = "preenchida"
+        cells[index].classList.add('filled');
         colunaAtual++;
 
         if (currentCol < allColumns) {
@@ -62,5 +63,52 @@ function submitGuess() {
         return;
     }
 
-    const results = ['correct', 'partial', 'wrong'];
+    const guess = []; // palpite
+
+    for (let i = 0; i < allColumns; i++) {
+        const index = currentRow * allColumns + i;
+        guess.push(cells[index].textContent);
+    }
+
+    for (let i = 0; i < allColumns; i++) {
+        const index = currentRow * allColumns + i;
+        const letter = guess[i];
+        const cell = cells[index];
+
+        setTimeout(() => {
+            if (letter === secretWord[i]) {
+                cell.classList.add('correct');
+                updateColorCell(letter, 'correct');
+            }
+            
+            else if (secretWord.includes(letter)) {
+                cell.classList.add('partial');
+                updateColorCell(letra, 'partial');
+
+            }
+            
+            else {
+                cell.classList.add('wrong');
+                updateColorCell(letra, 'wrong');
+            }
+        }, i * 300);
+    }
+}
+
+// atualizar cor da célula
+
+function updateColorCell(letter, result) {
+    const keys = document.querySelectorAll('.key');
+
+    keys.forEach(key => {
+        if (key.textContent.trim() === letra) {
+            if (result === 'correct' || 
+                (result === 'partial' && !key.classList.contains('correct')) ||
+                (result === 'errada' && !key.classList.contains('correct') && !key.classList.contains('partial'))) {
+                
+                key.classList.remove('correct', 'partial', 'wrong');
+                key.classList.add(result);
+            }
+        }
+    });
 }
