@@ -9,14 +9,6 @@ CREATE TABLE usuario (
     pontuacao INT DEFAULT 0
 );
  
-CREATE TABLE partida (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    usuario_id INT NOT NULL,
-    data DATETIME DEFAULT CURRENT_TIMESTAMP,
-    pontuacao_obtida INT DEFAULT 0,
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id)
-);
- 
 CREATE TABLE ranking (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
