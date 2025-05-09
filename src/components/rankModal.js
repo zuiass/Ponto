@@ -1,6 +1,4 @@
-import '../../database/temporaryUsers.js';
-
-// U S I N G
+// R E T U R N
 
 export function createRank() { 
     const modal = document.createElement('div');
