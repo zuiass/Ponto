@@ -46,7 +46,7 @@
         }
 
         .game-button:focus #icon-default {
-            filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(200%) hue-rotate(180deg);
+            filter: brightness(0) invert(0%);
         }
     </style>    
 </head>
@@ -92,7 +92,7 @@
         <div id="line-two" class="flex flex-row gap-7">
             <button id="history" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
                 <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img src="../assets/public/history.svg">
+                    <img id="icon-default" src="../assets/public/history.svg">
                 </div>
 
                 <h2 class="text-xl text-yellow-500">Histórico</h2>
