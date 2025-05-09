@@ -44,6 +44,10 @@
         .game-button:focus .icon-container {
             background-color: rgba(0, 0, 0, 0.1);
         }
+
+        .game-button:focus .icon-container img {
+            filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(200%) hue-rotate(180deg);
+        }
     </style>    
 </head>
 
@@ -75,7 +79,7 @@
             </button>
 
             <button id="ponteto" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
+                <div id="icon-container-perfil" class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
                     <img src="../assets/public/typeGame.svg">
                 </div>
 
@@ -96,7 +100,7 @@
 
             <button id="rank" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
                 <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img src="../assets/public/rank.svg">
+                    <img id="icon-rank" src="../assets/public/rank.svg">
                 </div>
 
                 <h2 class="text-xl text-yellow-500">Rank</h2>
@@ -104,7 +108,7 @@
 
             <button id="settings" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
                 <div class="icon-container border-2 border-[#313E52] flex justify-center rounded-full w-14 h-14 overflow-hidden">
-                    <img src="../assets/public/fotoTeste.jpg" class="object-cover w-full h-full" >
+                    <img  src="../assets/public/fotoTeste.jpg" class="object-cover w-full h-full" >
                 </div>
 
                 <h2 class="text-xl text-yellow-500">Perfil</h2>
@@ -125,7 +129,7 @@
     </div>
 
 </div> <!-- # -->
-    <script type="module" src="../components/windowControls.js" defer></script>
-    <script type="module" src="../scripts/home.js" defer></script>
+    <script type="module" src="../components/windowControls.js"></script>
+    <script type="module" src="../scripts/home.js"></script>
 </body>
 </html>
