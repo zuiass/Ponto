@@ -100,6 +100,12 @@ export function createInstructions() {
 // E V E N T S  /  U S I N G
 
 window.addEventListener('DOMContentLoaded', () => {
+    const backButton = document.querySelector(".back-button");
+    
+    backButton.addEventListener("click", () => {
+        window.location.href = "../pages/home.html"
+    });
+    
     const instructionsModal = createInstructions();
     const hintButton = document.querySelector('.hint-button');
 
