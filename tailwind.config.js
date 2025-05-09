@@ -1,7 +1,7 @@
 /** @type { import('tailwindcss').Config } */
 
 module.exports = {
-  darkMode: 'class',
+  darkMode: 'media',
 
   content: [
     './src/**/*.{html,js,jsx}'
@@ -41,7 +41,7 @@ module.exports = {
 
         body: {
           darkMidOne: '#0F172A',
-          darkMidTwo: '#1E293B',
+          darkMidTwo: '#273447',
         },
         
         button: {

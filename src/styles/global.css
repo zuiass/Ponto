@@ -28,8 +28,6 @@ body {
     height: 100dvh;
     overflow-x: hidden;
     padding-top: 40px;
-} #bodyHome {
-    background: linear-gradient(to bottom, #0F172A, #273447, #0F172A);
 } #bodyGame {
     background: #0F172A;
     background-image: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 30%), radial-gradient(circle at 80% 70%, rgba(99, 102, 241, 0.1) 0%, transparent 30%);
