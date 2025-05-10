@@ -10,7 +10,7 @@ export function createWindowControls() {
                     <img src="../assets/public/maximize.svg" id="maximize-icon">
                 </button>
         
-                <button id="close" class="hover:bg-[#ffbb3c] px-4 py-2 flex justify-center" title="Fechar">
+                <button id="close" class="hover:bg-[#ff0909] px-4 py-2 flex justify-center" title="Fechar">
                     <img src="../assets/public/close.svg">
                 </button>
             </div>
