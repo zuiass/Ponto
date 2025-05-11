@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="../styles/output.css">
     <link rel="stylesheet" href="../styles/global.css">
 
-    <style>    
+    <style>
+        .game-button {
+            background: linear-gradient(135deg, #313E52, #1F2A3F 90%);
+            border: 1px solid #313E52;
+            transition: all 0.3s all;
+        }
+
         .game-button:focus {
             background: linear-gradient(135deg, #FBBF24, #D97706);
             border-color: #0000001a;
@@ -42,12 +48,7 @@
         .game-button:focus #icon-default {
             filter: brightness(0) invert(0%);
         }
-        /* .game-button {
-            background: linear-gradient(135deg, #313E52, #1F2A3F 90%);
-            border: 1px solid #313E52;
-            transition: all 0.3s all;
-        } */
-        </style>    
+    </style>    
 </head>
 
 <body id="bodyHome" class="dark:bg-gradient-to-b dark:from-body-darkMidOne dark:via-body-darkMidTwo dark:to-body-darkMidOne bg-gradient-to-b from-slate-400 via-white to-slate-400">
@@ -61,7 +62,7 @@
     
     <div id="optionsHome" class="flex w-full h-auto flex-col items-center justify-center gap-6">
         <div id="line-one" class="flex flex-row gap-7">
-            <button id="pondeto" class="game-button">
+            <button id="pondeto" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
                 <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
                     <img id="icon-default" src="../assets/public/typeGame.svg">
                 </div>
