@@ -1,10 +1,12 @@
-import { createLogin } from '../components/loginModal.js';
-import { createRecover } from '../components/recoverModal.js';
-import { createRegister } from '../components/registerModal.js';
+// M O D U L E S //
 
-import { createHistory } from '../components/historyModal.js';
-import { createProfile } from '../components/profileModal.js';
-import { createRank } from '../components/rankModal.js';
+import { createLogin } from '../modals/loginModal.js';
+import { createRecover } from '../modals/recoverModal.js';
+import { createRegister } from '../modals/registerModal.js';
+
+import { createHistory } from '../modals/historyModal.js';
+import { createProfile } from '../modals/profileModal.js';
+import { createRank } from '../modals/rankModal.js';
 
 // S C R I P T S //
 
@@ -141,5 +143,4 @@ document.addEventListener('DOMContentLoaded', () => {
             loginModal.open();
         });
     }
-
 });

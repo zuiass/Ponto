@@ -1608,6 +1608,10 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 @font-face {
   src: url('../assets/fonts/Outfit.ttf') format('truetype');
 
@@ -1706,9 +1710,9 @@ input {
   background-color: rgb(52 73 94 / var(--tw-bg-opacity, 1));
 }
 
-.hover\:bg-\[\#ffbb3c\]:hover {
+.hover\:bg-\[\#ff0909\]:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 187 60 / var(--tw-bg-opacity, 1));
+  background-color: rgb(255 9 9 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:bg-game-surface:hover {
@@ -1800,9 +1804,19 @@ input {
     background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   }
 
+  .dark\:bg-gradient-to-tr {
+    background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+  }
+
   .dark\:from-body-darkMidOne {
     --tw-gradient-from: #0F172A var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  }
+
+  .dark\:from-gameButton-midOne {
+    --tw-gradient-from: #313E52 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(49 62 82 / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
@@ -1813,6 +1827,10 @@ input {
 
   .dark\:to-body-darkMidOne {
     --tw-gradient-to: #0F172A var(--tw-gradient-to-position);
+  }
+
+  .dark\:to-gameButton-midTwo {
+    --tw-gradient-to: #1F2A3F var(--tw-gradient-to-position);
   }
 
   .dark\:hover\:bg-gray-600:hover {

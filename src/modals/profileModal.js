@@ -1,5 +1,5 @@
-import { createInput } from './input.js';
-import { createButton } from './button.js';
+import { createInput } from '../components/input.js';
+import { createButton } from '../components/button.js';
 
 // R E T U R N
 
