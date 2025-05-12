@@ -10,10 +10,7 @@ export function createButton({
     button.innerText = text;
     button.className = className;
     button.type = type;
-
-    if (onClick) {
-        button.addEventListener("click", onClick);
-    }
+    if (onClick) button.addEventListener("click", onClick);
 
     return button;
 }

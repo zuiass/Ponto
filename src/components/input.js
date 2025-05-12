@@ -12,7 +12,7 @@ export function createInput({
     className = ''
 }) {
     const wrapper = document.createElement('div');
-    wrapper.className = 'bg-white/5 w-full border border-[#91959D] rounded-xl pt-2';
+    wrapper.className = 'dark:bg-white/5 bg-black/10 w-full border border-[#91959D] rounded-xl pt-2';
 
     const myLabel = document.createElement('label');
     if (id) myLabel.id = id;
@@ -28,11 +28,8 @@ export function createInput({
     input.required = required;
     input.disabled = disabled;
     input.maxLength = maxLength;
-    input.className = `text-white bg-transparent w-full px-2 py-2 rounded-xl border border-gray-300 focus:outline-none transition ${className}`;
-
-    if (onInput) {
-        input.addEventListener('input', onInput);
-    }
+    input.className = `dark:text-white text-black bg-transparent w-full px-2 py-2 rounded-xl border border-gray-300 focus:outline-none transition ${className}`;
+    if (onInput) input.addEventListener('input', onInput);
 
     wrapper.appendChild(myLabel);
     wrapper.appendChild(input);

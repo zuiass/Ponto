@@ -1,10 +1,6 @@
 import { createInput } from '../components/input.js';
 import { createButton } from '../components/button.js';
 
-if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark');
-}
-
 // R E T U R N
 
 export function createProfile() { 
@@ -12,12 +8,12 @@ export function createProfile() {
     modal.className = 'fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-sm z-50 hidden transition-opacity duration-300 ease-out';
 
     const modalBox = document.createElement('div');
-    modalBox.className = 'h-auto w-auto p-8 rounded-3xl shadow-lg border-2 border-white/10 bg-gradient-to-br from-modal-midOne to-modal-midTwo transform transition-all duration-300 ease-out scale-95 opacity-0';
+    modalBox.className = 'h-auto w-auto p-8 rounded-3xl shadow-lg border-2 border-white/10 dark:bg-gradient-to-br dark:from-modal-midOne dark:to-modal-midTwo bg-white transform transition-all duration-300 ease-out scale-95';
 
     modalBox.innerHTML = `
         <div class="flex flex-row items-center gap-3 mb-6">
-            <button class="close-modal flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors">
-                <img src="../assets/public/fechar.svg" />
+            <button class="close-modal flex items-center justify-center w-10 h-10 rounded-full dark:hover:bg-white/10 hover:bg-black/10 transition-colors">
+                <img src="../assets/public/fechar.svg" class="dark:brightness-100 invert-0 brightness-0"/>
             </button>
 
             <h1 class="text-3xl font-bold text-yellow-400 text-center tracking-tighter flex-1 mr-10">Perfil</h1>
@@ -91,14 +87,14 @@ export function createProfile() {
     const cancelButton = createButton({
         id: 'cancelar',
         text: 'Cancelar',
-        className: 'border-2 border-button-stroke bg-gradient-to-br from-bg-button-normalMidOne to-bg-button-normalMidTwo text-[#F1C40F] text-bold py-2 px-2 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        className: 'border-2 dark:border-button-stroke border-gray-300 dark:bg-gradient-to-br dark:from-bg-button-normalMidOne dark:to-bg-button-normalMidTwo bg-white text-orange-500 text-bold py-2 px-2 rounded-xl shadow-md dark:hover:bg-[#34495E] hover:bg-gray-200 transition w-full',
         type: 'button'
     });
 
     const saveButton = createButton({
         id: 'salvar',
         text: 'Salvar',
-        className: 'bg-gradient-to-br from-[#DC7C08] to-[#F2AB1B] text-semibold p-4 rounded py-3 px-2 rounded-xl shadow-md text-[#392404] hover:bg-[#34495E] transition w-full',
+        className: 'border-2 border-yellow-500 bg-gradient-to-br from-[#DC7C08] to-[#F2AB1B] text-semibold p-4 rounded py-3 px-2 rounded-xl shadow-md text-[#392404] hover:bg-[#34495E] transition w-full',
         type: 'button'
     });
 
@@ -109,8 +105,8 @@ export function createProfile() {
     closeButton.addEventListener('click', () => close());
 
     document.querySelector(".toggle-theme").addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        const isDark = document.body.classList.contains('dark');
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
     });
 

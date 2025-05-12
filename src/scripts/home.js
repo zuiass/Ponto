@@ -143,4 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
             loginModal.open();
         });
     }
+
+    const userPrefersDark = localStorage.getItem('theme') === 'dark' 
+    || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+    if (userPrefersDark) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
 });
