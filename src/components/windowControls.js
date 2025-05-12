@@ -1,6 +1,6 @@
 export function createWindowControls() {
     return `
-        <header id="title-bar" class="fixed border-b-[1px] border-gray-600 top-0 left-0 right-0 flex justify-end items-center dark:bg-gray-800 bg-slate-300 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
+        <header id="title-bar" class="fixed border-b-[1px] border-gray-600 top-0 left-0 right-0 flex justify-end items-center dark:bg-game-surface/50 bg-slate-300 h-10 select-none" style="-webkit-app-region: drag; z-index: 1000;">
             <div id="window-controls" class="flex gap-[1px] pr-[1px]" style="-webkit-app-region: no-drag;">
                 <button id="minimize" class="dark:hover:bg-gray-600 hover:bg-gray-300 px-4 py-2 flex justify-center" title="Minimizar">
                     <img src="../assets/public/minimize.svg">

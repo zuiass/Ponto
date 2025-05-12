@@ -16,11 +16,11 @@ export function createGameButton({
 
     button.id = id;
     button.type = 'button';
-    button.className = "game-button border-2 border-gameButton-midOne dark:bg-gradient-to-br dark:from-gameButton-midOne/90 dark:to-gameButton-midTwo opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32";
+    button.className = "game-button border-[1px] border-gameButton-midOne dark:bg-gradient-to-br dark:from-gameButton-midOne/90 dark:to-gameButton-midTwo opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32";
 
     div.className = `${divClass || "icon-container dark:bg-[#2D3C4F] bg-orange-500/10 transition-all 0.2s ease-in-out flex justify-center p-4 rounded-full w-14 h-14"}`;
 
-    img.id = `${idImg || "icon-default stroke-black"}`;
+    img.id = `${idImg || "icon-default"}`;
     img.src = icon;
     img.className = imgClass || '';
 

@@ -1,5 +1,3 @@
--- IF NOT EXISTS no SQL é usada para criar um banco de dados ou uma tabela apenas se eles ainda não existirem no sistema. Ela evita erros que aconteceriam se você tentasse criar algo que já existe.
-
 CREATE DATABASE IF NOT EXISTS ponto;
 USE ponto;
 
@@ -10,6 +8,8 @@ CREATE TABLE IF NOT EXISTS usuario (
     email VARCHAR(255) UNIQUE NOT NULL,
     pontuacao INT DEFAULT 0
 );
+
+/*
 
 CREATE TABLE IF NOT EXISTS ranking (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -27,3 +27,5 @@ CREATE TABLE IF NOT EXISTS historico (
     data_acao DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
 );
+
+/*
