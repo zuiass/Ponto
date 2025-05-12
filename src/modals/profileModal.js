@@ -1,6 +1,10 @@
 import { createInput } from '../components/input.js';
 import { createButton } from '../components/button.js';
 
+if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+}
+
 // R E T U R N
 
 export function createProfile() { 
@@ -21,7 +25,7 @@ export function createProfile() {
 
         <div class="flex flex-col gap-8 justify-beetwen items-center">
             <div class="flex flex-row w-full justify-around items-center">
-                <button class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
+                <button class="toggle-theme w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
                     <img src="../assets/public/darkMode.svg" />
                 </button>
 
@@ -104,24 +108,13 @@ export function createProfile() {
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => close());
 
-    // const darkModeToggle = modalBox.querySelector('#dark-mode-toggle');
+    document.querySelector(".toggle-theme").addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
-    // darkModeToggle.addEventListener('click', () => {
-    //     const status = modalBox.querySelector('#dark-mode-status');
-
-    //     if (status.textContent === 'Ativado') {
-    //         status.textContent = 'Desativado';
-    //         darkModeToggle.classList.remove('bg-yellow-500', 'hover:bg-yellow-600');
-    //         darkModeToggle.classList.add('bg-slate-600', 'hover:bg-slate-500');
-    //     } else {
-    //         status.textContent = 'Ativado';
-    //         darkModeToggle.classList.remove('bg-slate-600', 'hover:bg-slate-500');
-    //         darkModeToggle.classList.add('bg-yellow-500', 'hover:bg-yellow-600');
-    //     }
-    // });
-
-    // const logoutButton = modalBox.querySelector('#logout-button');
-    // const deleteAccountButton = modalBox.querySelector('#delete-account-button');
+    // A N I M A T I O N S
 
     function open() {
         modal.classList.remove('hidden');
