@@ -688,6 +688,10 @@ video {
   margin-top: 1.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -1284,6 +1288,10 @@ video {
      object-fit: cover;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p-1 {
   padding: 0.25rem;
 }
@@ -1608,20 +1616,12 @@ video {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* G L O B A L S */
 
 @font-face {
   src: url('../assets/fonts/Outfit.ttf') format('truetype');
 
   font-family: 'Outfit';
-}
-
-/* G L O B A L S */
-
-html {
-  scroll-behavior: smooth;
 }
 
 * {
@@ -1646,57 +1646,6 @@ body {
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* E L E M E N T S */
-
-#ponto-image {
-  opacity: 0;
-  transform: scale(1.1);
-  animation: fadeInScale 1s ease forwards;
-}
-
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(1.1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
-input {
-  outline: none;
-  border: none;
-}
-
-@media (max-height: 700px) {
-  #optionsHome {
-    gap: 4px;
-  }
-
-  #line-one {
-    gap: 6px;
-  }
-
-  #line-two {
-    gap: 6px;
-  }
-
-  .game-button {
-    transform: scale(0.9);
-  }
-
-  #ponto-image {
-    width: 250px;
-  }
 }
 
 .hover\:scale-105:hover {
@@ -1804,19 +1753,9 @@ input {
     background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   }
 
-  .dark\:bg-gradient-to-tr {
-    background-image: linear-gradient(to top right, var(--tw-gradient-stops));
-  }
-
   .dark\:from-body-darkMidOne {
     --tw-gradient-from: #0F172A var(--tw-gradient-from-position);
     --tw-gradient-to: rgb(15 23 42 / 0) var(--tw-gradient-to-position);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  }
-
-  .dark\:from-gameButton-midOne {
-    --tw-gradient-from: #313E52 var(--tw-gradient-from-position);
-    --tw-gradient-to: rgb(49 62 82 / 0) var(--tw-gradient-to-position);
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   }
 
@@ -1827,10 +1766,6 @@ input {
 
   .dark\:to-body-darkMidOne {
     --tw-gradient-to: #0F172A var(--tw-gradient-to-position);
-  }
-
-  .dark\:to-gameButton-midTwo {
-    --tw-gradient-to: #1F2A3F var(--tw-gradient-to-position);
   }
 
   .dark\:hover\:bg-gray-600:hover {

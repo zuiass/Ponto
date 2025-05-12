@@ -62,60 +62,14 @@
     
     <div id="optionsHome" class="flex w-full h-auto flex-col items-center justify-center gap-6">
         <div id="line-one" class="flex flex-row gap-7">
-            <button id="pondeto" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img id="icon-default" src="../assets/public/typeGame.svg">
-                </div>
-                
-                <h2 class="text-xl text-yellow-500">Pondeto</h2>
-            </button>
-
-            <button id="diario" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img id="icon-default" src="../assets/public/typeGame.svg">
-                </div>
-
-                <h2 class="text-xl text-yellow-500">Diário</h2>
-            </button>
-
-            <button id="ponteto" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div id="icon-container-perfil" class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img id="icon-default" src="../assets/public/typeGame.svg">
-                </div>
-
-                <h2 class="text-xl text-yellow-500">Ponteto</h2>
-            </button>
+            <!-- Game Buttons -->
         </div>
-
-        <!-- Linha 2 -->
         
         <div id="line-two" class="flex flex-row gap-7">
-            <button id="history" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img id="icon-default" src="../assets/public/history.svg">
-                </div>
-
-                <h2 class="text-xl text-yellow-500">Histórico</h2>
-            </button>
-
-            <button id="rank" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container flex justify-center p-4 rounded-full w-14 h-14">
-                    <img id="icon-default" src="../assets/public/rank.svg">
-                </div>
-
-                <h2 class="text-xl text-yellow-500">Rank</h2>
-            </button>
-
-            <button id="settings" class="game-button opacity-0 scale-125 transition-all duration-700 ease-out flex flex-col rounded-3xl p-4 justify-between items-center w-32 h-32">
-                <div class="icon-container border-2 border-[#313E52] flex justify-center rounded-full w-14 h-14 overflow-hidden">
-                    <img src="../assets/public/fotoTeste.jpg" class="object-cover w-full h-full" >
-                </div>
-
-                <h2 class="text-xl text-yellow-500">Perfil</h2>
-            </button>
+            <!-- Game Buttons -->
         </div>
 
-        <div class="flex items-center justify-center flex-row p-3">
+        <div class="flex items-center justify-center flex-row p-3 mt-3">
             <button id="jogar" disabled class="flex flex-row items-center justify-center gap-2 px-4 h-12 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-default" style="background: linear-gradient(90deg, #F59E0B, #D97706);">
                 <img src="../assets/public/play.svg" width="20px">
                 <h2 class="text-xl text-black opacity-75 font-bold">Jogar</h2>
@@ -131,5 +85,6 @@
 </div> <!-- # -->
     <script type="module" src="../components/windowControls.js"></script>
     <script type="module" src="../scripts/home.js"></script>
+    <script type="module" src="../components/gameButton.js"></script>
 </body>
 </html>

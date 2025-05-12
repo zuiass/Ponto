@@ -3,16 +3,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('./styles.css');
+
+/* G L O B A L S */
 
 @font-face {
     src: url('../assets/fonts/Outfit.ttf') format('truetype');
     font-family: 'Outfit';
-}
-
-/* G L O B A L S */
-
-html {
-    scroll-behavior: smooth;
 }
 
 * {
@@ -35,46 +32,4 @@ body {
 
 ::-webkit-scrollbar {
     display: none;
-}
-
-/* E L E M E N T S */
-
-#ponto-image {
-    opacity: 0;
-    transform: scale(1.1);
-    animation: fadeInScale 1s ease forwards;
-}
-
-@keyframes fadeInScale {
-    0% {
-        opacity: 0;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-a {
-    text-decoration: none;
-}
-
-input {
-    outline: none;
-    border: none;
-}
-
-@media (max-height: 700px) {
-    #optionsHome {
-        gap: 4px;
-    } #line-one {
-        gap: 6px;
-    } #line-two {
-        gap: 6px;
-    } .game-button {
-        transform: scale(0.9);
-    } #ponto-image {
-        width: 250px;
-    }
 }
