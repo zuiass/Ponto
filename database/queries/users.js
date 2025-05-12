@@ -1,4 +1,4 @@
-const database = require('../connection.js');
+const database = require('../connection/connection.js');
 
 // BUSCAR USUÁRIOS
 

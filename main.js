@@ -1,17 +1,15 @@
 const { app, BrowserWindow } = require('electron');
 const { ipcMain, screen } = require('electron');
 const path = require('path');
-const database = require('./database/connection.js');
+const connection = require('./database/connection/connection.js');
 
 let audioWindow;
 
 function createWindow() {
     const primaryDisplay = screen.getPrimaryDisplay();
-    const { x, y, width, height } = primaryDisplay.workArea;
+    const { width, height } = primaryDisplay.workArea;
     
     const win = new BrowserWindow({
-        x,
-        y,
         width: 700,
         height: 700,
         minWidth: 700,
@@ -31,14 +29,13 @@ function createWindow() {
 
     win.loadFile('./src/pages/home.html');
 
-    // Envia eventos de maximização e fullscreen para o renderer
     win.on('maximize', () => win.webContents.send('window:is-maximized', true));
     win.on('unmaximize', () => win.webContents.send('window:is-maximized', false));
     win.on('enter-full-screen', () => win.webContents.send('window:is-fullscreen', true));
     win.on('leave-full-screen', () => win.webContents.send('window:is-fullscreen', false));
 
-    // Lida com eventos enviados pelo renderer
     ipcMain.on('window:minimize', () => win.minimize());
+
     ipcMain.on('window:toggle-maximize', () => {
         if (win.isMaximized()) {
             win.unmaximize();
@@ -46,9 +43,9 @@ function createWindow() {
             win.maximize();
         }
     });
+
     ipcMain.on('window:close', () => win.close());
 
-    // Retorna o estado atual da janela
     ipcMain.handle('window:get-state', () => {
         return {
             isMaximized: win.isMaximized(),
