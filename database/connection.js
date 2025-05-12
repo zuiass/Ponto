@@ -4,15 +4,16 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'ponto',
-    port: '3306'
+    database: 'ponto'
 });
 
-connection.connect((error) => {
-    if (error) {
-        console.error('Erro ao conectar ao banco de dados:', error);
+connection.connect(err => {
+    if (err) {
+        console.error('Erro ao conectar ao MySQL:', err);
         return;
-    } console.log('Conectado ao banco de dados');
+    }
+
+    console.log('Conectado ao MySQL.');
 });
 
 module.exports = connection;

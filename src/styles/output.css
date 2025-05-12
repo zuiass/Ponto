@@ -1300,10 +1300,6 @@ video {
           background-clip: text;
 }
 
-.stroke-black {
-  stroke: #000;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -1764,17 +1760,12 @@ body {
   background-color: rgb(45 60 79 / var(--tw-bg-opacity, 1));
 }
 
-.dark\:bg-gray-800:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+.dark\:bg-game-surface\/50:is(.dark *) {
+  background-color: rgb(30 41 59 / 0.5);
 }
 
 .dark\:bg-white\/5:is(.dark *) {
   background-color: rgb(255 255 255 / 0.05);
-}
-
-.dark\:bg-game-surface\/50:is(.dark *) {
-  background-color: rgb(30 41 59 / 0.5);
 }
 
 .dark\:bg-gradient-to-br:is(.dark *) {

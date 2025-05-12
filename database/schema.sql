@@ -1,13 +1,15 @@
 CREATE DATABASE IF NOT EXISTS ponto;
 USE ponto;
 
-CREATE TABLE IF NOT EXISTS usuario (
+CREATE TABLE IF NOT EXISTS usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(40) NOT NULL,
     senha VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
     pontuacao INT DEFAULT 0
 );
+
+SELECT * FROM usuarios;
 
 /*
 

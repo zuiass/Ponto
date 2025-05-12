@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const { ipcMain, screen } = require('electron');
 const path = require('path');
+const database = require('./database/connection.js');
 
 let audioWindow;
 
