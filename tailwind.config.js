@@ -22,30 +22,44 @@ module.exports = {
         'game-partial': '#ea580c',
         'game-wrong': '#475569',
 
-        'body-darkMidOne': '#0F172A',
-        'body-darkMidTwo': '#273447',
+        boxShadow: {
+          'cell': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.25)',
+          'glow': '0 0 15px rgba(59, 130, 246, 0.5)'
+        },
 
-        'button-normalMidOne': '#2E3B4E',
-        'button-normalMidTwo': '#212C3E',
-        'button-stroke': '#2E3A4D',
+        animation: {
+          'float': 'float 3s ease-in-out infinite',
+          'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+        },
 
-        'modal-midOne': '#293546',
-        'modal-midTwo': '#19212E',
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10px)' }
+          }
+        },
 
-        'gameButton-midOne': '#313E52',
-        'gameButton-midTwo': '#1F2A3F',
+        body: {
+          darkMidOne: '#0F172A',
+          darkMidTwo: '#273447'
+        },
+
+        button: {
+          normalMidOne: '#2E3B4E',
+          normalMidTwo: '#212C3E',
+          stroke: '#2E3A4D'
+        },
+        
+        modal: {
+          midOne: '#293546',
+          midTwo: '#19212E'
+        },
+
+        gameButton: {
+          midOne: '#313E52',
+          midTwo: '#1F2A3F',
+        }
       },
-
-      backgroundImage: {
-        'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-        'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
-        'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
-        'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
-        'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
-        'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
-        'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
-        'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))'
-      }
     },
   },
 
