@@ -1,16 +1,23 @@
 export function createButton({
+
     id, 
-    text = '',
     className = '',
-    type = 'button',
-    onClick
+    text = '',
+    textClass = '',
+    type = 'button'
+
 }) {
+
     const button = document.createElement("button");
+    const span = document.createElement("h3");
+    
     if (id) button.id = id;
-    button.innerText = text;
     button.className = className;
     button.type = type;
-    if (onClick) button.addEventListener("click", onClick);
+    
+    span.innerText = text;
+    span.className = textClass;
 
+    button.appendChild(span);
     return button;
 }

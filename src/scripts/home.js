@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 switch (button.id) {
                     case 'history':
-                        historyModal.open();
+                        loginModal.open();
                         break;
                     case 'rank':
                         rankModal.open();

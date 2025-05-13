@@ -47,8 +47,9 @@ export function createRecover() {
 
     const enviarButton = createButton({
         id: 'enviar',
+        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] p-4 rounded py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         text: 'Enviar',
-        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] text-black p-4 rounded font-bold py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        textClass: 'font-bold, text-black/75, text-lg',
         type: 'submit'
     });
 

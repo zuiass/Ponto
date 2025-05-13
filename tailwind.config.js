@@ -47,7 +47,10 @@ module.exports = {
         button: {
           normalMidOne: '#2E3B4E',
           normalMidTwo: '#212C3E',
-          stroke: '#2E3A4D'
+          stroke: '#2E3A4D',
+
+          gradientMidOne: '#F2AB1B',
+          gradientMidTwo: '#DC7C08'
         },
         
         modal: {

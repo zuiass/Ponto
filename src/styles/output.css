@@ -1139,6 +1139,10 @@ video {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-tr {
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+}
+
 .from-\[\#DC7C08\] {
   --tw-gradient-from: #DC7C08 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(220 124 8 / 0) var(--tw-gradient-to-position);
@@ -1229,6 +1233,12 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-button-gradientMidOne {
+  --tw-gradient-from: #F2AB1B var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(242 171 27 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .via-slate-600 {
   --tw-gradient-to: rgb(71 85 105 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #475569 var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -1293,6 +1303,10 @@ video {
 
 .to-yellow-600 {
   --tw-gradient-to: #ca8a04 var(--tw-gradient-to-position);
+}
+
+.to-button-gradientMidTwo {
+  --tw-gradient-to: #DC7C08 var(--tw-gradient-to-position);
 }
 
 .bg-clip-text {
@@ -1537,6 +1551,20 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+
+.text-black\/75 {
+  color: rgb(0 0 0 / 0.75);
+}
+
+.text-\[\#000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
+}
+
+.text-\[\#000000\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
 .opacity-0 {

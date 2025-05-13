@@ -86,15 +86,17 @@ export function createProfile() {
 
     const cancelButton = createButton({
         id: 'cancelar',
+        className: 'border-[1px] dark:border-button-stroke border-gray-300 dark:bg-gradient-to-br dark:from-bg-button-normalMidOne dark:to-bg-button-normalMidTwo bg-white py-2 px-2 rounded-xl shadow-md dark:hover:bg-[#34495E] hover:bg-gray-200 transition w-full',
         text: 'Cancelar',
-        className: 'border-2 dark:border-button-stroke border-gray-300 dark:bg-gradient-to-br dark:from-bg-button-normalMidOne dark:to-bg-button-normalMidTwo bg-white text-orange-500 text-bold py-2 px-2 rounded-xl shadow-md dark:hover:bg-[#34495E] hover:bg-gray-200 transition w-full',
+        textClass: 'font-bold, text-[#F1C40F], text-lg',
         type: 'button'
     });
 
     const saveButton = createButton({
         id: 'salvar',
+        className: 'border-[1px] border-yellow-500 bg-gradient-to-br from-button-gradientMidOne to-button-gradientMidTwo p-4 rounded py-3 px-2 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         text: 'Salvar',
-        className: 'border-2 border-yellow-500 bg-gradient-to-br from-[#DC7C08] to-[#F2AB1B] text-semibold p-4 rounded py-3 px-2 rounded-xl shadow-md text-[#392404] hover:bg-[#34495E] transition w-full',
+        textClass: 'font-bold, text-black/75, text-lg',
         type: 'button'
     });
 
