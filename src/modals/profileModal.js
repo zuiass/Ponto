@@ -105,7 +105,7 @@ export function createProfile() {
 
     const closeButton = modalBox.querySelector('.close-modal');
     closeButton.addEventListener('click', () => close());
-
+    
     document.querySelector(".toggle-theme").addEventListener('click', () => {
         document.documentElement.classList.toggle('dark');
         const isDark = document.documentElement.classList.contains('dark');

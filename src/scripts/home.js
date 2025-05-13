@@ -12,6 +12,9 @@ import { createRank } from '../modals/rankModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const letreiro = document.querySelector("#ponto-image");
+    const html = document.getElementsByTagName('html');
+
     const loginModal = createLogin();
     const registerModal = createRegister();
     const recoverModal = createRecover();
@@ -87,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 switch (button.id) {
                     case 'history':
-                        loginModal.open();
+                        historyModal.open();
                         break;
                     case 'rank':
                         rankModal.open();

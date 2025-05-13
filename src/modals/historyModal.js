@@ -26,17 +26,17 @@ export function createHistory() {
       </div>
 
       <div class="grid grid-cols-3 gap-4 mb-5">
-        <div class="bg-gray-100 dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
+        <div class="dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
           <span class="text-3xl font-bold text-red-600 dark:text-red-500 block">0</span>
           <span class="text-sm text-gray-600 dark:text-slate-300">Erros</span>
         </div>
         
-        <div class="bg-gray-100 dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
+        <div class="dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
           <span class="text-3xl font-bold text-green-600 dark:text-green-500 block">0</span>
           <span class="text-sm text-gray-600 dark:text-slate-300">Acertos</span>
         </div>
         
-        <div class="bg-gray-100 dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
+        <div class="dark:bg-transparent rounded-xl p-3 text-center transition-transform hover:scale-105">
           <span class="text-3xl font-bold text-amber-600 dark:text-amber-500 block">0</span>
           <span class="text-sm text-gray-600 dark:text-slate-300">Tentativas</span>
         </div>
@@ -49,51 +49,51 @@ export function createHistory() {
       </div>
 
       <div class="tab-content space-y-2" id="ponto-content">
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Peppa
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Kayke
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Bosta
         </div>
       </div>
 
       <div class="tab-content hidden space-y-2" id="ponteto-content">
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Peppa
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Bosta
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Nitro
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Natal
         </div>
       </div>
 
       <div class="tab-content hidden space-y-2" id="pondeto-content">
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Nitro
         </div>
 
-        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center bg-gray-50 dark:bg-transparent">
+        <div class="p-3 rounded-xl text-gray-800 dark:text-slate-200 flex items-center dark:bg-transparent">
           <div class="h-2 w-2 rounded-full bg-yellow-500 dark:bg-yellow-400 mr-3"></div>
           Peppa
         </div>
