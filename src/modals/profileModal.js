@@ -88,7 +88,7 @@ export function createProfile() {
         id: 'cancelar',
         className: 'border-[1px] dark:border-button-stroke border-gray-300 dark:bg-gradient-to-br dark:from-bg-button-normalMidOne dark:to-bg-button-normalMidTwo bg-white py-2 px-2 rounded-xl shadow-md dark:hover:bg-[#34495E] hover:bg-gray-200 transition w-full',
         text: 'Cancelar',
-        textClass: 'font-bold, text-[#F1C40F], text-lg',
+        textClass: 'font-medium text-[#F1C40F] text-lg',
         type: 'button'
     });
 
@@ -96,7 +96,7 @@ export function createProfile() {
         id: 'salvar',
         className: 'border-[1px] border-yellow-500 bg-gradient-to-br from-button-gradientMidOne to-button-gradientMidTwo p-4 rounded py-3 px-2 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         text: 'Salvar',
-        textClass: 'font-bold, text-black/75, text-lg',
+        textClass: 'font-medium text-black/75 text-lg',
         type: 'button'
     });
 

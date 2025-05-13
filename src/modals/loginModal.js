@@ -62,17 +62,17 @@ export function createLogin() {
 
     const cadastrarButton = createButton({
         id: 'registerPage',
-        className: 'bg-[#2C3E50] py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        className: 'border-[1px] dark:border-button-stroke border-gray-300 dark:bg-gradient-to-br dark:from-bg-button-normalMidOne dark:to-bg-button-normalMidTwo bg-white py-2 px-2 rounded-xl shadow-md dark:hover:bg-[#34495E] hover:bg-gray-200 transition w-full',
         text: 'Cadastrar',
-        textClass: 'font-bold, text-[#F1C40F], text-lg',
+        textClass: 'font-medium text-[#F1C40F] text-lg',
         type: 'button'
     });
 
     const entrarButton = createButton({
         id: 'entrar',
-        className: 'bg-gradient-to-r from-[#DC7C08] to-[#F2AB1B] p-4 rounded py-3 px-6 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
+        className: 'border-[1px] border-yellow-500 bg-gradient-to-br from-button-gradientMidOne to-button-gradientMidTwo p-4 rounded py-3 px-2 rounded-xl shadow-md hover:bg-[#34495E] transition w-full',
         text: 'Entrar',
-        textClass: 'font-bold, text-xl, text-black',
+        textClass: 'font-medium text-xl text-black/75',
         type: 'button'
     });
 
