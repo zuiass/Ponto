@@ -123,7 +123,7 @@ export function createProfile() {
     }
 
     function close() {
-        modal.classList.remove('opacity-100');
+        modal.classList.remove('opacity-100')
         modal.classList.add('opacity-0');
         modalBox.classList.remove('scale-100', 'opacity-100');
         modalBox.classList.add('scale-95', 'opacity-0');
