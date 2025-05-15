@@ -9,17 +9,13 @@ CREATE TABLE IF NOT EXISTS usuarios (
     pontuacao INT DEFAULT 0
 );
 
-SELECT * FROM usuarios;
-
-/*
-
 CREATE TABLE IF NOT EXISTS ranking (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,
     posicao INT NOT NULL,
     pontuacao_total INT NOT NULL,
     data_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS historico (
@@ -27,7 +23,7 @@ CREATE TABLE IF NOT EXISTS historico (
     usuario_id INT NOT NULL,
     acao VARCHAR(100) NOT NULL,
     data_acao DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
-/*
+SELECT * FROM usuarios;
