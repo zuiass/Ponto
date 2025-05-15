@@ -13,7 +13,7 @@ cells[0].classList.add('active');
 
 let activeGame = true; // jogo ativo
 const diaryWords = ["TERMO", "BEBER"]; // que sorteio?
-const secretWord = pontoWords[Math.floor(Math.random() * diaryWords.length)]; // palavra secreta
+const secretWord = diaryWords[Math.floor(Math.random() * diaryWords.length)]; // palavra secreta
 
 // F U N C T I O N S
 
@@ -33,7 +33,7 @@ function insertLetter(letter) {
     if (index < cells.length) {
         cells[index].textContent = letter;
         cells[index].classList.add('filled');
-        colunaAtual++;
+        currentCol++;
 
         if (currentCol < allColumns) {
             updateCell();
@@ -112,3 +112,20 @@ function updateColorCell(letter, result) {
         }
     });
 }
+
+// U S I N G
+
+document.addEventListener('keydown', (event) => {
+    if (!activeGame) return; 
+  
+    const letter = event.key.toUpperCase();
+  
+    if (letter.length === 1 && letter >= 'A' && letter <= 'Z') {
+      insertLetter(letter);
+    } else if (event.key === 'Backspace') {
+      deleteLetter();
+    } else if (event.key === 'Enter') {
+      submitGuess();
+    }
+});
+  

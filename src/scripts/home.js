@@ -12,8 +12,16 @@ import { createRank } from '../modals/rankModal.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    const letreiro = document.querySelector("#ponto-image");
-    const html = document.getElementsByTagName('html');
+    function updateLogo() {
+        const logo = document.getElementById("ponto-image");
+        const bodyClasses = document.body.classList;
+
+        if (bodyClasses.contains("dark")) {
+            logo.src = "../assets/public/home.png";
+        } else {
+            logo.src = "../assets/public/lightHome.svg";
+        }
+    } updateLogo();
 
     const loginModal = createLogin();
     const registerModal = createRegister();
