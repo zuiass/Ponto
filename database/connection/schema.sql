@@ -9,6 +9,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
     pontuacao INT DEFAULT 0
 );
 
+INSERT INTO usuarios (nome, senha, email) VALUES ("Kayke", "12345678", "kayke@gmail.com");
+
 CREATE TABLE IF NOT EXISTS ranking (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario_id INT NOT NULL,

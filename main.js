@@ -1,9 +1,8 @@
-const { app, BrowserWindow } = require('electron');
-const { ipcMain, screen } = require('electron');
+const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
-const connection = require('./database/connection/connection.js');
+require('./database/queries/queries.js');
 
-let audioWindow;
+// W I N D O W
 
 function createWindow() {
     const primaryDisplay = screen.getPrimaryDisplay();
@@ -27,7 +26,9 @@ function createWindow() {
         }
     });
 
-    win.loadFile('./src/pages/home.html');
+    win.loadFile('./src/pages/index.html');
+
+    // F U N C T I O N S
 
     win.on('maximize', () => win.webContents.send('window:is-maximized', true));
     win.on('unmaximize', () => win.webContents.send('window:is-maximized', false));
@@ -52,19 +53,6 @@ function createWindow() {
             isFullscreen: win.isFullScreen(),
         };
     });
-
-    audioWindow = new BrowserWindow({
-        width: 0,
-        height: 0,
-        show: false,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-            devTools: false
-        }
-    });
-
-    audioWindow.loadFile('./src/pages/audioPlayer.html');
 }
 
 app.whenReady().then(createWindow);
