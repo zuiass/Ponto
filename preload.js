@@ -30,6 +30,9 @@ contextBridge.exposeInMainWorld('electron', {
 contextBridge.exposeInMainWorld('api', {
 
     getLogin: (email, senha) => ipcRenderer.invoke('get-login', email, senha),
+    getSession: (token) => ipcRenderer.invoke('get-session', token),
+    getLogout: (token) => ipcRenderer.invoke('logout', token),
+    
     getRanking: () => ipcRenderer.invoke('get-ranking'),
     getHistory: () => ipcRenderer.invoke('get-history')
 
