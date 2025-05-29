@@ -28,9 +28,10 @@ export function createProfile() {
                 <div class="relative">
                     <img class="h-24 w-24 rounded-full object-cover border-2 border-white/20" src="./../assets/public/fotoTeste.jpg">
 
-                    <button class="absolute bottom-0 right-0 bg-yellow-500 rounded-full p-1 hover:bg-yellow-600 transition-colors">
+                    <label class="absolute bottom-0 right-0 bg-yellow-500 rounded-full p-1 hover:bg-yellow-600 transition-colors cursor-pointer">
                         <img src="../assets/public/addPhoto.svg" />
-                    </button>
+                        <input id="insert-photo" type="file" accept="image/*" class="hidden" />
+                    </label>
                 </div>
 
                 <button class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-500 flex items-center justify-center">
@@ -110,6 +111,37 @@ export function createProfile() {
         document.documentElement.classList.toggle('dark');
         const isDark = document.documentElement.classList.contains('dark');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    document.getElementById('insert-photo').addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+            const base64Image = reader.result.split(',')[1];
+            const apiKey = 'c895eda0152609e927f222e3b8d45938';
+
+            const formData = new URLSearchParams();
+            formData.append('key', apiKey);
+            formData.append('image', base64Image);
+
+            try {
+                const response = await fetch('https://api.imgbb.com/1/upload', {
+                    method: 'POST',
+                    headers: { 'Content-Type' : 'application/x-www-form-urlencoded' },
+                    body: formData
+                });
+
+                const data = await response.json();
+                const imageUrl = data.data.url;
+
+            } catch (err) {
+                console.error('Erro ao enviar imagem:', err);
+            }
+        };
+
+        reader.readAsDataURL(file);
     });
 
     // A N I M A T I O N S
