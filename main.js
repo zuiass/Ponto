@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
-const path = require('path');
+const { path } = require('path');
+const { ipcHandlers } = require('./database/handlers');
 
 // W I N D O W
 

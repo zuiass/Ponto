@@ -29,6 +29,8 @@ contextBridge.exposeInMainWorld('electron', {
 
 contextBridge.exposeInMainWorld('api', {
 
-    buscarDados: () => ipcRenderer.invoke('buscar-dados')
+    getLogin: (email, senha) => ipcRenderer.invoke('get-login', email, senha),
+    getRanking: () => ipcRenderer.invoke('get-ranking'),
+    getHistory: () => ipcRenderer.invoke('get-history')
 
 });
