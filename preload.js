@@ -26,9 +26,3 @@ contextBridge.exposeInMainWorld('electron', {
     }
 
 });
-
-contextBridge.exposeInMainWorld('api', {
-
-    buscarDados: () => ipcRenderer.invoke('buscar-dados')
-
-});
