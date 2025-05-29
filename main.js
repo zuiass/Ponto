@@ -1,6 +1,5 @@
 const { app, BrowserWindow, ipcMain, screen } = require('electron');
 const path = require('path');
-require('./database/queries/queries.js');
 
 // W I N D O W
 
