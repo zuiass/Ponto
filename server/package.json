@@ -1,7 +1,8 @@
 {
     "name": "server",
-    "version": "1.0.0",
-    "main": "app.js",
+    "version": "4.21.2",
+    "type": "module",
+    "main": "server.js",
     "scripts": {
         "start": "node app.js"
     },
