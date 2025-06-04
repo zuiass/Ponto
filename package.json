@@ -1,7 +1,7 @@
 {
     "name": "ponto",
     "version": "1.0",
-    "description": "Jogo das palavras de 5 letras",
+    "description": "Jogo das palavras",
     "main": "main.js",
     "scripts": {
         "start": "concurrently \"npm:build:css\" \"npm:electron\"",
