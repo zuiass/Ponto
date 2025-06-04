@@ -9,8 +9,8 @@ const db = mysql.createConnection({
 });
 
 db.connect(err => {
-    if (err) console.error('Erro ao conectar ao MySQL:', err);
-    else console.log('Conectado ao MySQL!');
+    if (err) console.error('\x1b[32mErro ao conectar ao MySQL\x1b[0m:', err);
+    else console.log('Conectado ao \x1b[34mMySQL\x1b[0m\n');
 });
 
 export { db };
