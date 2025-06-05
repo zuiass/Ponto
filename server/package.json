@@ -1,0 +1,13 @@
+{
+    "name": "server",
+    "version": "4.21.2",
+    "type": "module",
+    "main": "server.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "^4.21.2",
+        "mysql2": "^3.14.1"
+    }
+}

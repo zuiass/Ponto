@@ -25,7 +25,7 @@ function createWindow() {
         }
     });
 
-    win.loadFile('./src/pages/home.html');
+    win.loadFile('./src/pages/index.html');
 
     // F U N C T I O N S
 

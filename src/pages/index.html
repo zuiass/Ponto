@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lista de Usuários</title>
+</head>
+<body>
+  <h1>Usuários cadastrados</h1>
+  <div id="lista-usuarios" class="flex flex-row">
+
+  </div>
+
+    <script>
+        fetch('http://localhost:3000/usuarios')
+        .then(res => res.json())
+        .then(dados => {
+            const divs = document.getElementById('lista-usuarios');
+            dados.forEach(usuario => {
+                const div = document.createElement('div');
+
+                const img = document.createElement('img');
+                img.width = 100;
+                img.src = `${usuario.foto}`
+
+                const h2 = document.createElement('h2')
+                h2.textContent = `ID: ${usuario.id}, Nome: ${usuario.nome}, Email: ${usuario.email}`;
+                
+                div.appendChild(img);
+                div.appendChild(h2);
+
+                divs.appendChild(div);
+            });
+        }).catch(err => {
+            console.error('Erro ao buscar usuários:', err);
+        });
+    </script>
+</body>
+</html>
